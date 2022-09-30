@@ -107,7 +107,11 @@ kramdown:
 
 # Includes & excludes
 include: ['_pages']
-exclude: [vendor]
+exclude:
+  - tmp/
+  - vendor/
+  - Gemfile
+  - Gemfile.lock
 
 # Plug-ins
 plugins:
