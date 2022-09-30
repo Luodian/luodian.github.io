@@ -110,8 +110,6 @@ include: ['_pages']
 exclude:
   - tmp/
   - vendor/
-  - Gemfile
-  - Gemfile.lock
 
 # Plug-ins
 plugins:
