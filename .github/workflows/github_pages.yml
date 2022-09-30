@@ -25,7 +25,7 @@ jobs:
     - uses: helaili/jekyll-action@v2
       with:
         token: ${{ secrets.LUODIAN_PAGES }}
-        jekyll_src: 'sample_site'
+        jekyll_src: 'docs'
 
     # Specify the target branch (optional)
     - uses: helaili/jekyll-action@v2
