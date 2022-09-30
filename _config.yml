@@ -107,15 +107,13 @@ kramdown:
 
 # Includes & excludes
 include: ['_pages']
-exclude:
-  - vendor/
+exclude: [vendor]
 
 # Plug-ins
 plugins:
   - jekyll-email-protect
   - jekyll-paginate-v2
   - jekyll/scholar
-  - jekyll-scholar
   - jemoji
   # - bootstrap
   # - material-sass
