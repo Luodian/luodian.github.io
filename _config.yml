@@ -108,7 +108,6 @@ kramdown:
 # Includes & excludes
 include: ['_pages']
 exclude:
-  - tmp/
   - vendor/
 
 # Plug-ins
