@@ -107,7 +107,8 @@ kramdown:
 
 # Includes & excludes
 include: ['_pages']
-exclude: [vendor]
+exclude:
+  - vendor/
 
 # Plug-ins
 plugins:
