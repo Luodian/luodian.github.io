@@ -1,0 +1,17 @@
+current directory: /Users/luodian/PycharmProjects/Luodian.github.io/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+/opt/homebrew/opt/ruby@2.7/bin/ruby -I /opt/homebrew/lib/ruby/site_ruby/2.7.0 extconf.rb
+checking for -lstdc++... yes
+creating Makefile
+
+current directory: /Users/luodian/PycharmProjects/Luodian.github.io/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20220930-14929-9wgz2m sitelibdir\=./.gem.20220930-14929-9wgz2m clean
+
+current directory: /Users/luodian/PycharmProjects/Luodian.github.io/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20220930-14929-9wgz2m sitelibdir\=./.gem.20220930-14929-9wgz2m
+compiling unf.cc
+linking shared-object unf_ext.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/luodian/PycharmProjects/Luodian.github.io/vendor/bundle/ruby/2.7.0/gems/unf_ext-0.0.8.2/ext/unf_ext
+make DESTDIR\= sitearchdir\=./.gem.20220930-14929-9wgz2m sitelibdir\=./.gem.20220930-14929-9wgz2m install
+/usr/bin/install -c -m 0755 unf_ext.bundle ./.gem.20220930-14929-9wgz2m
