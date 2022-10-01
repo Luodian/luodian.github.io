@@ -107,7 +107,7 @@ kramdown:
 
 # Includes & excludes
 include: ['_pages']
-exclude: [vendor]
+exclude: ["travis.sh", "Rakefile", "README.md", "Gemfile", "Gemfile.lock", "FAQ.md", "vendor"]
 
 # Plug-ins
 plugins:
