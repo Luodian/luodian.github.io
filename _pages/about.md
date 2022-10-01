@@ -21,9 +21,9 @@ Nanyang Technological University, Singapore <br/>
 
 I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/).
 
-I am new to machine learning but with a crazy mind of creating autonomous agents that approximate human intelligence from perception to decision. The agent is expected to quickly learn from observations in an unsupervised manner and adapt to new environments. Ideas are from [physical world model](https://worldmodels.github.io/) and [autonomous machine learning](https://openreview.net/pdf?id=BZ5a1r-kVsf).
+I am new to machine learning but with a crazy mind of creating autonomous agent that approximates human intelligence from perception to decision. The agent is expected to quickly learn from observations in an unsupervised manner and adapt to new environments. Ideas are from [physical world model](https://worldmodels.github.io/) and [autonomous machine learning](https://openreview.net/pdf?id=BZ5a1r-kVsf).
 
-I have been studying topics towards the objective including *1) Domain Generalization 2) Generative Models 3) Reinforcement Learning*. 
+I have been studying the few topics towards this objective including *1) Domain Generalization 2) Generative Models 3) Reinforcement Learning*. 
 
 I love discussion & collaboration to all kinds of problems and interesting projects. Feel free to drop an email~
 
