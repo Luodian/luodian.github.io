@@ -3,11 +3,11 @@
 # -----------------------------------------------------------------------------
 
 title: Bo Li
-repository: luodian/luodian.github.io
+# repository: luodian/luodian.github.io
 destination: docs
-github: [metadata]
+# github: [metadata]
 production_url : http://luodian.github.io
-email: drluodian@gmail.com
+# email: drluodian@gmail.com
 # description: > # this means to ignore newlines until "url:"
 #   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
 # footer_text: >
@@ -16,7 +16,7 @@ email: drluodian@gmail.com
 #   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
 url: http://luodian.github.io # the base hostname & protocol for your site
-baseurl: ""
+# baseurl: ""
 # baseurl: / # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
 
