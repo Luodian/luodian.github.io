@@ -6,7 +6,7 @@ title: Bo Li
 repository: luodian/luodian.github.io
 destination: docs
 github: [metadata]
-production_url : http://brianboli.com
+production_url : http://luodian.github.io
 email: drluodian@gmail.com
 # description: > # this means to ignore newlines until "url:"
 #   A simple, whitespace theme for academics. Based on [*folio](https://github.com/bogoli/-folio) design.
@@ -15,7 +15,8 @@ email: drluodian@gmail.com
 #   Hosted by <a href="https://pages.github.com/" target="_blank">GitHub Pages</a>.
 #   Photos from <a href="https://unsplash.com" target="_blank">Unsplash</a>.
 
-url: http://brianboli.com # the base hostname & protocol for your site
+url: http://luodian.github.io # the base hostname & protocol for your site
+baseurl: ""
 # baseurl: / # the subpath of your site, e.g. /blog/
 last_updated: false # set to true if you want to display last updated in the footer
 
