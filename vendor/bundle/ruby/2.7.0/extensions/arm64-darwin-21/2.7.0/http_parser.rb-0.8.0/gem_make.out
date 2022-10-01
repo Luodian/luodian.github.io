@@ -1,0 +1,17 @@
+current directory: /Users/luodian/PycharmProjects/luodian.github.io/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+/opt/homebrew/opt/ruby@2.7/bin/ruby -I /opt/homebrew/lib/ruby/site_ruby/2.7.0 extconf.rb
+creating Makefile
+
+current directory: /Users/luodian/PycharmProjects/luodian.github.io/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20221001-16008-136qf18 sitelibdir\=./.gem.20221001-16008-136qf18 clean
+
+current directory: /Users/luodian/PycharmProjects/luodian.github.io/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20221001-16008-136qf18 sitelibdir\=./.gem.20221001-16008-136qf18
+compiling ruby_http_parser.c
+compiling ryah_http_parser.c
+linking shared-object ruby_http_parser.bundle
+ld: warning: -undefined dynamic_lookup may not work with chained fixups
+
+current directory: /Users/luodian/PycharmProjects/luodian.github.io/vendor/bundle/ruby/2.7.0/gems/http_parser.rb-0.8.0/ext/ruby_http_parser
+make DESTDIR\= sitearchdir\=./.gem.20221001-16008-136qf18 sitelibdir\=./.gem.20221001-16008-136qf18 install
+/usr/bin/install -c -m 0755 ruby_http_parser.bundle ./.gem.20221001-16008-136qf18
