@@ -109,6 +109,7 @@ kramdown:
 include: ['_pages']
 exclude:
   - vendor/
+  - docs/vendor/bundle/ruby/2.7.0/gems/jekyll-3.9.2/lib/site_template
 
 # Plug-ins
 plugins:
