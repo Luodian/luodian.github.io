@@ -1,2 +1,5 @@
 .DS_STORE
 /vendor
+docs/Gemfile.lock
+docs/Gemfile
+docs/README.md
