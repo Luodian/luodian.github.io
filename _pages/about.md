@@ -59,12 +59,14 @@ Previously I was fortunately doing research at/with
 
 </div>
 
-<!-- ----
+----
 ##### Professional Services
 
-**Conference reviewer / Program committee**: NeurIPS (2022), BMVC (2023), AAAI (2023)
+**Conference Reviewer / Program Committee**: NeurIPS (2022), BMVC (2023), AAAI (2023).
 
-**Workshop organization**:
+**Journal Reviewer**: Pattern Recognition.
+
+<!-- **Workshop organization**:
 - [NeurIPS 2019 Workshop on Information Theory and Machine Learning](https://sites.google.com/view/itml19/home) (chair)
 - [DALI 2018 Workshop on Generative Models and Reinforcement Learning](http://dalimeeting.org/dali2018//program) (chair) -->
 
@@ -73,6 +75,7 @@ Previously I was fortunately doing research at/with
 ##### Awards and Fellowships
 
 - [AISG Fellowship 2022](https://aisingapore.org/research/aisg-phd-fellowship-programme/)
+- [Microsoft Starbridge Programe 2020](https://www.msra.cn/zh-cn/connections/academic-programs/xingqiao)
 - Silver Medal, China Collegiate Programming Competition (CCPC), ACM Regional, 2017
 
 ----
