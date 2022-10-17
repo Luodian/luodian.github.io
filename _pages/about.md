@@ -75,7 +75,7 @@ Previously I was fortunately doing research at/with
 ##### Awards and Fellowships
 
 - [AISG Fellowship 2022](https://aisingapore.org/research/aisg-phd-fellowship-programme/)
-- [Microsoft Starbridge Programe 2020](https://www.msra.cn/zh-cn/connections/academic-programs/xingqiao)
+- [Microsoft Starbridge Program 2020](https://www.msra.cn/zh-cn/connections/academic-programs/xingqiao)
 - Silver Medal, China Collegiate Programming Competition (CCPC), ACM Regional, 2017
 
 ----
