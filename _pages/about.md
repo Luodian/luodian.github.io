@@ -23,10 +23,7 @@ I am a first-year PhD student and luckily advised by the brilliant and kind rese
 
 I am new to machine learning but with a crazy mind of creating autonomous agent that approximates human intelligence from perception to decision. The agent is expected to quickly learn from observations in an unsupervised manner and adapt to new environments. Ideas are from [physical world model](https://worldmodels.github.io/) and [autonomous machine learning](https://openreview.net/pdf?id=BZ5a1r-kVsf).
 
-Currently I am pivoting my research focus to (1) Visual Language Pretraining (2) Robust Vision Models.
-<!-- I have been studying the few topics towards this objective including *1) Domain Generalization 2) Generative Models 3) Reinforcement Learning*.  -->
-
-I love discussion & collaboration to all kinds of problems and interesting projects. Feel free to drop an email~
+Currently I base my first step research topic on robust vision models. If you are an undergraduate & master student and want to dive in these topics, feel free to drop an email~
 
 **Email**: drluodian[at]gmail[dot]com
 
