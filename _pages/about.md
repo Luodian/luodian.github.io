@@ -64,7 +64,7 @@ Previously I was fortunately doing research at/with
 
 **Journal Reviewer**: Pattern Recognition.
 
-**Slab@NTU**: GPU Server Management (~50 users)
+**Slab@NTU**: GPU Server Management (~70 users, 300+ GPUs)
 
 <!-- **Workshop organization**:
 - [NeurIPS 2019 Workshop on Information Theory and Machine Learning](https://sites.google.com/view/itml19/home) (chair)
