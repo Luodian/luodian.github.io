@@ -32,19 +32,19 @@ Previously I was fortunately doing research at/with
 
 - [Microsoft Research Asia, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
 
-  2020-2021, relaxing WestBud office, chill colleagues.
+  Sep. 2020 - Dec. 2021, relaxing WestBud office, chill colleagues.
 
 - [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
 
-  2019-2020, nice Bay Area weather, and roll on your golden bears!
+  Oct. 2019 - Aug. 2020, nice Bay Area weather, and roll on your golden bears!
 
 - [Prof. Han Zhao](https://hanzhaoml.github.io/) from UIUC, USA
 
-  2020-2021, learn to write a paper with the ML taste.
+  May 2020 - Dec. 2021, learn to write a paper with the ML taste.
 
 - [DiDi Visual Perception Team, Beijing](https://www.didiglobal.com/science/ailabs)
 
-  2018-2019, first internship and two papers there.
+  May 2018 - Oct. 2019, first internship and two papers there.
 
 
 ----
