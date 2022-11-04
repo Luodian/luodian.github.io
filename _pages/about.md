@@ -60,11 +60,13 @@ Previously I was fortunately doing research at/with
 ----
 ##### Professional Services
 
-**Conference Reviewer / Program Committee**: NeurIPS (2022), BMVC (2023), AAAI (2023).
+**Conference Reviewer / Program Committee**: 
+
+ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2023).
 
 **Journal Reviewer**: Pattern Recognition.
 
-**Slab@NTU**: GPU Server Management (~70 users, 300+ GPUs)
+**Slab@NTU**: GPU Server Management (~70 users, 400+ GPUs)
 
 <!-- **Workshop organization**:
 - [NeurIPS 2019 Workshop on Information Theory and Machine Learning](https://sites.google.com/view/itml19/home) (chair)
