@@ -37,21 +37,21 @@ If you are an undergraduate & master student and want to dive in these topics, f
 ##### Experiences
 Previously I was fortunately doing research at/with
 
-- [Microsoft Research Asia, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
+-   Sep. 2020 - Dec. 2021: [Microsoft Research Asia, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
+    
+    Beautiful and relaxing WestBud office, explore the unknowns with chill and smart colleagues.
 
-  Sep. 2020 - Dec. 2021: Beautiful and relaxing WestBud office, explore the unknowns with chill and smart colleagues.
+- Oct. 2019 - Aug. 2020 (remote till May 2021): [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
+    
+    Sunny summer and warm winter. Go and roll on your golden bears!
 
-- [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
+- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/) from UIUC, USA
 
-  Oct. 2019 - Aug. 2020: Sunny summer and warm winter. Go and roll on your golden bears!
+    Learn to write a paper with machine learning taste.
 
-- [Prof. Han Zhao](https://hanzhaoml.github.io/) from UIUC, USA
+- May 2018 - Oct. 2019: [DiDi Visual Perception Team, Beijing](https://www.didiglobal.com/science/ailabs)
 
-  May 2020 - Dec. 2021: Learn to write a paper with machine learning taste.
-
-- [DiDi Visual Perception Team, Beijing](https://www.didiglobal.com/science/ailabs)
-
-  May 2018 - Oct. 2019: First internship and two papers there.
+    First internship and two papers there.
 
 
 ----
