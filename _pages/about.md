@@ -20,15 +20,15 @@ Nanyang Technological University, Singapore <br/>
 ---- 
 #### About
 
-I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/).
+I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/). With his guidance, I am passionate about deep learning research in the following topics:
 
-There are two reasons why I am involved in deep learning research:
+(1) I believe there will certainly be (and I would like to contribute to) a next-generation AI model that can multi-task across domains and modalities. Inspired by [Pathways system and PaLM](https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html).
 
-(1) I believe there will certainly be (and I would like to contribute to) the next-generation AI model that can multi-task across domains and modalities. Inspired by [PaLM](https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html).
+(2) I think future deep learning models (not only RL model) should be online and interactive, e.g. an autonomous agent that learns through interaction and exploration, then to creatively solve challenging tasks within environment. Inspired by [Embodied AI](https://embodied-ai.org/).
 
-(2) I think AI (not only RL) should be online and interactive, e.g. an autonomous agent that learns through interaction and exploration, then to creatively solve challenging tasks within environment. Inspired by [Embodied AI](https://embodied-ai.org/).
+These are moonshot wild dreams, and that's what I've been focusing on in the long run. 
 
-These are moonshot wild dreams, and that's what I've been focusing on in the long run. Currently I base my first step research topics on [computer-vision-in-the-wild](https://github.com/Computer-Vision-in-the-Wild/CVinW_Readings) and emerging abilities in large vision language models.
+Currently I base my first step research topics on [computer-vision-in-the-wild](https://github.com/Computer-Vision-in-the-Wild/CVinW_Readings) and emerging abilities in large vision language models (e.g. Chain of Thought, Multi-step Reasoning).
 
 If you are an undergraduate & master student and want to dive in these topics, feel free to drop an email~
 
