@@ -26,7 +26,7 @@ I am a first-year PhD student and luckily advised by the brilliant and kind rese
 
 (2) [Embodied AI](https://embodied-ai.org/): an autonomous agent that learns to solve challenging tasks within environment through interaction and exploration.
 
-These are moonshot wild dreams and recent big advances in deep learning, and that's what I will focus on in the long run. 
+These are moonshot wild dreams and also what I will focus on in the long run. 
 
 Currently I base my first step research topics on [computer-vision-in-the-wild](https://github.com/Computer-Vision-in-the-Wild/CVinW_Readings) and emerging abilities in large vision language models (e.g. Chain of Thought, Multi-step Reasoning).
 
