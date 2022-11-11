@@ -22,11 +22,11 @@ Nanyang Technological University, Singapore <br/>
 
 I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/). With his guidance, I am passionate about deep learning research in the following topics:
 
-(1) I believe there will certainly be (and I would like to contribute to) a next-generation AI model that can multi-task across domains and modalities. Inspired by [Pathways system and PaLM](https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html).
+(1) [Pathways system and PaLM](https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html): a next-generation AI model that can multi-task across domains and modalities.
 
-(2) I think future deep learning models (not only RL model) should be online and interactive, e.g. an autonomous agent that learns through interaction and exploration, then to creatively solve challenging tasks within environment. Inspired by [Embodied AI](https://embodied-ai.org/).
+(2) [Embodied AI](https://embodied-ai.org/): an autonomous agent that learns to solve challenging tasks within environment through interaction and exploration.
 
-These are moonshot wild dreams, and that's what I've been focusing on in the long run. 
+These are moonshot wild dreams and recent big advances in deep learning, and that's what I will focus on in the long run. 
 
 Currently I base my first step research topics on [computer-vision-in-the-wild](https://github.com/Computer-Vision-in-the-Wild/CVinW_Readings) and emerging abilities in large vision language models (e.g. Chain of Thought, Multi-step Reasoning).
 
@@ -35,9 +35,13 @@ If you are an undergraduate & master student and want to dive in these topics, f
 **Email**: drluodian[at]gmail[dot]com
 
 ##### Experiences
-Previously I was fortunately doing research at/with
+I have been fortunately doing research at/with
 
--   Sep. 2020 - Dec. 2021: [Microsoft Research Asia, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
+<!-- -   Nov. 2022 - Present: [Microsoft Research, Redmond](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/)
+
+    Explore the large models emerging abilities and deep mysteries of intelligence. -->
+
+-   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
     
     Beautiful and relaxing WestBud office, explore the unknowns with chill and smart colleagues.
 
