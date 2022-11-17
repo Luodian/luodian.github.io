@@ -47,7 +47,7 @@ I have been fortunately doing research at/with
 
 - Oct. 2019 - Aug. 2020 (remote till May 2021): [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
     
-    Sunny summer and warm winter. Go and roll on your golden bears!
+    Sunny summer and warm winter. Go Cal and Roll on your Golden Bears!
 
 - May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/) from UIUC, USA
 
