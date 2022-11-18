@@ -73,7 +73,7 @@ I have been fortunately doing research at/with
 
 **Conference Reviewer / Program Committee**: 
 
-ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2023).
+ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2023), AISTATS (2023).
 
 **Journal Reviewer**: Pattern Recognition.
 
