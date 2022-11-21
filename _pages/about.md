@@ -39,7 +39,7 @@ I have been fortunately doing research at/with
 
 -   Nov. 2022 - Present: [Microsoft Research, Redmond](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/)
 
-    Explore the large models emerging abilities and deep mysteries of intelligence.
+    Explore large models emerging abilities and deep mysteries of intelligence.
 
 -   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
     
