@@ -75,7 +75,7 @@ I have been fortunately doing research at/with
 
 ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2023), AISTATS (2023).
 
-**Journal Reviewer**: Pattern Recognition.
+**Journal Reviewer**: Pattern Recognition, Transactions on Multimedia
 
 **Slab@NTU**: GPU Server Management (~70 users, 400+ GPUs)
 
