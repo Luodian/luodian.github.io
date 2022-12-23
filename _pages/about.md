@@ -30,7 +30,8 @@ These are moonshot wild dreams and also what I will focus on in the long run.
 
 Currently I base my first step research topics on [computer-vision-in-the-wild](https://github.com/Computer-Vision-in-the-Wild/CVinW_Readings) and emerging abilities in large vision language models (e.g. Chain of Thought, Multi-step Reasoning).
 
-If you are an undergraduate & master student and want to dive in these topics, feel free to drop an email~
+I am always grateful to those more senior who have a deep understanding of these topics for their advice. Besides, I am always willing to collaborate with people who are also interested in relevant issues, and provide corresponding guidance to younger students (undergrad or master).
+<!-- If you are an undergraduate & master student and want to dive in these topics, I am willing to provide academic guidance and research collaboration. -->
 
 **Email**: drluodian[at]gmail[dot]com
 
