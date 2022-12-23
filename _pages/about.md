@@ -22,7 +22,7 @@ Nanyang Technological University, Singapore <br/>
 
 I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/). With his guidance, I am passionate about deep learning research in the following topics:
 
-(1) [Pathways system and PaLM](https://ai.googleblog.com/2022/04/pathways-language-model-palm-scaling-to.html): a next-generation AI model that can multi-task across domains and modalities.
+(1) [Foundation Models](https://crfm.stanford.edu/commentary/2021/10/18/steinhardt.html): Stable Diffusion, GPT, they are seemingly promising to put AI with *real* intelligence into pratical use.
 
 (2) [Embodied AI](https://embodied-ai.org/): an autonomous agent that learns to solve challenging tasks within environment through interaction and exploration.
 
