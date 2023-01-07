@@ -44,17 +44,17 @@ I have been fortunately  collaborating and doing research at/with
 
 -   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
     
-    Beautiful and relaxing WestBud office, explore the unknowns with chill and smart colleagues.
+    Supervised by Dr. [Dongsheng Li](http://recmind.cn/) in the beautiful and relaxing WestBud office, with chill and smart colleagues.
 
 - Oct. 2019 - Aug. 2020 (remote till May 2021): [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
     
-    Sunny summer and warm winter. Go Cal and Roll on your Golden Bears!
+    Supervised by Prof. [Kurt Keutzer](https://people.eecs.berkeley.edu/~keutzer/)  and Prof. [Sicheng Zhao](https://sites.google.com/view/schzhao), Prof. [Xiangyu Yue](https://www.ie.cuhk.edu.hk/people/xyyue.shtml), Prof. [Shanghang Zhang](https://www.shanghangzhang.com/). Doing front-tier research in nice bay-area weather. Go Cal and Roll on your Golden Bears!
 
-- Jan 2020 - Nov 2022: [Dr. Tong Che](https://nvr-avg.github.io/author/gerry-che/) from MILA->Nvidia Research
+- Jan 2020 - Nov 2022: [Dr. Tong Che](https://nvr-avg.github.io/author/gerry-che/), MILA/Nvidia Research
 
-    Great appreciation on guiding me in many interesting ML topics.
+    Great appreciation on guiding me in many fascinating ML topics.
 
-- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/) from CMU->UIUC
+- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/), UIUC
 
     Learn to write a paper with machine learning taste.
 
