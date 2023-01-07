@@ -50,7 +50,11 @@ I have been fortunately  collaborating and doing research at/with
     
     Sunny summer and warm winter. Go Cal and Roll on your Golden Bears!
 
-- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/) from UIUC, USA
+- Jan 2020 - Nov 2022: [Dr. Tong Che](https://nvr-avg.github.io/author/gerry-che/) from MILA->Nvidia Research
+
+    Great appreciation on guiding me in many interesting ML topics.
+
+- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/) from CMU->UIUC
 
     Learn to write a paper with machine learning taste.
 
