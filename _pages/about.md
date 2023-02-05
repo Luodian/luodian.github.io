@@ -78,9 +78,15 @@ I have been fortunately  collaborating and doing research at/with
 
 **Conference Reviewer / Program Committee**: 
 
-ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022,2023), AISTATS (2023).
+- ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022,2023), AISTATS (2023), ICML (2023).
 
-**Journal Reviewer**: Pattern Recognition (PR), Transactions on Multimedia (TMM), Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+- Workshop: ICLR 2023 (DG)
+
+**Journal Reviewer**: 
+
+- Pattern Recognition (PR)
+- Transactions on Multimedia (TMM)
+- Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
 
 **Slab@NTU**: Cluster Management (70+ users, 400+ GPUs)
 
