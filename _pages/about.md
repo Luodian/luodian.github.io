@@ -76,19 +76,21 @@ I have been fortunately  collaborating and doing research at/with
 ----
 ##### Professional Services
 
-**Conference Reviewer / Program Committee**: 
+- **[Slab@NTU](https://www.mmlab-ntu.com/index.html)**: Cluster Management (70+ users, 400+ GPUs)
 
-- ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022,2023), AISTATS (2023), ICML (2023).
+- **[The AI Talk](https://theaitalks.org/)**: Organizer
 
-- Workshop: ICLR 2023 (DG)
+- **Conference Reviewer / Program Committee**: 
 
-**Journal Reviewer**: 
+    - ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022,2023), AISTATS (2023), ICML (2023).
 
-- Pattern Recognition (PR)
-- Transactions on Multimedia (TMM)
-- Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+    - Workshop: ICLR 2023 (DG)
 
-**Slab@NTU**: Cluster Management (70+ users, 400+ GPUs)
+- **Journal Reviewer**: 
+
+    - Pattern Recognition (PR)
+    - Transactions on Multimedia (TMM)
+    - Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
 
 <!-- **Workshop organization**:
 - [NeurIPS 2019 Workshop on Information Theory and Machine Learning](https://sites.google.com/view/itml19/home) (chair)
@@ -99,7 +101,7 @@ I have been fortunately  collaborating and doing research at/with
 ##### Awards and Fellowships
 
 - [AISG Fellowship 2022](https://aisingapore.org/research/aisg-phd-fellowship-programme/)
-- [Microsoft Starbridge Program 2020](https://www.msra.cn/zh-cn/connections/academic-programs/xingqiao)
+- [Microsoft Research Starbridge Program 2020](https://www.msra.cn/zh-cn/connections/academic-programs/xingqiao)
 - Silver Medal, China Collegiate Programming Competition (CCPC), ACM Regional, 2017
 
 ----
