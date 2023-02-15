@@ -35,33 +35,6 @@ I am always grateful to those more senior who have a deep understanding of these
 
 **Email**: drluodian[at]gmail[dot]com
 
-##### Experiences
-I have been fortunately  collaborating and doing research at/with
-
--   Nov. 2022 - Present: [Microsoft Research, Redmond](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/)
-
-    Collaborate with Dr. [Chunyuan Li](https://chunyuan.li/)'s team, to explore foundation models emerging abilities and deep mysteries of intelligence.
-
--   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
-    
-    Supervised by Dr. [Dongsheng Li](http://recmind.cn/) in the beautiful and relaxing WestBud office, with chill and smart colleagues.
-
-- Oct. 2019 - Aug. 2020 (remote till May 2021): [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
-    
-    Supervised by Prof. [Kurt Keutzer](https://people.eecs.berkeley.edu/~keutzer/)  and Prof. [Sicheng Zhao](https://sites.google.com/view/schzhao), Prof. [Xiangyu Yue](https://www.ie.cuhk.edu.hk/people/xyyue.shtml), Prof. [Shanghang Zhang](https://www.shanghangzhang.com/). Doing front-tier research in nice bay-area weather. Go Cal and Roll on your Golden Bears!
-
-- Jan 2020 - Nov 2022: [Dr. Tong Che](https://nvr-avg.github.io/author/gerry-che/), MILA/Nvidia Research
-
-    Great appreciation on guiding me in many fascinating ML topics.
-
-- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/), UIUC
-
-    Learn to write a paper with machine learning taste.
-
-- May 2018 - Oct. 2019: [DiDi Visual Perception Team, Beijing](https://www.didiglobal.com/science/ailabs)
-
-    First internship and two papers there.
-
 
 ----
 
@@ -73,6 +46,33 @@ I have been fortunately  collaborating and doing research at/with
 
 </div>
 
+##### Experiences
+I have been fortunately  collaborating and doing research at/with
+
+-   Nov. 2022 - Present: [Microsoft Research, Redmond](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/)
+
+    Supervised by Dr. [Chunyuan Li](https://chunyuan.li/), to explore the what external knowledge brings to foundation models and their emerging abilities.
+
+-   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
+    
+    Supervised by Dr. [Dongsheng Li](http://recmind.cn/) in the beautiful and relaxing WestBud office, with chill and smart colleagues.
+
+- Oct. 2019 - Aug. 2020 (remote till May 2021): [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
+    
+    Supervised by Prof. [Kurt Keutzer](https://people.eecs.berkeley.edu/~keutzer/)  and Prof. [Sicheng Zhao](https://sites.google.com/view/schzhao), Prof. [Xiangyu Yue](https://www.ie.cuhk.edu.hk/people/xyyue.shtml), Prof. [Shanghang Zhang](https://www.shanghangzhang.com/) and Dr. [Colorado Reed](https://people.eecs.berkeley.edu/~cjrd/). Enjoy the weather and front-tier research atmosphere. Go Cal and Roll on your Golden Bears!
+
+- Jan 2020 - Nov 2022: [Dr. Tong Che](https://nvr-avg.github.io/author/gerry-che/), MILA/Nvidia Research
+
+    Great appreciation on guiding me to explore many fascinating ML topics.
+
+- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/), UIUC
+
+    Learn to write a paper with machine learning taste.
+
+- May 2018 - Oct. 2019: [DiDi Visual Perception Team, Beijing](https://www.didiglobal.com/science/ailabs)
+
+    First internship and two papers there.
+
 ----
 ##### Professional Services
 
@@ -82,7 +82,7 @@ I have been fortunately  collaborating and doing research at/with
 
 - **Conference Reviewer / Program Committee**: 
 
-    - ICCV (2021), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022,2023), AISTATS (2023), ICML (2023).
+    - ICCV (2021,2023), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022,2023), AISTATS (2023), ICML (2023).
 
     - Workshop: ICLR 2023 (DG)
 
