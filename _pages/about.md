@@ -76,7 +76,7 @@ I have been fortunately  collaborating and doing research at/with
 ----
 ##### Professional Services
 
-- **[Slab@NTU](https://www.mmlab-ntu.com/index.html)**: Cluster Management (70+ users, 400+ GPUs)
+- **[Slab@NTU](https://www.mmlab-ntu.com/index.html)**: Cluster Adminstrator (70+ users, 400+ GPUs)
 
 - **[The AI Talk](https://theaitalks.org/)**: Organizer
 
