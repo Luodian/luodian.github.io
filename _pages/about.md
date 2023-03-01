@@ -91,6 +91,7 @@ I have been fortunately  collaborating and doing research at/with
     - Pattern Recognition (PR)
     - Transactions on Multimedia (TMM)
     - Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
+    - International Journal of Computer Vision (IJCV)
 
 <!-- **Workshop organization**:
 - [NeurIPS 2019 Workshop on Information Theory and Machine Learning](https://sites.google.com/view/itml19/home) (chair)
