@@ -20,7 +20,7 @@ Nanyang Technological University, Singapore <br/>
 ---- 
 #### About
 
-I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/). With his guidance, I am passionate about deep learning research in the following topics:
+I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/). I am passionate about deep learning research in the following topics:
 
 (1) [Foundation Models](https://crfm.stanford.edu/commentary/2021/10/18/steinhardt.html): Stable Diffusion, GPT, they are seemingly promising to put AI with *real* intelligence into pratical use.
 
