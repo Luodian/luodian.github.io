@@ -49,10 +49,6 @@ I am always grateful to those more senior who have a deep understanding of these
 ##### Experiences
 I have been fortunately  collaborating and doing research at/with
 
--   Nov. 2022 - Present: [Microsoft Research, Redmond](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/)
-
-    Supervised by Dr. [Chunyuan Li](https://chunyuan.li/), to explore the what external knowledge brings to foundation models and their emerging abilities.
-
 -   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
     
     Supervised by Dr. [Dongsheng Li](http://recmind.cn/) in the beautiful and relaxing WestBud office, with chill and smart colleagues.

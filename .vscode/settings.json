@@ -4,5 +4,6 @@
         "activityBar.background": "#778899",
         "titleBar.activeBackground": "#A6B1BC",
         "titleBar.activeForeground": "#F9FAFA"
-    }
+    },
+    "git-blame.gitWebUrl": ""
 }
