@@ -71,10 +71,18 @@ I have been fortunately  collaborating and doing research at/with
 
 ----
 ##### Professional Services
+- **Talk/Technical Sharing**: 
+    - Otter & MIMICIT@Alibaba, Damo Academy, Hosted by [Dr. Lidong Bing](https://lidongbing.github.io/), Sep. 2023.
+    - Otter & MIMICIT@HITSZ, Hosted by [Prof. Rui Shao](https://rshaojimmy.github.io/), Jul. 2023.
 
+---
 - **[Slab@NTU](https://www.mmlab-ntu.com/index.html)**: Cluster Adminstrator (70+ users, 400+ GPUs)
 
+---
+
 - **[The AI Talk](https://theaitalks.org/)**: Organizer
+
+---
 
 - **Conference Reviewer / Program Committee**: 
 
@@ -82,12 +90,15 @@ I have been fortunately  collaborating and doing research at/with
 
     - Workshop: ICLR 2023 (DG)
 
+---
+
 - **Journal Reviewer**: 
 
     - Pattern Recognition (PR)
     - Transactions on Multimedia (TMM)
     - Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
     - International Journal of Computer Vision (IJCV)
+
 
 <!-- **Workshop organization**:
 - [NeurIPS 2019 Workshop on Information Theory and Machine Learning](https://sites.google.com/view/itml19/home) (chair)
