@@ -28,7 +28,7 @@ I am a first-year PhD student and luckily advised by the brilliant and kind rese
 
 These are moonshot wild dreams and also what I will focus on in the long run. 
 
-Currently I base my first step research topics on [computer-vision-in-the-wild](https://github.com/Computer-Vision-in-the-Wild/CVinW_Readings) and emerging abilities in foundation models.
+Currently I base my first step research topics on [large-scale multi-mdoality models](https://github.com/Luodian/Otter) and emerging abilities in foundation models.
 
 I am always grateful to those more senior who have a deep understanding of these topics for their advice. Besides, I am always willing to collaborate with people who are also interested in relevant issues, and provide corresponding guidance to younger students (undergrad or master).
 <!-- If you are an undergraduate & master student and want to dive in these topics, I am willing to provide academic guidance and research collaboration. -->
