@@ -20,21 +20,12 @@ Nanyang Technological University, Singapore <br/>
 ---- 
 #### About
 
-I am a first-year PhD student and luckily advised by the brilliant and kind researcher [Prof. Ziwei Liu](https://liuziwei7.github.io/). I am passionate about deep learning research in the following topics:
-
-(1) [Foundation Models](https://crfm.stanford.edu/commentary/2021/10/18/steinhardt.html): Stable Diffusion, GPT, they are seemingly promising to put AI with *real* intelligence into pratical use.
-
-(2) [Embodied AI](https://embodied-ai.org/): an autonomous agent that learns to solve challenging tasks within environment through interaction and exploration.
-
-These are moonshot wild dreams and also what I will focus on in the long run. 
-
-Currently I base my first step research topics on [large-scale multi-mdoality models](https://github.com/Luodian/Otter) and emerging abilities in foundation models.
+I am a second-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). Currently I base my research topics on [large-scale multi-mdoality models](https://github.com/Luodian/Otter) and emerging abilities in foundation models.
 
 I am always grateful to those more senior who have a deep understanding of these topics for their advice. Besides, I am always willing to collaborate with people who are also interested in relevant issues, and provide corresponding guidance to younger students (undergrad or master).
 <!-- If you are an undergraduate & master student and want to dive in these topics, I am willing to provide academic guidance and research collaboration. -->
 
 **Email**: drluodian[at]gmail[dot]com
-
 
 ----
 
