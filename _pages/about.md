@@ -97,25 +97,4 @@ I have been fortunately  collaborating and doing research at/with
 
 ----
 
-##### Awards and Fellowships
-
-- [AISG Fellowship 2022](https://aisingapore.org/research/aisg-phd-fellowship-programme/)
-- [Microsoft Research Starbridge Program 2020](https://www.msra.cn/zh-cn/connections/academic-programs/xingqiao)
-- Silver Medal, China Collegiate Programming Competition (CCPC), ACM Regional, 2017
-
-----
-
-#### Personal
-
-##### Exercise
-- Deadlift: 100kg, 1-3RM
-- Squat: 100kg, 1-3RM
-- Bench Press: 80kg, 3RM
-- 5KM Run: ~34 min
-
-##### Life
-- Love watching a lot of Youtube videos and reading daily world news.
-- Enjoy participating meaningful social activities (connect with community).
-- Dream to be a film director.
-
 **Acknowledgements**: this website builds on [al-folio](https://github.com/alshedivat/al-folio) and [Jiaming Song](https://github.com/jiamings/tsong.me).
