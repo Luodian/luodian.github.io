@@ -18,12 +18,13 @@ Nanyang Technological University, Singapore <br/>
 <!-- <a href="assets/pdf/jiaming_cv.pdf" target="_blank"><b>Curriculum Vitae</b></a> -->
 
 ---- 
-#### About
+#### About Me
 
-I am a second-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). Currently I base my research topics on [large-scale multi-mdoality models](https://github.com/Luodian/Otter) and emerging abilities in foundation models.
+I am a third-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). My research focuses on multimodal models, and I co-founded [LMMs-Lab](https://huggingface.co/lmms-lab) to bring together brilliant researchers who share a sincere passion for developing multimodal intelligence.
 
-I am always grateful to those more senior who have a deep understanding of these topics for their advice. Besides, I am always willing to collaborate with people who are also interested in relevant issues, and provide corresponding guidance to younger students (undergrad or master).
-<!-- If you are an undergraduate & master student and want to dive in these topics, I am willing to provide academic guidance and research collaboration. -->
+In an era of pursuing AGI, I feel the enthusiasm, which has ignited my passion for pursuing and building true intelligence. I am not bounded by money, fame, or other material gains. I seek to follow the quiet call of my inner beliefs and true calling. 
+
+As Ilya’s famous quote suggests, [Feel the AGI](https://x.com/ilyasut/status/1578238338288402432), simply feeling it brings me immense joy and fulfillment.
 
 **Email**: drluodian[at]gmail[dot]com
 
@@ -63,6 +64,8 @@ I have been fortunately  collaborating and doing research at/with
 ----
 ##### Professional Services
 - **Talk/Technical Sharing**: 
+    - LMMs-Lab Projects@TwelveLabs (2024), Hosted by [James Le](https://jameskle.com/)
+    - LMMs-Lab Projects@Tiktok (2024)
     - Otter & MIMICIT@Alibaba, Damo Academy, Hosted by [Dr. Lidong Bing](https://lidongbing.github.io/), Sep. 2023.
     - Otter & MIMICIT@HITSZ, Hosted by [Prof. Rui Shao](https://rshaojimmy.github.io/), Jul. 2023.
 
