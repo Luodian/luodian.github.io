@@ -20,11 +20,11 @@ Nanyang Technological University, Singapore <br/>
 ---- 
 #### About Me
 
-I am a third-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). My research focuses on multimodal models, and I co-founded [LMMs-Lab](https://huggingface.co/lmms-lab) to bring together brilliant researchers who share a sincere passion for developing multimodal intelligence.
+I am a third-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). My research focuses on multimodal models.
 
-In an era of pursuing AGI, I feel the enthusiasm, which has ignited my passion for pursuing and building true intelligence. I am not bounded by money, fame, or other material gains. I seek to follow the quiet call of my inner beliefs and true calling. 
+In an era of [Feeling the AGI](https://x.com/ilyasut/status/1578238338288402432), I also feel the enthusiasm, which has ignited my passion for pursuing and building true intelligence, not bounded by money, fame, or other material gains, just seeking the quiet call of inner beliefs and true calling. 
 
-As Ilya’s famous quote suggests, [Feel the AGI](https://x.com/ilyasut/status/1578238338288402432), simply feeling it brings me immense joy and fulfillment.
+I am lucky to work with many brilliant researchers in a non-profit research-oriented organization, [LMMs-Lab](https://huggingface.co/lmms-lab), we share the sincere passion for developing multimodal intelligence.
 
 **Email**: drluodian[at]gmail[dot]com
 
