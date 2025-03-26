@@ -64,8 +64,10 @@ I have been fortunately  collaborating and doing research at/with
 ----
 ##### Professional Services
 - **Talk/Technical Sharing**: 
-    - LMMs-Lab Projects@TwelveLabs (2024), Hosted by [James Le](https://jameskle.com/)
-    - LMMs-Lab Projects@Tiktok (2024)
+    - Multimodal Models, LMMs-Lab Projects@Jump Trading (2025), Hosted by Weifeng Liu.
+    - Guest Lecture: Multimodal Models@UMich 
+    - Multimodal Models, LMMs-Lab Projects@TwelveLabs (2024), Hosted by [James Le](https://jameskle.com/)
+    - Multimodal Models, LMMs-Lab Projects@Tiktok (2024)
     - Otter & MIMICIT@Alibaba, Damo Academy, Hosted by [Dr. Lidong Bing](https://lidongbing.github.io/), Sep. 2023.
     - Otter & MIMICIT@HITSZ, Hosted by [Prof. Rui Shao](https://rshaojimmy.github.io/), Jul. 2023.
 
