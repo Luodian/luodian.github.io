@@ -39,7 +39,15 @@ I am lucky to work with many brilliant researchers in a non-profit research-orie
 </div>
 
 ##### Experiences
-I have been fortunately  collaborating and doing research at/with
+I have been fortunately collaborating and doing research at/with
+
+- Dec. 2023 - Aug. 2024: [Bytedance Seed Research, Singapore](https://team.doubao.com/en/)
+
+    Supervised by Dr. [Chunyuan Li](https://chunyuan.li/). Dedicated in building open-source multimodal models.
+
+- Dec. 2022 - Aug. 2023: [Microsoft Research, Redmond](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/)
+
+    Supervised by Dr. [Chunyuan Li](https://chunyuan.li/). Great experience on multimodal learning, learned a lot from great teammate [Haotian Liu](https://hliu.cc/) and later participated in the LLaVA Journey.
 
 -   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
     
@@ -65,7 +73,7 @@ I have been fortunately  collaborating and doing research at/with
 ##### Professional Services
 - **Talk/Technical Sharing**: 
     - Multimodal Models, LMMs-Lab Projects@Jump Trading (2025), Hosted by Weifeng Liu.
-    - Guest Lecture: Multimodal Models@UMich 
+    - Guest Lecture: Multimodal Models@UMich, UM EECS 542: Advanced Topics in Computer Vision, Hosted by [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/index.html)
     - Multimodal Models, LMMs-Lab Projects@TwelveLabs (2024), Hosted by [James Le](https://jameskle.com/)
     - Multimodal Models, LMMs-Lab Projects@Tiktok (2024)
     - Otter & MIMICIT@Alibaba, Damo Academy, Hosted by [Dr. Lidong Bing](https://lidongbing.github.io/), Sep. 2023.
