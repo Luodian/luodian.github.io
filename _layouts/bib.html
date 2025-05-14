@@ -1,26 +1,25 @@
----
----
-
 <div class="row">
-  <div class="col-sm-1">
-    [{{ entry.count }}]
-  </div>
+    <div class="col-sm-1">
+        [{{ entry.count }}]
+    </div>
 
-  <div id="{{entry.key}}" class="col-sm-11">
-    {% if entry.type == "thesis" %}
-    {{reference}}
-    {% else %}
-    <span class="author">
+    <div id="{{entry.key}}" class="col-sm-11">
+        {% if entry.type == "thesis" %} {{reference}} {% else %}
+        <span class="author">
       {% for author in entry.author_array %}
       {% if forloop.length == 1 %}
       {% if author.last == site.scholar.last_name and author.first == site.scholar.first_name %}
       <em>{{author.first}} {{author.last}}</em>
+      {% elsif author.first == "Bo" and (author.last == "Li" or author.last == "Li*") %}
+      <u>{{author.first}} {{author.last}}</u>
       {% else %}
       {{author.first}} {{author.last}}
       {% endif %}
       {% else %}
       {% unless forloop.last %}
-      {% if author.first == site.scholar.first_name author.last == site.scholar.last_name.concat("*") %}
+      {% if author.first == "Bo" and (author.last == "Li" or author.last == "Li*") %}
+      <u>{{author.first}} {{author.last}}</u>,
+      {% elsif author.first == site.scholar.first_name author.last == site.scholar.last_name.concat("*") %}
       <em>{{author.first}} {{author.last}}</em>,
       {% else %}
       {% if site.data.coauthors[author.last] %}
@@ -30,7 +29,9 @@
       {% endif %}
       {% endif %}
       {% else %}
-      {% if author.last == site.scholar.last_name.concat("*") and author.first == site.scholar.first_name %}
+      {% if author.first == "Bo" and (author.last == "Li" or author.last == "Li*") %}
+      <u>{{author.first}} {{author.last}}</u>
+      {% elsif author.last == site.scholar.last_name.concat("*") and author.first == site.scholar.first_name %}
       <em>{{author.first}} {{author.last}}</em>
       {% else %}
       {% if site.data.coauthors[author.last] %}
@@ -42,14 +43,11 @@
       {% endunless %}
       {% endif %}
       {% endfor %}
-    </span>
-    {% if entry.url %}
-    <span class="title" style="font-size: 16px;"> <a href="{{entry.url}}">{{entry.title}}</a></span>
-    {% else %}
-    <span class="title" style="font-size: 16px;">{{entry.title}}</span>
-    {% endif %}
+    </span> {% if entry.url %}
+        <span class="title" style="font-size: 16px;"> <a href="{{entry.url}}">{{entry.title}}</a></span> {% else %}
+        <span class="title" style="font-size: 16px;">{{entry.title}}</span> {% endif %}
 
-    <span class="periodical">
+        <span class="periodical">
       <nobr style="color:darkcyan; font-weight: 600;">
         {% if entry.abbr %}
         {% if site.data.venues[entry.abbr] %}
@@ -110,22 +108,16 @@
         {% endif %}
       </nobr>
 
-    </span>
-
-    {% if entry.workshop %}
-    <span class="periodical">
+    </span> {% if entry.workshop %}
+        <span class="periodical">
     <em>Short version in {{ entry.workshop }}.</em>  
-    </span>
-    {% endif %}
-
-    {% endif %}
+    </span> {% endif %} {% endif %}
 
 
-    <!-- Hidden abstract block -->
-    {% if entry.abstract %}
-    <span class="abstract hidden">
+        <!-- Hidden abstract block -->
+        {% if entry.abstract %}
+        <span class="abstract hidden">
       <p>{{ entry.abstract }}</p>
-    </span>
-    {% endif %}
-  </div>
+    </span> {% endif %}
+    </div>
 </div>
