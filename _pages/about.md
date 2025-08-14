@@ -20,11 +20,11 @@ Nanyang Technological University, Singapore <br/>
 ---- 
 #### About Me
 
-I am a third-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). My research focuses on multimodal models and building true intelligence.
+I am a final-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). My research focuses on multimodal models and building true intelligence.
 
 <!-- [Feeling the AGI](https://x.com/ilyasut/status/1578238338288402432) and seeing the progress give me a deep passion for what I am doing, driving a commitment not bound by material gain, but by the quiet call of inner beliefs and a true sense of purpose. -->
 
-I am lucky to work with many brilliant researchers in a non-profit research-oriented organization, [LMMs-Lab](https://huggingface.co/lmms-lab), we share the sincere passion for developing multimodal intelligence.
+I am fortunate to work with many brilliant researchers in the research-oriented organization [LMMs-Lab](https://huggingface.co/lmms-lab), which I co-founded with Prof. Ziwei Liu. We share the sincere passion for building multimodal intelligence. Within LMMs-Lab, I have helped guide junior students to deliver successful projects such as [Octopus](https://arxiv.org/abs/2310.08588), [VideoMMMU](https://arxiv.org/abs/2501.13826), [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae).
 
 **Email**: drluodian[at]gmail[dot]com
 

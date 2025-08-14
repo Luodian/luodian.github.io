@@ -127,7 +127,7 @@ scholar:
 
   first_name: Brian (Bo)
   last_name: Li
-  style: https://raw.githubusercontent.com/citation-style-language/styles/master/chicago-author-date.csl
+  style: chicago-author-date.csl
 
   locale: en
 
