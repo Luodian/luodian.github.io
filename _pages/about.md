@@ -43,6 +43,14 @@ You can email me if you have ideas or thoughts on research or the future form of
 ##### Experiences
 I have been fortunately collaborating and doing research at/with
 
+- Aug. 2025 - Present: [Bytedance Seed Research, Singapore](https://team.doubao.com/en/)
+
+    Supervised by Dr. [Haoqi Fan](https://haoqifan.github.io/). Super insightful conversation on research and building foundational models, also learned a lot from great teammate Chaorui Deng.
+
+- Oct. 2024 - Aug. 2025: [Tiktok AI Innovation Center, Singapore](https://lifeattiktok.com/position/7364272465797990665/detail)
+
+    Supervised by Dr. Wei Li and Dr. Zejun Ma. Two charming senior researchers and a comfortable and collaborative team.
+
 - Dec. 2023 - Aug. 2024: [Bytedance Seed Research, Singapore](https://team.doubao.com/en/)
 
     Supervised by Dr. [Chunyuan Li](https://chunyuan.li/). Dedicated in building open-source multimodal models.
