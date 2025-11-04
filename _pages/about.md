@@ -45,7 +45,7 @@ I have been fortunately collaborating and doing research at/with
 
 - Aug. 2025 - Present: [Bytedance Seed Research, Singapore](https://team.doubao.com/en/)
 
-    Supervised by Dr. [Haoqi Fan](https://haoqifan.github.io/). Super insightful conversation on research and building foundational models, also learned a lot from great teammate Chaorui Deng.
+    Supervised by Dr. [Congwu Shen](https://haoqifan.github.io/) and Dr. [Guang Shi]. Super insightful conversation on research and building foundational models, also learned a lot from great teammate Chaorui Deng.
 
 - Oct. 2024 - Aug. 2025: [Tiktok AI Innovation Center, Singapore](https://lifeattiktok.com/position/7364272465797990665/detail)
 
