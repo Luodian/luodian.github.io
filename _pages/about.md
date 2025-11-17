@@ -43,7 +43,7 @@ You can email me if you have ideas or thoughts on research or the future form of
 ##### Experiences
 I have been fortunately collaborating and doing research at/with
 
-- Aug. 2025 - Present: [Bytedance Seed Research, Singapore](https://team.doubao.com/en/)
+- Aug. 2025 - Present: [Bytedance Seed, Singapore](https://team.doubao.com/en/)
 
     My first full-time job, supervised by Dr. [Congwu Shen](https://haoqifan.github.io/) and Dr. Guang Shi. 
 
@@ -55,7 +55,7 @@ I have been fortunately collaborating and doing research at/with
 
     Supervised by Dr. Wei Li and Dr. Zejun Ma. Two charming senior researchers and a comfortable and collaborative team.
 
-- Dec. 2023 - Aug. 2024: [Bytedance Seed Research, Singapore](https://team.doubao.com/en/)
+- Dec. 2023 - Aug. 2024: [Bytedance Seed, Singapore](https://team.doubao.com/en/)
 
     Supervised by Dr. [Chunyuan Li](https://chunyuan.li/). Dedicated in building open-source multimodal models.
 
