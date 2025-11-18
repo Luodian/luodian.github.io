@@ -48,8 +48,6 @@ I have been fortunately collaborating and doing research at/with
     My first full-time job, supervised by Dr. [Congwu Shen](https://haoqifan.github.io/) and Dr. Guang Shi. 
 
     Doing fun stuff on unified multimodal models.
-    
-    Also being part of the [TopSeed Program](https://seed.bytedance.com/en/topseed).
 
 - Oct. 2024 - Aug. 2025: [Tiktok AI Innovation Center, Singapore](https://lifeattiktok.com/position/7364272465797990665/detail)
 
