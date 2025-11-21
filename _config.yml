@@ -190,5 +190,5 @@ mdb:
     css: "sha256-/SwJ2GDcEt5382i8zqDwl36VJGECxEoIcBIuoLmLR4g="
     js: "sha256-UGNYR+uy841zU5TiO2yXD96UktHt9TM4/WXvsDLr4l0="
 popper:
-  version: "2.4.0"
-  integrity: "sha256-OH05DFHUWzr725HmuHo3pnuvUUn+TJuj8/Qz9xytFEw="
+  version: "1.16.0"
+  integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3Uks+dQRVvoxMfooN"

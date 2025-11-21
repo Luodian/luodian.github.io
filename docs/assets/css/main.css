@@ -120,6 +120,13 @@ pre { background: rgba(8, 12, 20, 0.85); border: 1px solid rgba(255, 255, 255, 0
 
 .navbar.cyber-nav.nav-visible { opacity: 1; }
 
+@media (max-width: 576px) { body.fixed-top-nav { padding-top: 96px; }
+  .container { padding-left: 1rem; padding-right: 1rem; }
+  .navbar.cyber-nav { padding: 0.75rem 0; }
+  .navbar.cyber-nav .navbar-toggler { padding: 0.45rem 0.8rem; min-width: 44px; min-height: 44px; }
+  .navbar.cyber-nav .navbar-collapse { background: rgba(7, 11, 19, 0.96); border: 1px solid rgba(72, 242, 194, 0.38); border-radius: 14px; margin-top: 0.6rem; padding: 0.5rem 0.9rem; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45); }
+  .navbar.cyber-nav .navbar-nav .nav-link { padding: 0.55rem 0; }
+  .post, .page-content, .content-panel { padding: 1.4rem 1.2rem; margin-bottom: 1.6rem; } }
 .news table { width: 100%; background: transparent; }
 
 .news table td { font-size: 1rem; color: #e9f4ff; border-top: 1px solid rgba(255, 255, 255, 0.06); }

@@ -28,8 +28,58 @@ $(document).ready(function() {
             ticking = false;
         };
 
-        window.addEventListener('scroll', () => {});
+        window.addEventListener('scroll', () => {
+            if (!ticking) {
+                window.requestAnimationFrame(updateNavbar);
+                ticking = true;
+            }
+        });
         navbar.classList.add('nav-visible');
+    }
+
+    // Reliable navbar collapse on mobile (works even if Bootstrap data API is blocked)
+    const toggler = document.querySelector('.navbar-toggler');
+    const targetSelector = toggler ? toggler.getAttribute('data-target') || toggler.getAttribute('data-bs-target') : null;
+    const navTarget = targetSelector ? document.querySelector(targetSelector) : null;
+    const hasBootstrapCollapse = typeof window.jQuery !== 'undefined'
+        && window.jQuery.fn
+        && typeof window.jQuery.fn.collapse === 'function';
+
+    if (toggler && navTarget) {
+        const setToggleState = (isOpen) => {
+            toggler.classList.toggle('collapsed', !isOpen);
+            toggler.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        };
+
+        const toggleMenu = (forceOpen) => {
+            const currentlyOpen = navTarget.classList.contains('show');
+            const nextState = typeof forceOpen === 'boolean' ? forceOpen : !currentlyOpen;
+
+            if (hasBootstrapCollapse) {
+                window.jQuery(navTarget).collapse(nextState ? 'show' : 'hide');
+            } else {
+                navTarget.classList.toggle('show', nextState);
+            }
+            setToggleState(nextState);
+        };
+
+        toggler.addEventListener('click', (event) => {
+            event.preventDefault();
+            event.stopPropagation();
+            toggleMenu();
+        });
+
+        navTarget.querySelectorAll('.nav-link').forEach((link) => {
+            link.addEventListener('click', () => toggleMenu(false));
+        });
+
+        if (hasBootstrapCollapse) {
+            window.jQuery(navTarget)
+                .on('shown.bs.collapse', () => setToggleState(true))
+                .on('hidden.bs.collapse', () => setToggleState(false));
+        } else {
+            setToggleState(navTarget.classList.contains('show'));
+        }
     }
 
     // Background particle field
