@@ -20,13 +20,13 @@ Nanyang Technological University, Singapore <br/>
 ---- 
 #### About Me
 
-I am a final-year PhD student and luckily advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). My research focuses on multimodal models and building true intelligence.
+I am a final-year PhD student advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/), working on multimodal models and the long-standing quest for building intelligence.
 
-[Feeling the AGI](https://x.com/ilyasut/status/1578238338288402432) and seeing the progress give me a deep passion for what I am doing, driving a commitment not bound by material gain, but by the quiet call of inner beliefs and a true sense of purpose.
+[Feeling the AGI](https://x.com/ilyasut/status/1578238338288402432) and witnessing the accelerating progress provide a deep sense of motivation.
 
-My another motivation is to work with frontier researchers. I organized the research community [LMMs-Lab](https://huggingface.co/lmms-lab) with Prof. Ziwei Liu. We collaborate with researchers who share the same vision and understanding of building intelligence. Within LMMs-Lab, I have mentored junior students to deliver successful projects such as [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine), [LLaVA-OneVision-1.5](https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5), [Octopus](https://arxiv.org/abs/2310.08588), [VideoMMMU](https://arxiv.org/abs/2501.13826), [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae).
+I enjoy collaborating with frontier researchers and contributing to open research communities. I organized the research group [LMMs-Lab](https://lmms-lab.com), which gathers researchers who share a similar vision for building intelligence. Within LMMs-Lab, I have mentored junior students and contributed to projects such as [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine), [LLaVA-OneVision-1.5](https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5), [Octopus](https://arxiv.org/abs/2310.08588), [VideoMMMU](https://arxiv.org/abs/2501.13826), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae).
 
-You can email me if you have ideas or thoughts on research or the future form of life. I am busy but always willing to talk and help.
+You can contact me if you have good vibes or understandings on the future form of intelligence.
 
 **Email**: drluodian[at]gmail[dot]com
 
