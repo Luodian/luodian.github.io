@@ -10,7 +10,7 @@ body { font-family: 'Space Grotesk', 'Nunito', 'Monospace', 'Lato', sans-serif; 
 
 body { font-weight: 400; }
 
-body.fixed-top-nav { padding-top: 88px; }
+body.fixed-top-nav { padding-top: 88px; padding-top: calc(env(safe-area-inset-top, 0px) + 88px); }
 
 body.sticky-bottom-footer { padding-bottom: 0; }
 
@@ -120,11 +120,13 @@ pre { background: rgba(8, 12, 20, 0.85); border: 1px solid rgba(255, 255, 255, 0
 
 .navbar.cyber-nav.nav-visible { opacity: 1; }
 
-@media (max-width: 576px) { body.fixed-top-nav { padding-top: 96px; }
+@media (max-width: 576px) { body.fixed-top-nav { padding-top: 96px; padding-top: calc(env(safe-area-inset-top, 0px) + 96px); }
   .container { padding-left: 1rem; padding-right: 1rem; }
-  .navbar.cyber-nav { padding: 0.75rem 0; }
-  .navbar.cyber-nav .navbar-toggler { padding: 0.45rem 0.8rem; min-width: 44px; min-height: 44px; }
-  .navbar.cyber-nav .navbar-collapse { background: rgba(7, 11, 19, 0.96); border: 1px solid rgba(72, 242, 194, 0.38); border-radius: 14px; margin-top: 0.6rem; padding: 0.5rem 0.9rem; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45); }
+  .navbar.cyber-nav { padding: 0.65rem 0; padding-top: calc(env(safe-area-inset-top, 0px) + 0.65rem); }
+  .navbar.cyber-nav .container { width: 100%; flex-wrap: wrap; justify-content: space-between; padding-left: calc(env(safe-area-inset-left, 0px) + 1rem); padding-right: calc(env(safe-area-inset-right, 0px) + 1rem); }
+  .navbar.cyber-nav .navbar-brand { font-size: 0.95rem; letter-spacing: 0.1em; white-space: nowrap; }
+  .navbar.cyber-nav .navbar-toggler { padding: 0.45rem 0.8rem; min-width: 44px; min-height: 44px; margin-left: auto; }
+  .navbar.cyber-nav .navbar-collapse { background: rgba(7, 11, 19, 0.96); border: 1px solid rgba(72, 242, 194, 0.38); border-radius: 14px; margin-top: 0.6rem; padding: 0.6rem 1rem; box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45); width: 100%; }
   .navbar.cyber-nav .navbar-nav .nav-link { padding: 0.55rem 0; }
   .post, .page-content, .content-panel { padding: 1.4rem 1.2rem; margin-bottom: 1.6rem; } }
 .news table { width: 100%; background: transparent; }
