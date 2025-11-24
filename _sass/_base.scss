@@ -314,7 +314,7 @@ pre {
 @media (max-width: 576px) {
   body.fixed-top-nav {
     padding-top: 96px;
-    padding-top: calc(env(safe-area-inset-top, 0px) + 96px);
+    padding-top: calc(env(safe-area-inset-top, 20px) + 96px);
   }
 
   .container {
@@ -324,15 +324,15 @@ pre {
 
   .navbar.cyber-nav {
     padding: 0.65rem 0;
-    padding-top: calc(env(safe-area-inset-top, 0px) + 0.65rem);
+    padding-top: calc(env(safe-area-inset-top, 20px) + 0.65rem);
   }
 
   .navbar.cyber-nav .container {
     width: 100%;
     flex-wrap: wrap;
     justify-content: space-between;
-    padding-left: calc(env(safe-area-inset-left, 0px) + 1rem);
-    padding-right: calc(env(safe-area-inset-right, 0px) + 1rem);
+    padding-left: calc(env(safe-area-inset-left, 20px) + 1rem);
+    padding-right: calc(env(safe-area-inset-right, 20px) + 1rem);
   }
 
   .navbar.cyber-nav .navbar-brand {

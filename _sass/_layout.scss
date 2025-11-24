@@ -23,7 +23,7 @@
  body.fixed-top-nav {
    // Add some padding for the nav-bar.
    padding-top: 88px;
-   padding-top: calc(env(safe-area-inset-top, 0px) + 88px);
+   padding-top: calc(env(safe-area-inset-top, 20px) + 88px);
  }
 
  body.sticky-bottom-footer {
