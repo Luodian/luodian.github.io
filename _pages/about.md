@@ -3,123 +3,74 @@ layout: about
 title: About
 permalink: /
 description:
-
-# profile:
-#   align: right
-#   image: Bo Li-High Res.jpg
-
-news: true
-social: true
-years: [2022, 2021, 2020, 2019, 2018, 2017, 2016]
+news: false
+social: false
+profile:
+  image: profile.jpg
 ---
 
-Ph.D Student, Computer Science <br/>
-Nanyang Technological University, Singapore <br/>
-<!-- <a href="assets/pdf/jiaming_cv.pdf" target="_blank"><b>Curriculum Vitae</b></a> -->
+**{{ site.title }}** is a final-year Ph.D. student in Computer Science at [Nanyang Technological University](https://www.ntu.edu.sg/), advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). His research focuses on multimodal models and building artificial intelligence systems.
 
----- 
-#### About Me
+He organized the research group [LMMs-Lab](https://lmms-lab.com), which gathers researchers working on building intelligence. Within LMMs-Lab, he has contributed to projects including [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine), [LLaVA-OneVision-1.5](https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5), [Octopus](https://arxiv.org/abs/2310.08588), [VideoMMMU](https://arxiv.org/abs/2501.13826), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae).
 
-I am a final-year PhD student advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/), working on multimodal models and the long-standing quest for building intelligence.
+Check more on [Google Scholar](https://scholar.google.com/citations?user={{ site.scholar_userid }}), [GitHub](https://github.com/{{ site.github_username }}), and [Twitter](https://twitter.com/{{ site.twitter_username }}).
 
-[Feeling the AGI](https://x.com/ilyasut/status/1578238338288402432) and witnessing the accelerating progress provide a deep sense of motivation.
+## Contents
 
-I enjoy collaborating with frontier researchers and contributing to open research communities. I organized the research group [LMMs-Lab](https://lmms-lab.com), which gathers researchers who share a similar vision for building intelligence. Within LMMs-Lab, I have mentored junior students and contributed to projects such as [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine), [LLaVA-OneVision-1.5](https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5), [Octopus](https://arxiv.org/abs/2310.08588), [VideoMMMU](https://arxiv.org/abs/2501.13826), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae).
+<div class="toc">
+<div class="toc-title">Contents</div>
 
-You can contact me if you have good vibes or understandings on the future form of intelligence.
-
-**Email**: drluodian[at]gmail[dot]com
-
-----
-
-##### Selected Publications
-
-<div class="publications">
-
-{% bibliography -f selected_papers %}
-
+- [Contents](#contents)
+- [Selected publications](#selected-publications)
+- [Career](#career)
+- [Professional services](#professional-services)
+  - [Talks and lectures](#talks-and-lectures)
+  - [Administrative roles](#administrative-roles)
+  - [Peer review](#peer-review)
 </div>
 
-##### Experiences
-I have been fortunately collaborating and doing research at/with
+## Selected publications
 
-- Aug. 2025 - Present: [Bytedance Seed, Singapore](https://team.doubao.com/en/)
+<div class="publications">
+{% bibliography -f selected_papers %}
+</div>
 
-    My first full-time job, supervised by Dr. [Congwu Shen](https://haoqifan.github.io/) and Dr. Guang Shi. 
+## Career
 
-    Doing fun stuff on unified multimodal models.
+- **Aug. 2025 – Present**: [ByteDance Seed](https://team.doubao.com/en/), Singapore. With Haoqi Fan, working on unified multimodal models.
 
-- Oct. 2024 - Aug. 2025: [Tiktok AI Innovation Center, Singapore](https://lifeattiktok.com/position/7364272465797990665/detail)
+- **Oct. 2024 – Aug. 2025**: [TikTok AI Innovation Center](https://lifeattiktok.com/position/7364272465797990665/detail), Singapore. With Dr. Wei Li and Dr. Zejun Ma.
 
-    Supervised by Dr. Wei Li and Dr. Zejun Ma. Two charming senior researchers and a comfortable and collaborative team.
+- **Dec. 2023 – Aug. 2024**: [ByteDance Seed](https://team.doubao.com/en/), Singapore. With Dr. [Chunyuan Li](https://chunyuan.li/), building open-source multimodal models.
 
-- Dec. 2023 - Aug. 2024: [Bytedance Seed, Singapore](https://team.doubao.com/en/)
+- **Dec. 2022 – Aug. 2023**: [Microsoft Research](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/), Redmond. With Dr. [Chunyuan Li](https://chunyuan.li/), collaborated with [Haotian Liu](https://hliu.cc/) on the LLaVA project.
 
-    Supervised by Dr. [Chunyuan Li](https://chunyuan.li/). Dedicated in building open-source multimodal models.
+- **Sep. 2020 – Dec. 2021**: [Microsoft Research](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/), Shanghai. With Dr. [Dongsheng Li](http://recmind.cn/).
 
-- Dec. 2022 - Aug. 2023: [Microsoft Research, Redmond](https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/)
+- **Oct. 2019 – Aug. 2020**: [Berkeley AI Research](https://bair.berkeley.edu/), CA, USA. With Prof. [Kurt Keutzer](https://people.eecs.berkeley.edu/~keutzer/), Prof. [Sicheng Zhao](https://sites.google.com/view/schzhao), Prof. [Xiangyu Yue](https://www.ie.cuhk.edu.hk/people/xyyue.shtml), Prof. [Shanghang Zhang](https://www.shanghangzhang.com/), and Dr. [Colorado Reed](https://people.eecs.berkeley.edu/~cjrd/).
 
-    Supervised by Dr. [Chunyuan Li](https://chunyuan.li/). Great experience on multimodal learning, learned a lot from great teammate [Haotian Liu](https://hliu.cc/) and later participated in the LLaVA Journey.
+- **May 2018 – Oct. 2019**: [DiDi Visual Perception Team](https://www.didiglobal.com/science/ailabs), Beijing.
 
--   Sep. 2020 - Dec. 2021: [Microsoft Research, Shanghai](https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/)
-    
-    Supervised by Dr. [Dongsheng Li](http://recmind.cn/) in the beautiful and relaxing WestBud office, with chill and smart colleagues.
+## Professional services
 
-- Oct. 2019 - Aug. 2020 (remote till May 2021): [Berkeley AI Research, CA, USA](https://bair.berkeley.edu/)
-    
-    Supervised by Prof. [Kurt Keutzer](https://people.eecs.berkeley.edu/~keutzer/)  and Prof. [Sicheng Zhao](https://sites.google.com/view/schzhao), Prof. [Xiangyu Yue](https://www.ie.cuhk.edu.hk/people/xyyue.shtml), Prof. [Shanghang Zhang](https://www.shanghangzhang.com/) and Dr. [Colorado Reed](https://people.eecs.berkeley.edu/~cjrd/). Enjoy the weather and front-tier research atmosphere. Go Cal and Roll on your Golden Bears!
+### Talks and lectures
 
-- Jan 2020 - Nov 2022: [Dr. Tong Che](https://nvr-avg.github.io/author/gerry-che/), MILA/Nvidia Research
+- Multimodal Models @ Jump Trading (2025), hosted by Weifeng Liu
+- Guest Lecture: Multimodal Models @ UMich EECS 542, hosted by [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/index.html)
+- Multimodal Models @ TwelveLabs (2024), hosted by [James Le](https://jameskle.com/)
+- Otter & MIMICIT @ Alibaba Damo Academy (2023), hosted by [Dr. Lidong Bing](https://lidongbing.github.io/)
 
-    Great appreciation on guiding me to explore many fascinating ML topics.
+### Administrative roles
 
-- May 2020 - Dec. 2021: [Prof. Han Zhao](https://hanzhaoml.github.io/), UIUC
+- Cluster Administrator, [S-Lab @ NTU](https://www.mmlab-ntu.com/index.html) (70+ users, 400+ GPUs)
+- Organizer, [The AI Talk](https://theaitalks.org/)
 
-    Learn to write a paper with machine learning taste.
+### Peer review
 
-- May 2018 - Oct. 2019: [DiDi Visual Perception Team, Beijing](https://www.didiglobal.com/science/ailabs)
+**Conferences**: ICCV (2021, 2023), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022, 2023), AISTATS (2023), ICML (2023)
 
-    First internship and two papers there.
-
-----
-##### Professional Services
-- **Talk/Technical Sharing**: 
-    - Multimodal Models, LMMs-Lab Projects@Jump Trading (2025), Hosted by Weifeng Liu.
-    - Guest Lecture: Multimodal Models@UMich, UM EECS 542: Advanced Topics in Computer Vision, Hosted by [Stella X. Yu](https://web.eecs.umich.edu/~stellayu/index.html)
-    - Multimodal Models, LMMs-Lab Projects@TwelveLabs (2024), Hosted by [James Le](https://jameskle.com/)
-    - Multimodal Models, LMMs-Lab Projects@Tiktok (2024)
-    - Otter & MIMICIT@Alibaba, Damo Academy, Hosted by [Dr. Lidong Bing](https://lidongbing.github.io/), Sep. 2023.
-    - Otter & MIMICIT@HITSZ, Hosted by [Prof. Rui Shao](https://rshaojimmy.github.io/), Jul. 2023.
-
----
-- **[Slab@NTU](https://www.mmlab-ntu.com/index.html)**: Cluster Adminstrator (70+ users, 400+ GPUs)
+**Journals**: Pattern Recognition (PR), IEEE Transactions on Multimedia (TMM), IEEE TPAMI, IJCV
 
 ---
 
-- **[The AI Talk](https://theaitalks.org/)**: Organizer
-
----
-
-- **Conference Reviewer / Program Committee**: 
-
-    - ICCV (2021,2023), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022,2023), AISTATS (2023), ICML (2023).
-
-    - Workshop: ICLR 2023 (DG)
-
----
-
-- **Journal Reviewer**: 
-
-    - Pattern Recognition (PR)
-    - Transactions on Multimedia (TMM)
-    - Transactions on Pattern Analysis and Machine Intelligence (TPAMI)
-    - International Journal of Computer Vision (IJCV)
-
-
-<!-- **Workshop organization**:
-- [NeurIPS 2019 Workshop on Information Theory and Machine Learning](https://sites.google.com/view/itml19/home) (chair)
-- [DALI 2018 Workshop on Generative Models and Reinforcement Learning](http://dalimeeting.org/dali2018//program) (chair) -->
-
-----
-
-**Acknowledgements**: this website builds on [al-folio](https://github.com/alshedivat/al-folio) and [Jiaming Song](https://github.com/jiamings/tsong.me).
+*This page is styled after [Wikipedia](https://en.wikipedia.org/).*

@@ -1,536 +1,291 @@
 /*******************************************************************************
- * Styles for the base elements of the theme.
+ * Base styles - Wikipedia-style minimal theme
  ******************************************************************************/
 
 // Typography
 
 a, table.table a {
-  color: $theme-color;
-  position: relative;
-  font-weight: 600;
+  color: $link-color;
   text-decoration: none;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
   &:hover {
-    color: lighten($theme-color, 10%);
-    text-shadow: 0 0 12px rgba(72, 242, 194, 0.6);
+    text-decoration: underline;
   }
-  &:hover:after {
-    width: 100%;
-  }
-}
-
-a:after, table.table a:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -6px;
-  height: 2px;
-  width: 0;
-  background: linear-gradient(90deg, $theme-color, #a45bff);
-  box-shadow: 0 0 12px rgba(72, 242, 194, 0.35);
-  transition: width 0.25s ease;
-}
-
-.container {
-  h1, h2, h3, h4, h5 {
-    font-weight: 600;
-    color: #f5fbff;
-    letter-spacing: 0.02em;
-    text-shadow: 0 0 18px rgba(0, 255, 209, 0.15);
+  &:visited {
+    color: $link-visited;
   }
 }
 
-::selection {
-  color: $background-color;
-  background: $theme-color;
+h1, h2, h3, h4, h5, h6 {
+  color: $text-color;
+  font-weight: normal;
+  border-bottom: 1px solid $border-light;
+  padding-bottom: 0.25em;
+  margin-top: 1.5em;
+  margin-bottom: 0.5em;
 }
+
+h1 { font-size: 1.8em; }
+h2 { font-size: 1.5em; }
+h3 { font-size: 1.2em; }
+h4 { font-size: 1.1em; border-bottom: none; }
+h5 { font-size: 1em; border-bottom: none; }
 
 p, li {
   color: $text-color;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 small, .text-muted {
   color: $text-muted-color !important;
 }
 
-// Math
-
-.equation {
-  margin-bottom: 1rem;
-  text-align: center;
+::selection {
+  background: #3366cc;
+  color: white;
 }
 
-// Caption
-
-.caption {
-  font-size: 0.875rem;
-  margin-top: 0.75rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
+// Horizontal rule
+hr {
+  border: none;
+  border-top: 1px solid $border-light;
+  margin: 1.5em 0;
 }
 
-.post, .page-content, .content-panel {
-  background: $card-background;
-  border: 1px solid $border-glow;
-  box-shadow: 0 20px 70px rgba(0, 0, 0, 0.5), 0 0 40px rgba(72, 242, 194, 0.16);
-  border-radius: 18px;
-  padding: 2.2rem 2.4rem;
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(8px);
-  margin-bottom: 2.2rem;
-}
-
-.post:before, .page-content:before, .content-panel:before {
-  content: '';
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(135deg, rgba(72, 242, 194, 0.12), rgba(164, 91, 255, 0.07));
-  opacity: 0.4;
-  pointer-events: none;
-}
-
-.post > *, .page-content > *, .content-panel > * {
-  position: relative;
-  z-index: 1;
-}
-
-.post h1, .post h2, .post h3 {
-  font-family: 'Share Tech Mono', 'Space Grotesk', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-}
-
-.post hr, .content-panel hr {
-  border: 0;
-  height: 1px;
-  margin: 2rem 0;
-  background: linear-gradient(90deg, transparent, $theme-color, transparent);
-  box-shadow: 0 0 18px rgba(72, 242, 194, 0.35);
-}
-
+// Blockquote
 blockquote {
-  border-left: 3px solid $theme-color;
-  padding-left: 1rem;
-  color: lighten($text-color, 5%);
-  background: rgba(255, 255, 255, 0.02);
+  border-left: 3px solid $border-color;
+  padding-left: 1em;
+  margin-left: 0;
+  color: $text-muted-color;
+  font-style: italic;
 }
 
-em, i, strong, b {
-  color: inherit;
-}
-
+// Code
 code {
-  background: rgba(255, 255, 255, 0.06);
-  color: #f7fbff;
-  padding: 0.1rem 0.3rem;
-  border-radius: 4px;
-  font-family: 'Share Tech Mono', 'Monospace', monospace;
+  background: #f8f9fa;
+  color: $text-color;
+  padding: 0.1em 0.3em;
+  border-radius: 2px;
+  font-family: 'Menlo', 'Monaco', 'Consolas', monospace;
+  font-size: 0.9em;
 }
 
 pre {
-  background: rgba(8, 12, 20, 0.85);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  color: #e6f1ff;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.5);
+  background: #f8f9fa;
+  border: 1px solid $border-light;
+  color: $text-color;
+  padding: 1em;
+  border-radius: 2px;
+  overflow-x: auto;
 }
 
+// Content panels - simplified
+.post, .page-content, .content-panel {
+  background: transparent;
+  padding: 0;
+  margin-bottom: 1.5em;
+}
 
 // Profile
-
 .profile {
-    .address {
-      font-family: monospace;
-      font-size: 1.2rem;
-      p {
-        margin: 0;
-      }
+  .address {
+    font-size: 0.9em;
+    color: $text-muted-color;
+    p {
+      margin: 0;
     }
+  }
 }
 
+// Navbar - Wikipedia style
+.navbar {
+  background: #f8f9fa;
+  border-bottom: 1px solid $border-color;
+  padding: 0.5rem 0;
+}
 
-// Navbar customization
-
-.navbar.cyber-nav {
-  background: rgba(7, 11, 19, 0.9);
-  border: 1px solid $border-glow;
-  box-shadow: none;
-  backdrop-filter: none;
-  border-radius: 0;
-  padding: 0.9rem 0;
-  margin-top: 0;
-  z-index: 1030;
-  width: 100%;
-  transition: opacity 0.35s ease, box-shadow 0.25s ease, background 0.25s ease;
+.navbar.fixed-top {
+  position: fixed;
+  top: 0;
   left: 0;
   right: 0;
+  z-index: 1000;
 }
 
-.navbar.cyber-nav.fixed-top {
-  position: fixed;
+.navbar .navbar-brand {
+  color: $text-color;
+  font-weight: bold;
+  font-size: 1.1rem;
+  &:hover {
+    text-decoration: none;
+  }
 }
 
-.navbar.cyber-nav.sticky-top {
-  position: sticky;
-  position: -webkit-sticky;
+.navbar .navbar-nav .nav-link {
+  color: $link-color;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.75rem;
+  &:hover {
+    text-decoration: underline;
+  }
 }
 
-.navbar.cyber-nav.fixed-top,
-.navbar.cyber-nav.sticky-top {
-  top: 0;
-  max-width: 100%;
-  margin-left: 0;
-  margin-right: 0;
+.navbar .navbar-nav .nav-item.active > .nav-link {
+  font-weight: bold;
 }
 
-.navbar.cyber-nav .navbar-brand {
-  color: #f8fbff;
-  font-family: 'Share Tech Mono', 'Space Grotesk', sans-serif;
-  text-transform: uppercase;
-  letter-spacing: 0.14em;
-  font-size: 1.05rem;
-  text-shadow: 0 0 18px rgba(72, 242, 194, 0.65);
-  transition: color 0.2s ease, transform 0.2s ease;
+.navbar .contact-icon {
+  font-size: 1.2rem;
 }
 
-.navbar.cyber-nav .navbar-brand span {
-  background: linear-gradient(90deg, $theme-color, #a45bff);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-}
-
-.navbar.cyber-nav .navbar-brand:hover {
-  transform: translateY(-2px);
-}
-
-.navbar.cyber-nav .navbar-nav .nav-link {
+.navbar .contact-icon a {
   color: $text-muted-color;
-  font-size: 0.85rem;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 0.6rem 0.9rem;
-  transition: color 0.2s ease, text-shadow 0.2s ease, opacity 0.2s ease;
-}
-
-.navbar.cyber-nav .navbar-nav .nav-link:hover {
-  color: lighten($theme-color, 10%);
-  text-shadow: 0 0 12px rgba(72, 242, 194, 0.7);
-  opacity: 1;
-}
-
-.navbar.cyber-nav .navbar-nav .nav-item.active > .nav-link {
-  color: #f8fbff;
-  text-shadow: 0 0 14px rgba(72, 242, 194, 0.8);
-  position: relative;
-}
-
-.navbar.cyber-nav .navbar-nav .nav-item.active > .nav-link:after {
-  content: '';
-  position: absolute;
-  left: 10%;
-  bottom: 6px;
-  width: 80%;
-  height: 2px;
-  background: linear-gradient(90deg, rgba(72, 242, 194, 0.9), rgba(164, 91, 255, 0.8));
-  box-shadow: 0 0 14px rgba(72, 242, 194, 0.7);
-}
-
-.navbar.cyber-nav .contact-icon {
-  margin-top: 0.1em;
-  font-size: 1.5rem;
-}
-
-.navbar.cyber-nav .contact-icon a {
-  color: $text-muted-color;
-  margin-left: 0.3em;
-  transition: color 0.2s ease, text-shadow 0.2s ease;
-}
-
-.navbar.cyber-nav .contact-icon a:hover {
-  color: $theme-color;
-  text-shadow: 0 0 12px rgba(72, 242, 194, 0.6);
-}
-
-.navbar.cyber-nav .social-inline {
-  margin-left: auto;
-  align-items: center;
+  margin-left: 0.5em;
+  &:hover {
+    color: $link-color;
+  }
 }
 
 .navbar-toggler {
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 0.35rem 0.6rem;
-  border-radius: 10px;
-  box-shadow: 0 0 18px rgba(72, 242, 194, 0.25);
-}
-
-.navbar.cyber-nav .navbar-toggler {
-  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid $border-color;
+  padding: 0.25rem 0.5rem;
 }
 
 .navbar-toggler .icon-bar {
   display: block;
   width: 22px;
   height: 2px;
-  background-color: $theme-color;
-  border-radius: 1px;
+  background-color: $text-muted-color;
   margin-bottom: 4px;
-  transition: all 0.2s;
-  box-shadow: 0 0 12px rgba(72, 242, 194, 0.7);
-}
-.navbar-toggler .top-bar {
-  transform: rotate(45deg);
-  transform-origin: 10% 10%;
-}
-.navbar-toggler .middle-bar {
-  opacity: 0;
-}
-.navbar-toggler .bottom-bar {
-  transform: rotate(-45deg);
-  transform-origin: 10% 90%;
-}
-
-.navbar-toggler.collapsed .top-bar {
-  transform: rotate(0);
-}
-.navbar-toggler.collapsed .middle-bar {
-  opacity: 1;
-}
-.navbar-toggler.collapsed .bottom-bar {
-  transform: rotate(0);
-}
-
-.navbar.cyber-nav.nav-hidden {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-.navbar.cyber-nav.nav-visible {
-  opacity: 1;
 }
 
 @media (max-width: 576px) {
   body.fixed-top-nav {
-    padding-top: 96px;
-    padding-top: calc(env(safe-area-inset-top, 20px) + 96px);
+    padding-top: 56px;
   }
 
-  .container {
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-
-  .navbar.cyber-nav {
-    padding: 0.65rem 0;
-    padding-top: calc(env(safe-area-inset-top, 20px) + 0.65rem);
-  }
-
-  .navbar.cyber-nav .container {
-    width: 100%;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    padding-left: calc(env(safe-area-inset-left, 20px) + 1rem);
-    padding-right: calc(env(safe-area-inset-right, 20px) + 1rem);
-  }
-
-  .navbar.cyber-nav .navbar-brand {
-    font-size: 0.95rem;
-    letter-spacing: 0.1em;
-    white-space: nowrap;
-  }
-
-  .navbar.cyber-nav .navbar-toggler {
-    padding: 0.45rem 0.8rem;
-    min-width: 44px;
-    min-height: 44px;
-    margin-left: auto;
-  }
-
-  .navbar.cyber-nav .navbar-collapse {
-    background: rgba(7, 11, 19, 0.96);
-    border: 1px solid $border-glow;
-    border-radius: 14px;
-    margin-top: 0.6rem;
-    padding: 0.6rem 1rem;
-    box-shadow: 0 12px 32px rgba(0, 0, 0, 0.45);
-    width: 100%;
-  }
-
-  .navbar.cyber-nav .navbar-nav .nav-link {
-    padding: 0.55rem 0;
-  }
-
-  .post,
-  .page-content,
-  .content-panel {
-    padding: 1.4rem 1.2rem;
-    margin-bottom: 1.6rem;
+  .navbar .navbar-collapse {
+    background: #f8f9fa;
+    border: 1px solid $border-color;
+    margin-top: 0.5rem;
+    padding: 0.5rem;
   }
 }
 
-
 // News
-
 .news table {
   width: 100%;
-  background: transparent;
 }
 
 .news table td {
-  font-size: 1rem;
+  font-size: 0.9rem;
   color: $text-color;
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
+  border-top: 1px solid $border-light;
+  padding: 0.5em 0;
 }
 
-
-// Social (bottom)
-
+// Social
 .social {
   text-align: center;
   .contact-icon {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     a {
       color: $text-muted-color;
+      margin: 0 0.3em;
       &:hover {
-        color: $theme-color;
-        text-shadow: 0 0 10px rgba(72, 242, 194, 0.6);
+        color: $link-color;
       }
     }
   }
-  .contact-note {
-    font-size: 0.8rem;
-  }
 }
 
-
 // Footer
-
 footer.fixed-bottom {
   color: $text-muted-color;
-  background-color: rgba(7, 11, 19, 0.95);
-  border-top: 1px solid $border-glow;
-  font-size: 0.75rem;
+  background-color: #f8f9fa;
+  border-top: 1px solid $border-color;
+  font-size: 0.8rem;
   .container {
-    padding-top: 9px;
+    padding-top: 8px;
     padding-bottom: 8px;
   }
   a {
-    color: $text-color;
-    &:hover {
-      color: lighten($theme-color, 20%);
-      text-decoration: none;
-      text-shadow: 0 0 10px rgba(72, 242, 194, 0.6);
-    }
+    color: $link-color;
   }
 }
 
 footer.sticky-bottom {
-  border-top: 1px solid $border-glow;
-  padding-top: 40px;
-  padding-bottom: 40px;
-  font-size: 0.9rem;
+  border-top: 1px solid $border-color;
+  padding-top: 2em;
+  padding-bottom: 2em;
+  font-size: 0.85rem;
   color: $text-muted-color;
 }
 
-
 // Blog
-
 .header-bar {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
-  text-align: center;
-  padding-top: 2rem;
-  padding-bottom: 5rem;
-  background: transparent;
+  border-bottom: 1px solid $border-color;
+  padding: 1em 0;
+  margin-bottom: 1.5em;
   h1 {
-    color: #f8fbff;
-    font-size: 4rem;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    text-shadow: 0 0 25px rgba(72, 242, 194, 0.3);
+    font-size: 1.8em;
+    border-bottom: none;
+    margin: 0;
   }
 }
 
 .post-list {
   margin: 0;
-  margin-bottom: 40px;
   padding: 0;
   li {
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    border-bottom: 1px solid $border-light;
     list-style: none;
-    padding-top: 2rem;
-    padding-bottom: 2rem;
+    padding: 1em 0;
     .post-meta {
       color: $text-muted-color;
-      font-size: 0.875rem;
-      margin-bottom: 0;
+      font-size: 0.85rem;
     }
     a {
-      color: $text-color;
-      text-decoration: none;
-      &:hover {
-        color: lighten($theme-color, 10%);
-      }
+      color: $link-color;
     }
   }
 }
 
 .pagination .page-item.active .page-link {
   background-color: $theme-color;
-  border-color: $border-glow;
-  &:hover {
-    background-color: $theme-color;
-  }
+  border-color: $theme-color;
 }
-
-
-// Distill
-
-.distill {
-  a:hover {
-    border-bottom-color: $theme-color;
-    text-decoration: none;
-  }
-}
-
 
 // Projects
-
 .projects {
   .grid-item {
     width: 250px;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     a {
-      color: $text-color;
-      text-decoration: none;
-      &:hover {
-        color: lighten($theme-color, 10%);
-      }
+      color: $link-color;
     }
+  }
+  .card {
+    background: white;
+    border: 1px solid $border-color;
   }
   .card img {
     width: 100%;
   }
-  .card {
-    background: rgba(10, 16, 28, 0.85);
-    border: 1px solid $border-glow;
-    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.45);
-  }
 }
-
 
 // Publications
-
 .publications {
-  margin-top: 2rem;
+  margin-top: 1.5em;
   h2.year {
     color: $text-muted-color;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 2rem;
-    margin-top: 4rem;
-    margin-bottom: -2rem;
+    border-top: 1px solid $border-color;
+    border-bottom: none;
+    padding-top: 1em;
+    margin-top: 2em;
+    margin-bottom: 0;
     text-align: right;
+    font-size: 1.1em;
   }
   ol.bibliography {
     list-style: none;
@@ -538,23 +293,20 @@ footer.sticky-bottom {
     margin-top: 0;
 
     li {
-      margin-bottom: 1.4rem;
-      padding: 1rem 1.2rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      background: rgba(255, 255, 255, 0.02);
-      border-radius: 12px;
-      box-shadow: 0 12px 35px rgba(0, 0, 0, 0.35);
+      margin-bottom: 1em;
+      padding: 0.75em 0;
+      border-bottom: 1px solid $border-light;
       .abbr {
-        height: 2rem;
-        margin-bottom: 0.5rem;
+        margin-bottom: 0.3em;
         abbr {
           display: inline-block;
-          background: linear-gradient(90deg, $theme-color, #a45bff);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          color: $background-color;
-          border-radius: 6px;
-          letter-spacing: 0.06em;
+          background: $grey-color-light;
+          padding: 0.1em 0.5em;
+          color: $text-color;
+          border-radius: 2px;
+          font-size: 0.8em;
+          text-decoration: none;
+          border-bottom: none;
         }
       }
       span {
@@ -562,193 +314,153 @@ footer.sticky-bottom {
         color: $text-color;
       }
       .title {
-        font-weight: bolder;
-        color: #f5fbff;
+        font-weight: bold;
       }
       .author {
         color: $text-muted-color;
+        font-size: 0.9em;
         a {
-          border-bottom: 1px dashed $theme-color;
-          &:hover {
-              border-bottom-style: solid;
-              text-decoration: none;
-          }
+          color: $link-color;
         }
         > em {
-          border-bottom: 1px solid;
           font-style: normal;
-        }
-        em, i {
-          color: $text-muted-color;
-        }
-        font-weight: 500;
-      }
-      em.star {
-        border-bottom: none;
-        color: $theme-color;
-        font-style: normal;
-      }
-      b, strong {
-        color: $orange-warm !important;
-      }
-      a.abstract, a.bibtex {
-        cursor: pointer;
-      }
-      .hidden {
-        font-size: 0.875rem;
-        max-height: 0px;
-        overflow: hidden;
-        text-align: justify;
-        background: rgba(0, 0, 0, 0.35);
-        border: 1px solid rgba(255, 255, 255, 0.1);
-        border-radius: 10px;
-        -webkit-transition: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-
-        p {
-          line-height: 1.4em;
-          margin: 10px;
-          font-weight: 500;
-        }
-        pre {
-          font-size: 1em;
-          line-height: 1.4em;
-          padding: 10px;
-        }
-      }
-      .hidden.open {
-        max-height: 100em;
-        -webkit-transition: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-      }
-      span.abstract.hidden {
-        border: dashed 1px $border-glow;
-      }
-      span.abstract.hidden.open {
-        border-color: $theme-color;
-      }
-    }
-  }
-}
-
-
-// Publications in Front Page
-
-.publications-front {
-  h3.year {
-    color: $text-muted-color;
-    border-top: 1px solid rgba(255, 255, 255, 0.08);
-    padding-top: 1rem;
-    margin-bottom: -2rem;
-    text-align: right;
-  }
-  ol.bibliography {
-    list-style: none;
-    padding: 0;
-    margin-top: 0;
-
-    li {
-      margin-bottom: 1.2rem;
-      padding: 0.9rem 1.1rem;
-      border: 1px solid rgba(255, 255, 255, 0.05);
-      border-radius: 10px;
-      background: rgba(255, 255, 255, 0.02);
-      .abbr {
-        height: 2rem;
-        margin-bottom: 0.5rem;
-        abbr {
-          display: inline-block;
-          background: linear-gradient(90deg, $theme-color, #a45bff);
-          padding-left: 1rem;
-          padding-right: 1rem;
-          color: $background-color;
-          border-radius: 6px;
-          letter-spacing: 0.06em;
-        }
-      }
-      span {
-        display: block;
-        color: $text-color;
-      }
-      .title {
-        font-weight: bolder;
-        font-size: 0.9rem;
-        color: #f5fbff;
-      }
-      .author {
-        font-size: 0.9rem;
-        color: $text-muted-color;
-        a {
-          border-bottom: 1px dashed $theme-color;
-          &:hover {
-              border-bottom-style: solid;
-              text-decoration: none;
-          }
-        }
-        > em {
-          border-bottom: 1px solid;
-          font-style: normal;
-        }
-        em, i {
-          color: $text-muted-color;
+          font-weight: bold;
         }
       }
       .periodical {
-        font-size: 0.9rem;
         color: $text-muted-color;
+        font-size: 0.9em;
+        font-style: italic;
       }
       em.star {
-        border-bottom: none;
-        color: $theme-color;
+        color: $red-color;
         font-style: normal;
-      }
-      b, strong {
-        color: $orange-warm !important;
       }
       a.abstract, a.bibtex {
         cursor: pointer;
+        font-size: 0.85em;
       }
       .hidden {
-        font-size: 0.875rem;
-        max-height: 0px;
+        font-size: 0.85em;
+        max-height: 0;
         overflow: hidden;
-        text-align: justify;
-        -webkit-transition: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-
+        background: #f8f9fa;
+        border: 1px solid $border-light;
+        border-radius: 2px;
+        transition: max-height 0.2s ease;
         p {
-          line-height: 1.4em;
-          margin: 10px;
+          margin: 0.75em;
         }
         pre {
-          font-size: 1em;
-          line-height: 1.4em;
-          padding: 10px;
+          margin: 0.75em;
+          font-size: 0.9em;
         }
       }
       .hidden.open {
-        max-height: 100em;
-        -webkit-transition: 0.15s ease;
-        -moz-transition: 0.15s ease;
-        -ms-transition: 0.15s ease;
-        -o-transition: 0.15s ease;
-        transition: all 0.15s ease;
-      }
-      span.abstract.hidden {
-        border: dashed 1px $border-glow;
-      }
-      span.abstract.hidden.open {
-        border-color: $theme-color;
+        max-height: 50em;
       }
     }
   }
+}
+
+// Publications in Front Page
+.publications-front {
+  h3.year {
+    color: $text-muted-color;
+    border-top: 1px solid $border-color;
+    padding-top: 0.75em;
+    margin-bottom: 0;
+    text-align: right;
+    font-size: 1em;
+  }
+  ol.bibliography {
+    list-style: none;
+    padding: 0;
+    margin-top: 0;
+
+    li {
+      margin-bottom: 0.75em;
+      padding: 0.5em 0;
+      border-bottom: 1px solid $border-light;
+      .abbr {
+        margin-bottom: 0.25em;
+        abbr {
+          display: inline-block;
+          background: $grey-color-light;
+          padding: 0.1em 0.5em;
+          color: $text-color;
+          border-radius: 2px;
+          font-size: 0.75em;
+          text-decoration: none;
+          border-bottom: none;
+        }
+      }
+      span {
+        display: block;
+        color: $text-color;
+      }
+      .title {
+        font-weight: bold;
+        font-size: 0.95em;
+      }
+      .author {
+        font-size: 0.85em;
+        color: $text-muted-color;
+        a {
+          color: $link-color;
+        }
+        > em {
+          font-style: normal;
+          font-weight: bold;
+        }
+      }
+      .periodical {
+        display: inline;
+        font-size: 0.85em;
+        color: $text-muted-color;
+        font-style: italic;
+        margin-left: 0.5em;
+      }
+      em.star {
+        color: $red-color;
+        font-style: normal;
+      }
+      a.abstract, a.bibtex {
+        cursor: pointer;
+        font-size: 0.8em;
+      }
+      .hidden {
+        font-size: 0.85em;
+        max-height: 0;
+        overflow: hidden;
+        background: #f8f9fa;
+        border: 1px solid $border-light;
+        transition: max-height 0.2s ease;
+        p {
+          margin: 0.75em;
+        }
+        pre {
+          margin: 0.75em;
+        }
+      }
+      .hidden.open {
+        max-height: 50em;
+      }
+    }
+  }
+}
+
+// Equation
+.equation {
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+// Caption
+.caption {
+  font-size: 0.85em;
+  margin-top: 0.5em;
+  margin-bottom: 1em;
+  text-align: center;
+  color: $text-muted-color;
 }

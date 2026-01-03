@@ -1,40 +1,24 @@
 /*******************************************************************************
- * Variables used throughout the theme.
- * To adjust anything, simply edit the variables below and rebuild the theme.
+ * Variables - Wikipedia-style minimal theme
  ******************************************************************************/
 
 // Dimensions
+$max-content-width: 960px;
 
-$max-content-width: 1080px;
-
-// Colors
-$red-color:           #FF3636 !default;
-$red-color-dark:      #B71C1C !default;
-$orange-color:        #F29105 !default;
-$orange-warm:         #f2b06d !default;
-$blue-color:          #0076df !default;
-$blue-color-dark:     #00369f !default;
-$cyan-color:          #2698BA !default;
-$green-color:         #00ab37 !default;
-$green-color-lime:    #B7D12A !default;
-$green-color-dark:    #009f06 !default;
-$green-color-light:   #ddffdd !default;
-$green-color-bright:  #11D68B !default;
-$purple-color:        #B509AC !default;
-$pink-color:          #f92080 !default;
-$pink-color-light:    #ffdddd !default;
-$yellow-color:        #efcc00 !default;
-
-$grey-color:          #828282 !default;
-$grey-color-light:    lighten($grey-color, 40%);
-$grey-color-dark:     darken($grey-color, 25%);
-
-/* Set theme colors *************************/
-$theme-color:         #48f2c2;
-
+// Wikipedia-style colors
+$theme-color:         #0645ad;  // Wikipedia link blue
 $link-color:          $theme-color;
-$text-color:          #e9f4ff !default;
-$text-muted-color:    #a9c3d8 !default;
-$background-color:    #0f1928 !default;
-$card-background:     rgba(18, 32, 48, 0.9) !default;
-$border-glow:         rgba(72, 242, 194, 0.38) !default;
+$link-hover:          #0b0080;  // Darker blue on hover
+$link-visited:        #0b0080;
+
+$text-color:          #202122;  // Wikipedia text color
+$text-muted-color:    #54595d;  // Secondary text
+$background-color:    #ffffff;  // White background
+$border-color:        #a2a9b1;  // Wikipedia border gray
+$border-light:        #c8ccd1;  // Lighter border
+
+// Legacy colors (kept for compatibility)
+$red-color:           #d33;
+$grey-color:          #54595d;
+$grey-color-light:    #eaecf0;
+$grey-color-dark:     #202122;

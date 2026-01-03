@@ -1,28 +1,398 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ site.title }}{% if page.title and page.url != "/" %} - {{ page.title }}{% endif %}</title>
+  <meta name="description" content="{{ site.description }}">
+  <link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
 
-  <head>
-    {% include head.html %}
-  </head>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #202122;
+      background: #f8f9fa;
+    }
 
-  <body class="{% if site.navbar_fixed %}fixed-top-nav{% endif %} {% unless site.footer_fixed %}sticky-bottom-footer{% endunless %}">
+    /* Header */
+    .wiki-header {
+      background: #fff;
+      border-bottom: 1px solid #a2a9b1;
+      padding: 0.5em 0;
+    }
+    .wiki-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .wiki-logo {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #202122;
+      text-decoration: none;
+    }
+    .wiki-nav a {
+      color: #0645ad;
+      text-decoration: none;
+      margin-left: 1.5em;
+      font-size: 0.9em;
+    }
+    .wiki-nav a:hover { text-decoration: underline; }
 
-    <!-- Header -->
+    /* Main layout */
+    .wiki-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      min-height: calc(100vh - 100px);
+    }
 
-    {% include header.html %}
+    /* Left sidebar - TOC */
+    .wiki-sidebar {
+      width: 176px;
+      flex-shrink: 0;
+      background: #f8f9fa;
+      border-right: 1px solid #a2a9b1;
+      padding: 0.75em;
+    }
+    .wiki-sidebar-title {
+      font-weight: bold;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid #c8ccd1;
+      margin-bottom: 0.5em;
+    }
+    .wiki-sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wiki-sidebar li {
+      margin: 0.3em 0;
+    }
+    .wiki-sidebar a {
+      color: #0645ad;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .wiki-sidebar a:hover { text-decoration: underline; }
 
-    <!-- Content -->
+    /* Content area */
+    .wiki-content {
+      flex: 1;
+      background: #fff;
+      border-left: 1px solid #a2a9b1;
+      border-right: 1px solid #a2a9b1;
+      padding: 1.5em 2em;
+      min-width: 0;
+    }
 
-    <div class="container mt-5">
-      {{ content }}
+    /* Page title */
+    .wiki-title {
+      font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+      font-size: 1.8em;
+      font-weight: normal;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal;
+      color: #000;
+      margin-top: 1em;
+      margin-bottom: 0.25em;
+    }
+    h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.2em;
+    }
+    h3 { font-size: 1.2em; }
+    h4 { font-size: 1.1em; font-weight: bold; }
+    h5 { font-size: 1em; font-weight: bold; }
+
+    p { margin: 0.5em 0; }
+
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:visited { color: #0b0080; }
+
+    ul, ol { margin: 0.3em 0 0.3em 1.6em; }
+    li { margin: 0.2em 0; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #a2a9b1;
+      margin: 1em 0;
+    }
+
+    blockquote {
+      border-left: 3px solid #c8ccd1;
+      padding-left: 1em;
+      margin: 1em 0;
+      color: #54595d;
+    }
+
+    code {
+      font-family: monospace;
+      background: #f8f9fa;
+      padding: 1px 4px;
+      border: 1px solid #eaecf0;
+    }
+    pre {
+      background: #f8f9fa;
+      border: 1px solid #eaecf0;
+      padding: 1em;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    /* Right sidebar - Infobox */
+    .wiki-infobox-container {
+      width: 260px;
+      flex-shrink: 0;
+      padding: 0.75em;
+      background: #f8f9fa;
+    }
+    .infobox {
+      border: 1px solid #a2a9b1;
+      background: #f8f9fa;
+      font-size: 0.9em;
+      padding: 0.5em;
+      position: sticky;
+      top: 1em;
+    }
+    .infobox-title {
+      background: #eaecf0;
+      text-align: center;
+      font-weight: bold;
+      padding: 0.4em;
+      margin: -0.5em -0.5em 0.5em -0.5em;
+    }
+    .infobox img {
+      width: 100%;
+      border: 1px solid #c8ccd1;
+    }
+    .infobox-caption {
+      text-align: center;
+      font-size: 0.85em;
+      color: #54595d;
+      padding: 0.3em 0;
+    }
+    .infobox-row {
+      padding: 0.3em 0;
+      border-top: 1px solid #eaecf0;
+    }
+    .infobox-label {
+      font-weight: bold;
+    }
+
+    .infobox-row a {
+      word-break: break-all;
+    }
+    .infobox-row i {
+      width: 1.2em;
+      text-align: center;
+    }
+
+    /* Publications */
+    .publications { margin-top: 0.5em; }
+    .publications ol.bibliography {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .publications ol.bibliography li {
+      margin-bottom: 0.4em !important;
+      padding-bottom: 0 !important;
+      padding-top: 0 !important;
+      margin-top: 0 !important;
+      border-bottom: none;
+    }
+    .publications ol.bibliography li .pub-entry .hidden {
+      display: none;
+    }
+    .pub-entry {
+      line-height: 1.4;
+    }
+    .pub-entry .periodical,
+    .pub-entry .author {
+      margin-top: 0;
+      line-height: 1.3;
+    }
+    .pub-entry .pub-number {
+      display: none;
+    }
+    .pub-entry .title {
+      font-weight: bold;
+    }
+    .pub-entry .title a {
+      color: #0645ad;
+    }
+    .pub-entry .periodical {
+      display: block;
+      color: #54595d;
+      font-size: 0.9em;
+      margin: 0;
+    }
+    .pub-entry .author {
+      display: block;
+      color: #54595d;
+      font-size: 0.9em;
+      margin: 0;
+    }
+    .pub-entry .links {
+      font-size: 0.85em;
+      margin-left: 0.5em;
+    }
+    .pub-entry .links a {
+      margin-right: 0.3em;
+    }
+    .pub-entry .hidden {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease;
+      background: #f8f9fa;
+      border: 1px solid #eaecf0;
+      margin-top: 0.5em;
+      font-size: 0.9em;
+    }
+    .pub-entry .hidden.open {
+      max-height: 30em;
+      padding: 0.5em;
+    }
+
+    /* Footer */
+    .wiki-footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.85em;
+      color: #54595d;
+      border-top: 1px solid #a2a9b1;
+      background: #f8f9fa;
+    }
+
+    /* Hide TOC in content when sidebar exists */
+    .toc { display: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .wiki-wrapper {
+        flex-direction: column;
+      }
+      .wiki-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #a2a9b1;
+      }
+      .wiki-infobox-container {
+        width: 100%;
+        order: -1;
+      }
+      .wiki-content {
+        border-left: none;
+        border-right: none;
+        padding: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wiki-header">
+    <div class="wiki-header-inner">
+      <a href="/" class="wiki-logo">{{ site.title }}</a>
+      <nav class="wiki-nav">
+        {% if site.blog_name %}<a href="{{ '/blog/' | relative_url }}">Blog</a>{% endif %}
+        {% assign sorted_pages = site.pages | sort: "title" %}
+        {% for p in sorted_pages %}
+          {% if p.nav and p.autogen == nil %}
+            <a href="{{ p.url | relative_url }}">{{ p.title }}</a>
+          {% endif %}
+        {% endfor %}
+      </nav>
     </div>
+  </header>
 
-    <!-- Footer -->
+  <div class="wiki-wrapper">
+    <aside class="wiki-sidebar">
+      <div class="wiki-sidebar-title">Contents</div>
+      <ul>
+        <li><a href="#">(Top)</a></li>
+        <li><a href="#selected-publications">Selected publications</a></li>
+        <li><a href="#career">Career</a></li>
+        <li><a href="#professional-services">Professional services</a></li>
+      </ul>
+    </aside>
 
-    {% include footer.html %}
+    <main class="wiki-content">
+      {{ content }}
+    </main>
 
-  </body>
+    <aside class="wiki-infobox-container">
+      {% if page.layout == 'about' %}
+      <div class="infobox">
+        <div class="infobox-title">{{ site.title }}</div>
+        {% if page.profile.image %}
+        <img src="{{ page.profile.image | prepend: '/assets/img/' | relative_url }}" alt="{{ site.title }}">
+        <div class="infobox-caption">Wearing 1st-gen Meta Ray-Ban smart glasses. Canberra, July 2023.</div>
+        {% endif %}
+        <div class="infobox-row">
+          <span class="infobox-label">Affiliation</span><br>
+          Nanyang Technological University
+        </div>
+        <div class="infobox-row">
+          <span class="infobox-label">Position</span><br>
+          Ph.D. Student
+        </div>
+        <div class="infobox-row">
+          <span class="infobox-label">Field</span><br>
+          Computer Science
+        </div>
+        <div class="infobox-row">
+          <span class="infobox-label">Advisor</span><br>
+          <a href="https://liuziwei7.github.io/">Ziwei Liu</a>
+        </div>
+        {% if site.email %}
+        <div class="infobox-row">
+          <span class="infobox-label">Email</span><br>
+          <a href="mailto:{{ site.email }}"><i class="fas fa-envelope"></i> {{ site.email }}</a>
+        </div>
+        {% endif %}
+        {% if site.github_username %}
+        <div class="infobox-row">
+          <span class="infobox-label">GitHub</span><br>
+          <a href="https://github.com/{{ site.github_username }}"><i class="fab fa-github"></i> {{ site.github_username }}</a>
+        </div>
+        {% endif %}
+        {% if site.twitter_username %}
+        <div class="infobox-row">
+          <span class="infobox-label">Twitter</span><br>
+          <a href="https://twitter.com/{{ site.twitter_username }}"><i class="fab fa-twitter"></i> @{{ site.twitter_username }}</a>
+        </div>
+        {% endif %}
+        {% if site.scholar_userid %}
+        <div class="infobox-row">
+          <span class="infobox-label">Google Scholar</span><br>
+          <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}"><i class="ai ai-google-scholar"></i> Profile</a>
+        </div>
+        {% endif %}
+      </div>
+      {% endif %}
+    </aside>
+  </div>
 
-  {% include hemline.html %}
-
+  <footer class="wiki-footer">
+    This page was last edited on {% assign d = site.time | date: "%-d" %}{{ site.time | date: "%B" }} {{ d }}, {{ site.time | date: "%Y" }}.
+  </footer>
+</body>
 </html>
