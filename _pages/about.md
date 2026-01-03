@@ -18,7 +18,7 @@ Check more on [Google Scholar](https://scholar.google.com/citations?user={{ site
 <div class="toc">
 
 - [Selected publications](#selected-publications)
-- [Career](#career)
+- [Professional experience](#professional-experience)
 - [Professional services](#professional-services)
   - [Talks and lectures](#talks-and-lectures)
   - [Administrative roles](#administrative-roles)
@@ -31,7 +31,7 @@ Check more on [Google Scholar](https://scholar.google.com/citations?user={{ site
 {% bibliography -f selected_papers %}
 </div>
 
-## Career
+## Professional experience
 
 - **Aug. 2025 – Present**: [ByteDance Seed](https://team.doubao.com/en/), Singapore. With Haoqi Fan, working on unified multimodal models.
 
