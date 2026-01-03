@@ -248,10 +248,40 @@
       color: #54595d;
       font-size: 0.9em;
     }
+    .pub-entry .periodical .genre-tag {
+      display: inline-block;
+      padding: 0.12em 0.45em;
+      border: 1px solid #c8ccd1;
+      border-radius: 3px;
+      background: #f8f9fa;
+      color: #54595d;
+      font-size: 0.85em;
+      font-style: normal;
+      line-height: 1.2;
+      margin: 0.15em 0.4em 0 0;
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .pub-entry .periodical .genre-tag-secondary {
+      border-color: #eaecf0;
+      background: #fff;
+    }
+    .pub-entry .periodical .genre-tag a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .pub-entry .periodical .genre-tag a:hover {
+      text-decoration: underline;
+    }
     .pub-entry .additional {
       display: block;
-      color: darkred;
-      font-weight: bold;
+      color: #5c4a1a;
+      background: #fff8e1;
+      border-left: 3px solid #d4a017;
+      padding: 0.25em 0.5em;
+      border-radius: 2px;
+      font-weight: normal;
     }
     .pub-entry .author {
       display: block;
@@ -378,7 +408,11 @@
 <ol class="bibliography"><li><div id="li2025lmmsengine" class="pub-entry">
     <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/lmms-engine">LMMs Engine for Unified Multimodal Training</a></span>
     
-    <span class="periodical"><em>Open-source Project</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">Open-source Project</span>
+      
+    </span>
     <span class="additional">A simple, unified multimodal models training engine. Lean, flexible, and built for hacking at scale. Lead codebase design and core maintainer</span>
     
     
@@ -387,7 +421,11 @@
 <li><div id="li2025llavaonevision15" class="pub-entry">
     <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5">LLaVA-OneVision 1.5: Democratized Multimodal Training</a></span>
     
-    <span class="periodical"><em>Open-source Project</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">Open-source Project</span>
+      
+    </span>
     <span class="additional">Fully open-source code, data, checkpoints and training logs; Provided a better open-source ViT; Proved the idea that simple scaling dense captions would improve overall multimodal tasks performance</span>
     <span class="author">Xiang An, Yin Xie, Kaicheng Yang, Changrui Chen, Huajie Tan, Chunyuan Li, Zizhen Yan, Ziyong Feng, Ziwei Liu, <u>Bo Li*</u>, Jiankang Deng</span>
     
@@ -396,7 +434,11 @@
 <li><div id="li2025aero" class="pub-entry">
     <span class="title"><a href="https://www.lmms-lab.com/posts/aero_audio/">Aero-1-Audio</a></span>
     
-    <span class="periodical"><em>Technical Blog</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">Technical Blog</span>
+      
+    </span>
     <span class="additional">Open models for wide range of audio tasks, trained on only 50K hours data yet achieving excellent performance, suggesting smart data &gt; massive training; Lead development</span>
     <span class="author"><u>Bo Li*</u>, Change Loy Chen, Fanyi Pu, Jingkang Yang, Kaichen Zhang*, Kairui Hu, Luu Minh Thang*, Nguyen Quang Trung*, Pham Ba Cong*, Shuai Liu, Yezhen Wang*, Ziwei Liu</span>
     
@@ -405,7 +447,11 @@
 <li><div id="li2024llava" class="pub-entry">
     <span class="title"><a href="https://arxiv.org/abs/2408.03326">LLaVA-OneVision: Easy Visual Task Transfer</a></span>
     
-    <span class="periodical"><em>Transactions on Machine Learning Research (TMLR), 2025</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">Transactions on Machine Learning Research (TMLR), 2025</span>
+      
+    </span>
     <span class="additional">SOTA-level fully open models (models/data/code) achieving GPT-4o-level performance across 30+ image and video tasks. Lead codebase, data curation, and evaluation</span>
     <span class="author"><u>Bo Li*</u>, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng Li, Hao Zhang, Kaichen Zhang, Yanwei Li, Ziwei Liu, Chunyuan Li</span>
     
@@ -414,7 +460,11 @@
 <li><div id="li2024lmmseval" class="pub-entry">
     <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/lmms-eval">LMMs-Eval: Reality Check on the Evaluation of Large Multimodal Models</a></span>
     
-    <span class="periodical"><em>North American Chapter of the Association for Computational Linguistics (NAACL), 2025</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">North American Chapter of the Association for Computational Linguistics (NAACL), 2025</span>
+      
+    </span>
     <span class="additional">Open-source evaluation frameworks spanning text, image, video, and audio tasks with 2.4K GitHub stars; contributed core framework and major code</span>
     <span class="author">Kaichen Zhang*, <u>Bo Li*</u>, Peiyuan Zhang*, Fanyi Pu*, Joshua Adrian Cahyono*, Kairui Hu*, Shuai Liu*, Yuanhan Zhang*, Jingkang Yang*, Chunyuan Li*, Ziwei Liu*</span>
     
@@ -423,34 +473,50 @@
 <li><div id="liu2024llavanext" class="pub-entry">
     <span class="title"><a href="https://llava-vl.github.io/blog/2024-01-30-llava-next/">LLaVA-NeXT: Improved reasoning, OCR, and world knowledge</a></span>
     
-    <span class="periodical"><em>Technical Blog</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">Technical Blog</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/LLaVA-VL/LLaVA-NeXT" target="_blank">Code</a></span>
+    </span>
     <span class="additional">First open models achieving GPT-4V-level performance, trained for 24 hours on 32 A100 GPUs. Proposed the idea that massive evaluation leads to better models</span>
-    <span class="author">Haotian Liu, Chunyuan Li, Yuheng Li, <u>Bo Li</u>, Yuanhan Zhang, Sheng Shen, Yong Jae Lee | <a href="https://github.com/LLaVA-VL/LLaVA-NeXT" target="_blank">Code</a></span>
+    <span class="author">Haotian Liu, Chunyuan Li, Yuheng Li, <u>Bo Li</u>, Yuanhan Zhang, Sheng Shen, Yong Jae Lee</span>
     
 </div>
 </li>
 <li><div id="li2023mimic" class="pub-entry">
     <span class="title"><a href="https://arxiv.org/abs/2306.05425">MIMIC-IT: Multi-modal In-Context Instruction Tuning</a></span>
     
-    <span class="periodical"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/Otter" target="_blank">Code</a></span>
+    </span>
     <span class="additional">Early (2023-10) experiment on a vision-language-agent (VLA) model with RLHF; proposed the idea and drafted the training code</span>
-    <span class="author"><u>Bo Li*</u>, Yuanhan Zhang*, Liangyu Chen, Jinghao Wang, Fanyi Pu, Jingkang Yang, Chunyuan Li, Ziwei Liu | <a href="https://github.com/Luodian/Otter" target="_blank">Code</a></span>
+    <span class="author"><u>Bo Li*</u>, Yuanhan Zhang*, Liangyu Chen, Jinghao Wang, Fanyi Pu, Jingkang Yang, Chunyuan Li, Ziwei Liu</span>
     
 </div>
 </li>
 <li><div id="li2023genbench" class="pub-entry">
     <span class="title"><a href="https://arxiv.org/abs/2307.13697">Benchmarking and Analyzing Generative Data for Visual Recognition</a></span>
     
-    <span class="periodical"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/GenBench" target="_blank">Code</a></span>
+    </span>
     <span class="additional">Early (2022-12) experiment using synthetic data for visual recognition</span>
-    <span class="author"><u>Bo Li</u>, Haotian Liu, Liangyu Chen, Yong Jae Lee, Chunyuan Li, Ziwei Liu | <a href="https://github.com/Luodian/GenBench" target="_blank">Code</a></span>
+    <span class="author"><u>Bo Li</u>, Haotian Liu, Liangyu Chen, Yong Jae Lee, Chunyuan Li, Ziwei Liu</span>
     
 </div>
 </li>
 <li><div id="li2022sparse" class="pub-entry">
     <span class="title"><a href="https://openreview.net/forum?id=kdHpWogtX6Y">Coordinating Multiple Vision-Language Models for Visual Reasoning</a></span>
     
-    <span class="periodical"><em style="color:#54595d;">NeurIPS 2023</em> <em>In Conference on Neural Information Processing Systems</em></span>
+    <span class="periodical">
+      <span class="genre-tag">NeurIPS 2023</span>
+      <span class="genre-tag genre-tag-secondary">In Conference on Neural Information Processing Systems</span>
+      
+    </span>
     
     <span class="author">Liangyu Chen*, <u>Bo Li*</u>, Sheng Shen, Jingkang Yang, Chunyuan Li, Kurt Keutzer, Trevor Darrell, Ziwei Liu</span>
     
@@ -459,43 +525,63 @@
 <li><div id="li2022sparsf" class="pub-entry">
     <span class="title"><a href="https://arxiv.org/abs/2206.04046">Sparse Mixture-of-Experts are Domain Generalizable Learners</a></span>
     
-    <span class="periodical"><em style="color:#54595d;">ICLR 2023 (Oral)</em> <em>In International Conference on Representation Learning 2023</em></span>
+    <span class="periodical">
+      <span class="genre-tag">ICLR 2023 (Oral)</span>
+      <span class="genre-tag genre-tag-secondary">In International Conference on Representation Learning 2023</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/Generalizable-Mixture-of-Experts" target="_blank">Code</a></span>
+    </span>
     <span class="additional">First batch (2022-05) theoretical analysis of the mixture-of-experts architecture from a generalization perspective</span>
-    <span class="author"><u>Bo Li*</u>, Yifei Shen*, Jingkang Yang, Yezhen Wang, Jiawei Ren, Tong Che, Jun Zhang, Ziwei Liu | <a href="https://github.com/Luodian/Generalizable-Mixture-of-Experts" target="_blank">Code</a></span>
+    <span class="author"><u>Bo Li*</u>, Yifei Shen*, Jingkang Yang, Yezhen Wang, Jiawei Ren, Tong Che, Jun Zhang, Ziwei Liu</span>
     
 </div>
 </li>
 <li><div id="li2022invariant" class="pub-entry">
     <span class="title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/20703">Invariant information bottleneck for domain generalization</a></span>
     
-    <span class="periodical"><em style="color:#54595d;">AAAI 2022</em> <em>In Proceedings of the AAAI Conference on Artificial Intelligence</em></span>
+    <span class="periodical">
+      <span class="genre-tag">AAAI 2022</span>
+      <span class="genre-tag genre-tag-secondary">In Proceedings of the AAAI Conference on Artificial Intelligence</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/IIB" target="_blank">Code</a></span>
+    </span>
     
-    <span class="author"><u>Bo Li</u>, Yifei Shen, Yezhen Wang, Wenzhen Zhu, Dongsheng Li, Kurt Keutzer, Han Zhao | <a href="https://github.com/Luodian/IIB" target="_blank">Code</a></span>
+    <span class="author"><u>Bo Li</u>, Yifei Shen, Yezhen Wang, Wenzhen Zhu, Dongsheng Li, Kurt Keutzer, Han Zhao</span>
     
 </div>
 </li>
 <li><div id="Wang_2021_ICCV" class="pub-entry">
     <span class="title"><a href="https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Energy-Based_Open-World_Uncertainty_Modeling_for_Confidence_Calibration_ICCV_2021_paper.html">Energy-Based Open-World Uncertainty Modeling for Confidence Calibration</a></span>
     
-    <span class="periodical"><em style="color:#54595d;">ICCV 2021</em> <em>In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</em></span>
+    <span class="periodical">
+      <span class="genre-tag">ICCV 2021</span>
+      <span class="genre-tag genre-tag-secondary">In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/BIGKnight/Energy-Based-Open-World-Uncertainty-Modeling-for-Confidence-Calibration" target="_blank">Code</a></span>
+    </span>
     
-    <span class="author">Yezhen Wang, <u>Bo Li</u>, Tong Che, Kaiyang Zhou, Ziwei Liu, Dongsheng Li | <a href="https://github.com/BIGKnight/Energy-Based-Open-World-Uncertainty-Modeling-for-Confidence-Calibration" target="_blank">Code</a></span>
+    <span class="author">Yezhen Wang, <u>Bo Li</u>, Tong Che, Kaiyang Zhou, Ziwei Liu, Dongsheng Li</span>
     
 </div>
 </li>
 <li><div id="li2021learning" class="pub-entry">
     <span class="title"><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Learning_Invariant_Representations_and_Risks_for_Semi-Supervised_Domain_Adaptation_CVPR_2021_paper.pdf">Learning invariant representations and risks for semi-supervised domain adaptation</a></span>
     
-    <span class="periodical"><em style="color:#54595d;">CVPR 2021</em> <em>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</em></span>
+    <span class="periodical">
+      <span class="genre-tag">CVPR 2021</span>
+      <span class="genre-tag genre-tag-secondary">In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/Learning-Invariant-Representations-and-Risks" target="_blank">Code</a></span>
+    </span>
     
-    <span class="author"><u>Bo Li</u>, Yezhen Wang, Shanghang Zhang, Dongsheng Li, Kurt Keutzer, Trevor Darrell, Han Zhao | <a href="https://github.com/Luodian/Learning-Invariant-Representations-and-Risks" target="_blank">Code</a></span>
+    <span class="author"><u>Bo Li</u>, Yezhen Wang, Shanghang Zhang, Dongsheng Li, Kurt Keutzer, Trevor Darrell, Han Zhao</span>
     
 </div>
 </li>
 <li><div id="zhao2021madan" class="pub-entry">
     <span class="title"><a href="https://link.springer.com/article/10.1007/s11263-021-01479-3">MADAN: multi-source adversarial domain aggregation network for domain adaptation</a></span>
     
-    <span class="periodical"><em style="color:#54595d;">IJCV 2021</em> <em>International Journal of Computer Vision</em></span>
+    <span class="periodical">
+      <span class="genre-tag">IJCV 2021</span>
+      <span class="genre-tag genre-tag-secondary">International Journal of Computer Vision</span>
+      
+    </span>
     
     <span class="author">Sicheng Zhao, <u>Bo Li</u>, Pengfei Xu, Xiangyu Yue, Guiguang Ding, Kurt Keutzer</span>
     
@@ -504,7 +590,11 @@
 <li><div id="li2020rethinking" class="pub-entry">
     <span class="title"><a href="https://arxiv.org/abs/2006.13352">Rethinking distributional matching based domain adaptation</a></span>
     
-    <span class="periodical"><em>arXiv preprint arXiv:2006.13352</em></span>
+    <span class="periodical">
+      
+      <span class="genre-tag">arXiv preprint arXiv:2006.13352</span>
+      
+    </span>
     
     <span class="author"><u>Bo Li</u>, Yezhen Wang, Tong Che, Shanghang Zhang, Yoshua Bengio, Kurt Keutzer</span>
     
@@ -513,9 +603,13 @@
 <li><div id="zhao2019multi" class="pub-entry">
     <span class="title"><a href="https://proceedings.neurips.cc/paper/2019/hash/db9ad56c71619aeed9723314d1456037-Abstract.html">Multi-source domain adaptation for semantic segmentation</a></span>
     
-    <span class="periodical"><em style="color:#54595d;">NeurIPS 2019</em> <em>In Neural Information Processing Systems</em></span>
+    <span class="periodical">
+      <span class="genre-tag">NeurIPS 2019</span>
+      <span class="genre-tag genre-tag-secondary">In Neural Information Processing Systems</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/MADAN" target="_blank">Code</a></span>
+    </span>
     
-    <span class="author">Sicheng Zhao*, <u>Bo Li*</u>, Xiangyu Yue*, Yang Gu, Pengfei Xu, Runbo Hu, Hua Chai, Kurt Keutzer | <a href="https://github.com/Luodian/MADAN" target="_blank">Code</a></span>
+    <span class="author">Sicheng Zhao*, <u>Bo Li*</u>, Xiangyu Yue*, Yang Gu, Pengfei Xu, Runbo Hu, Hua Chai, Kurt Keutzer</span>
     
 </div>
 </li></ol>
