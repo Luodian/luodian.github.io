@@ -213,10 +213,13 @@
       margin: 0;
     }
     .publications ol.bibliography li {
-      margin-bottom: 0.4em !important;
-      padding-bottom: 0 !important;
-      padding-top: 0 !important;
+      margin-bottom: 0.8em !important;
+      padding-bottom: 0.6em !important;
+      padding-top: 0.6em !important;
       margin-top: 0 !important;
+      border-bottom: 1px solid #eaecf0;
+    }
+    .publications ol.bibliography li:last-child {
       border-bottom: none;
     }
     .publications ol.bibliography li .pub-entry .hidden {
@@ -226,6 +229,7 @@
       line-height: 1.4;
     }
     .pub-entry .periodical,
+    .pub-entry .additional,
     .pub-entry .author {
       margin-top: 0;
       line-height: 1.3;
@@ -243,6 +247,12 @@
       display: block;
       color: #54595d;
       font-size: 0.9em;
+      margin: 0;
+    }
+    .pub-entry .additional {
+      display: block;
+      color: darkred;
+      font-weight: bold;
       margin: 0;
     }
     .pub-entry .author {
@@ -347,7 +357,7 @@
     </aside>
 
     <main class="wiki-content">
-      <h1 class="wiki-title">Brian (Bo) Li</h1>
+      <h1 class="wiki-title">Introduction</h1>
 
 <p><strong>Brian (Bo) Li</strong> is a final-year Ph.D. student in Computer Science at <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, advised by <a href="https://liuziwei7.github.io/">Prof. Ziwei Liu</a>. His research focuses on multimodal models and building artificial intelligence systems.</p>
 
@@ -355,12 +365,8 @@
 
 <p>Check more on <a href="https://scholar.google.com/citations?user=1_zc1-IAAAAJ">Google Scholar</a>, <a href="https://github.com/luodian">GitHub</a>, and <a href="https://twitter.com/BoLi68567011">Twitter</a>.</p>
 
-<h2 id="contents">Contents</h2>
-
 <div class="toc">
-<div class="toc-title">Contents</div>
 
-- [Contents](#contents)
 - [Selected publications](#selected-publications)
 - [Career](#career)
 - [Professional services](#professional-services)
@@ -376,7 +382,7 @@
     <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/lmms-engine">LMMs Engine for Unified Multimodal Training</a></span>
     
     <span class="periodical"><em>Open-source Project</em></span>
-    <br /><b style="color:darkred">A simple, unified multimodal models training engine. Lean, flexible, and built for hacking at scale. Lead codebase design and core maintainer</b>
+    <span class="additional">A simple, unified multimodal models training engine. Lean, flexible, and built for hacking at scale. Lead codebase design and core maintainer</span>
     
     
 </div>
@@ -385,8 +391,8 @@
     <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5">LLaVA-OneVision 1.5: Democratized Multimodal Training</a></span>
     
     <span class="periodical"><em>Open-source Project</em></span>
-    <br /><b style="color:darkred">Fully open-source code, data, checkpoints and training logs; Provided a better open-source ViT; Proved the idea that simple scaling dense captions would improve overall multimodal tasks performance</b>
-    <br /><span class="author">Xiang An, Yin Xie, Kaicheng Yang, Changrui Chen, Huajie Tan, Chunyuan Li, Zizhen Yan, Ziyong Feng, Ziwei Liu, <u>Bo Li*</u>, Jiankang Deng</span>
+    <span class="additional">Fully open-source code, data, checkpoints and training logs; Provided a better open-source ViT; Proved the idea that simple scaling dense captions would improve overall multimodal tasks performance</span>
+    <span class="author">Xiang An, Yin Xie, Kaicheng Yang, Changrui Chen, Huajie Tan, Chunyuan Li, Zizhen Yan, Ziyong Feng, Ziwei Liu, <u>Bo Li*</u>, Jiankang Deng</span>
     
 </div>
 </li>
@@ -394,8 +400,8 @@
     <span class="title"><a href="https://www.lmms-lab.com/posts/aero_audio/">Aero-1-Audio</a></span>
     
     <span class="periodical"><em>Technical Blog</em></span>
-    <br /><b style="color:darkred">Open models for wide range of audio tasks, trained on only 50K hours data yet achieving excellent performance, suggesting smart data &gt; massive training; Lead development</b>
-    <br /><span class="author"><u>Bo Li*</u>, Change Loy Chen, Fanyi Pu, Jingkang Yang, Kaichen Zhang*, Kairui Hu, Luu Minh Thang*, Nguyen Quang Trung*, Pham Ba Cong*, Shuai Liu, Yezhen Wang*, Ziwei Liu</span>
+    <span class="additional">Open models for wide range of audio tasks, trained on only 50K hours data yet achieving excellent performance, suggesting smart data &gt; massive training; Lead development</span>
+    <span class="author"><u>Bo Li*</u>, Change Loy Chen, Fanyi Pu, Jingkang Yang, Kaichen Zhang*, Kairui Hu, Luu Minh Thang*, Nguyen Quang Trung*, Pham Ba Cong*, Shuai Liu, Yezhen Wang*, Ziwei Liu</span>
     
 </div>
 </li>
@@ -403,8 +409,8 @@
     <span class="title"><a href="https://arxiv.org/abs/2408.03326">LLaVA-OneVision: Easy Visual Task Transfer</a></span>
     
     <span class="periodical"><em>Transactions on Machine Learning Research (TMLR), 2025</em></span>
-    <br /><b style="color:darkred">SOTA-level fully open models (models/data/code) achieving GPT-4o-level performance across 30+ image and video tasks. Lead codebase, data curation, and evaluation</b>
-    <br /><span class="author"><u>Bo Li*</u>, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng Li, Hao Zhang, Kaichen Zhang, Yanwei Li, Ziwei Liu, Chunyuan Li</span>
+    <span class="additional">SOTA-level fully open models (models/data/code) achieving GPT-4o-level performance across 30+ image and video tasks. Lead codebase, data curation, and evaluation</span>
+    <span class="author"><u>Bo Li*</u>, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng Li, Hao Zhang, Kaichen Zhang, Yanwei Li, Ziwei Liu, Chunyuan Li</span>
     
 </div>
 </li>
@@ -412,8 +418,8 @@
     <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/lmms-eval">LMMs-Eval: Reality Check on the Evaluation of Large Multimodal Models</a></span>
     
     <span class="periodical"><em>North American Chapter of the Association for Computational Linguistics (NAACL), 2025</em></span>
-    <br /><b style="color:darkred">Open-source evaluation frameworks spanning text, image, video, and audio tasks with 2.4K GitHub stars; contributed core framework and major code</b>
-    <br /><span class="author">Kaichen Zhang*, <u>Bo Li*</u>, Peiyuan Zhang*, Fanyi Pu*, Joshua Adrian Cahyono*, Kairui Hu*, Shuai Liu*, Yuanhan Zhang*, Jingkang Yang*, Chunyuan Li*, Ziwei Liu*</span>
+    <span class="additional">Open-source evaluation frameworks spanning text, image, video, and audio tasks with 2.4K GitHub stars; contributed core framework and major code</span>
+    <span class="author">Kaichen Zhang*, <u>Bo Li*</u>, Peiyuan Zhang*, Fanyi Pu*, Joshua Adrian Cahyono*, Kairui Hu*, Shuai Liu*, Yuanhan Zhang*, Jingkang Yang*, Chunyuan Li*, Ziwei Liu*</span>
     
 </div>
 </li>
@@ -421,8 +427,8 @@
     <span class="title"><a href="https://llava-vl.github.io/blog/2024-01-30-llava-next/">LLaVA-NeXT: Improved reasoning, OCR, and world knowledge</a></span>
     
     <span class="periodical"><em>Technical Blog</em></span>
-    <br /><b style="color:darkred">First open models achieving GPT-4V-level performance, trained for 24 hours on 32 A100 GPUs. Proposed the idea that massive evaluation leads to better models</b>
-    <br /><span class="author">Haotian Liu, Chunyuan Li, Yuheng Li, <u>Bo Li</u>, Yuanhan Zhang, Sheng Shen, Yong Jae Lee | <a href="https://github.com/LLaVA-VL/LLaVA-NeXT" target="_blank">Code</a></span>
+    <span class="additional">First open models achieving GPT-4V-level performance, trained for 24 hours on 32 A100 GPUs. Proposed the idea that massive evaluation leads to better models</span>
+    <span class="author">Haotian Liu, Chunyuan Li, Yuheng Li, <u>Bo Li</u>, Yuanhan Zhang, Sheng Shen, Yong Jae Lee | <a href="https://github.com/LLaVA-VL/LLaVA-NeXT" target="_blank">Code</a></span>
     
 </div>
 </li>
@@ -430,8 +436,8 @@
     <span class="title"><a href="https://arxiv.org/abs/2306.05425">MIMIC-IT: Multi-modal In-Context Instruction Tuning</a></span>
     
     <span class="periodical"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</em></span>
-    <br /><b style="color:darkred">Early (2023-10) experiment on a vision-language-agent (VLA) model with RLHF; proposed the idea and drafted the training code</b>
-    <br /><span class="author"><u>Bo Li*</u>, Yuanhan Zhang*, Liangyu Chen, Jinghao Wang, Fanyi Pu, Jingkang Yang, Chunyuan Li, Ziwei Liu | <a href="https://github.com/Luodian/Otter" target="_blank">Code</a></span>
+    <span class="additional">Early (2023-10) experiment on a vision-language-agent (VLA) model with RLHF; proposed the idea and drafted the training code</span>
+    <span class="author"><u>Bo Li*</u>, Yuanhan Zhang*, Liangyu Chen, Jinghao Wang, Fanyi Pu, Jingkang Yang, Chunyuan Li, Ziwei Liu | <a href="https://github.com/Luodian/Otter" target="_blank">Code</a></span>
     
 </div>
 </li>
@@ -439,8 +445,8 @@
     <span class="title"><a href="https://arxiv.org/abs/2307.13697">Benchmarking and Analyzing Generative Data for Visual Recognition</a></span>
     
     <span class="periodical"><em>IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI), 2025</em></span>
-    <br /><b style="color:darkred">Early (2022-12) experiment using synthetic data for visual recognition</b>
-    <br /><span class="author"><u>Bo Li</u>, Haotian Liu, Liangyu Chen, Yong Jae Lee, Chunyuan Li, Ziwei Liu | <a href="https://github.com/Luodian/GenBench" target="_blank">Code</a></span>
+    <span class="additional">Early (2022-12) experiment using synthetic data for visual recognition</span>
+    <span class="author"><u>Bo Li</u>, Haotian Liu, Liangyu Chen, Yong Jae Lee, Chunyuan Li, Ziwei Liu | <a href="https://github.com/Luodian/GenBench" target="_blank">Code</a></span>
     
 </div>
 </li>
@@ -449,7 +455,7 @@
     
     <span class="periodical"><em style="color:#54595d;">NeurIPS 2023</em> <em>In Conference on Neural Information Processing Systems</em></span>
     
-    <br /><span class="author">Liangyu Chen*, <u>Bo Li*</u>, Sheng Shen, Jingkang Yang, Chunyuan Li, Kurt Keutzer, Trevor Darrell, Ziwei Liu</span>
+    <span class="author">Liangyu Chen*, <u>Bo Li*</u>, Sheng Shen, Jingkang Yang, Chunyuan Li, Kurt Keutzer, Trevor Darrell, Ziwei Liu</span>
     
 </div>
 </li>
@@ -457,8 +463,8 @@
     <span class="title"><a href="https://arxiv.org/abs/2206.04046">Sparse Mixture-of-Experts are Domain Generalizable Learners</a></span>
     
     <span class="periodical"><em style="color:#54595d;">ICLR 2023 (Oral)</em> <em>In International Conference on Representation Learning 2023</em></span>
-    <br /><b style="color:darkred">First batch (2022-05) theoretical analysis of the mixture-of-experts architecture from a generalization perspective</b>
-    <br /><span class="author"><u>Bo Li*</u>, Yifei Shen*, Jingkang Yang, Yezhen Wang, Jiawei Ren, Tong Che, Jun Zhang, Ziwei Liu | <a href="https://github.com/Luodian/Generalizable-Mixture-of-Experts" target="_blank">Code</a></span>
+    <span class="additional">First batch (2022-05) theoretical analysis of the mixture-of-experts architecture from a generalization perspective</span>
+    <span class="author"><u>Bo Li*</u>, Yifei Shen*, Jingkang Yang, Yezhen Wang, Jiawei Ren, Tong Che, Jun Zhang, Ziwei Liu | <a href="https://github.com/Luodian/Generalizable-Mixture-of-Experts" target="_blank">Code</a></span>
     
 </div>
 </li>
@@ -467,7 +473,7 @@
     
     <span class="periodical"><em style="color:#54595d;">AAAI 2022</em> <em>In Proceedings of the AAAI Conference on Artificial Intelligence</em></span>
     
-    <br /><span class="author"><u>Bo Li</u>, Yifei Shen, Yezhen Wang, Wenzhen Zhu, Dongsheng Li, Kurt Keutzer, Han Zhao | <a href="https://github.com/Luodian/IIB" target="_blank">Code</a></span>
+    <span class="author"><u>Bo Li</u>, Yifei Shen, Yezhen Wang, Wenzhen Zhu, Dongsheng Li, Kurt Keutzer, Han Zhao | <a href="https://github.com/Luodian/IIB" target="_blank">Code</a></span>
     
 </div>
 </li>
@@ -476,7 +482,7 @@
     
     <span class="periodical"><em style="color:#54595d;">ICCV 2021</em> <em>In Proceedings of the IEEE/CVF International Conference on Computer Vision (ICCV)</em></span>
     
-    <br /><span class="author">Yezhen Wang, <u>Bo Li</u>, Tong Che, Kaiyang Zhou, Ziwei Liu, Dongsheng Li | <a href="https://github.com/BIGKnight/Energy-Based-Open-World-Uncertainty-Modeling-for-Confidence-Calibration" target="_blank">Code</a></span>
+    <span class="author">Yezhen Wang, <u>Bo Li</u>, Tong Che, Kaiyang Zhou, Ziwei Liu, Dongsheng Li | <a href="https://github.com/BIGKnight/Energy-Based-Open-World-Uncertainty-Modeling-for-Confidence-Calibration" target="_blank">Code</a></span>
     
 </div>
 </li>
@@ -485,7 +491,7 @@
     
     <span class="periodical"><em style="color:#54595d;">CVPR 2021</em> <em>In Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition</em></span>
     
-    <br /><span class="author"><u>Bo Li</u>, Yezhen Wang, Shanghang Zhang, Dongsheng Li, Kurt Keutzer, Trevor Darrell, Han Zhao | <a href="https://github.com/Luodian/Learning-Invariant-Representations-and-Risks" target="_blank">Code</a></span>
+    <span class="author"><u>Bo Li</u>, Yezhen Wang, Shanghang Zhang, Dongsheng Li, Kurt Keutzer, Trevor Darrell, Han Zhao | <a href="https://github.com/Luodian/Learning-Invariant-Representations-and-Risks" target="_blank">Code</a></span>
     
 </div>
 </li>
@@ -494,7 +500,7 @@
     
     <span class="periodical"><em style="color:#54595d;">IJCV 2021</em> <em>International Journal of Computer Vision</em></span>
     
-    <br /><span class="author">Sicheng Zhao, <u>Bo Li</u>, Pengfei Xu, Xiangyu Yue, Guiguang Ding, Kurt Keutzer</span>
+    <span class="author">Sicheng Zhao, <u>Bo Li</u>, Pengfei Xu, Xiangyu Yue, Guiguang Ding, Kurt Keutzer</span>
     
 </div>
 </li>
@@ -503,7 +509,7 @@
     
     <span class="periodical"><em>arXiv preprint arXiv:2006.13352</em></span>
     
-    <br /><span class="author"><u>Bo Li</u>, Yezhen Wang, Tong Che, Shanghang Zhang, Yoshua Bengio, Kurt Keutzer</span>
+    <span class="author"><u>Bo Li</u>, Yezhen Wang, Tong Che, Shanghang Zhang, Yoshua Bengio, Kurt Keutzer</span>
     
 </div>
 </li>
@@ -512,7 +518,7 @@
     
     <span class="periodical"><em style="color:#54595d;">NeurIPS 2019</em> <em>In Neural Information Processing Systems</em></span>
     
-    <br /><span class="author">Sicheng Zhao*, <u>Bo Li*</u>, Xiangyu Yue*, Yang Gu, Pengfei Xu, Runbo Hu, Hua Chai, Kurt Keutzer | <a href="https://github.com/Luodian/MADAN" target="_blank">Code</a></span>
+    <span class="author">Sicheng Zhao*, <u>Bo Li*</u>, Xiangyu Yue*, Yang Gu, Pengfei Xu, Runbo Hu, Hua Chai, Kurt Keutzer | <a href="https://github.com/Luodian/MADAN" target="_blank">Code</a></span>
     
 </div>
 </li></ol>

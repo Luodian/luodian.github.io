@@ -15,12 +15,8 @@ He organized the research group [LMMs-Lab](https://lmms-lab.com), which gathers 
 
 Check more on [Google Scholar](https://scholar.google.com/citations?user={{ site.scholar_userid }}), [GitHub](https://github.com/{{ site.github_username }}), and [Twitter](https://twitter.com/{{ site.twitter_username }}).
 
-## Contents
-
 <div class="toc">
-<div class="toc-title">Contents</div>
 
-- [Contents](#contents)
 - [Selected publications](#selected-publications)
 - [Career](#career)
 - [Professional services](#professional-services)

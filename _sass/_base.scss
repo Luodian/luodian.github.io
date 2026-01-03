@@ -327,10 +327,19 @@ footer.sticky-bottom {
           font-weight: bold;
         }
       }
+      .additional {
+        color: $red-color;
+        font-weight: bold;
+        a {
+          color: inherit;
+        }
+      }
       .periodical {
+        display: inline;
         color: $text-muted-color;
         font-size: 0.9em;
         font-style: italic;
+        margin-left: 0.5em;
       }
       em.star {
         color: $red-color;
@@ -412,6 +421,13 @@ footer.sticky-bottom {
         > em {
           font-style: normal;
           font-weight: bold;
+        }
+      }
+      .additional {
+        color: $red-color;
+        font-weight: bold;
+        a {
+          color: inherit;
         }
       }
       .periodical {
