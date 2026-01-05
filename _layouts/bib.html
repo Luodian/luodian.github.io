@@ -2,8 +2,10 @@
     {% if entry.url %}<span class="title"><a href="{{entry.url}}">{{entry.title}}</a></span>{% else %}<span class="title">{{entry.title}}</span>{% endif %}
     {% if entry.type != "thesis" %}
     <span class="periodical">
+      {%- comment -%} Show abbreviation only, hide full venue name {%- endcomment -%}
       {% if entry.abbr %}<span class="genre-tag">{% if site.data.venues[entry.abbr] %}<a href="{{site.data.venues[entry.abbr].url}}" target="_blank">{{entry.abbr}}</a>{% else %}{{entry.abbr}}{% endif %}</span>{% endif %}
-      {% if entry.type == "article" %}{% unless entry.abbr %}<span class="genre-tag">{{entry.journal}}</span>{% endunless %}{% elsif entry.type == "inproceedings" %}{% unless entry.abbr %}<span class="genre-tag">In {{entry.booktitle}}</span>{% endunless %}{% endif %}
+      {%- comment -%} Only show full journal/booktitle when no abbreviation exists {%- endcomment -%}
+      {% unless entry.abbr %}{% if entry.type == "article" %}<span class="genre-tag">{{entry.journal}}</span>{% elsif entry.type == "inproceedings" %}<span class="genre-tag">In {{entry.booktitle}}</span>{% endif %}{% endunless %}
       {% if entry.code %}<span class="genre-tag genre-tag-secondary"><a href="{{ entry.code }}" target="_blank">Code</a></span>{% endif %}
     </span>
     {% if entry.additional %}<span class="additional">{{entry.additional}}</span>{% endif %}
