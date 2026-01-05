@@ -9,7 +9,7 @@ profile:
   image: profile.jpg
 ---
 
-**{{ site.title }}** is a final-year Ph.D. student in Computer Science at [Nanyang Technological University](https://www.ntu.edu.sg/), advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). His research focuses on multimodal models and building artificial intelligence systems.
+**Brian (Bo) Li** is a final-year Ph.D. student in Computer Science at [Nanyang Technological University](https://www.ntu.edu.sg/), advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). His research focuses on multimodal models and building artificial intelligence systems.
 
 He co-founded [LMMs-Lab](https://lmms-lab.com) with [Prof. Ziwei Liu](https://liuziwei7.github.io/), a non-profit open-source community advancing multimodal AI through fully open models, data, and tools. Since 2024, we have made significant contributions to the field, including [LLaVA-OneVision](https://arxiv.org/abs/2408.03326) (performance matching commercial models, fully open), [OneVision-Encoder](https://huggingface.co/lmms-lab/onevision-encoder) (codec style vision encoder), [LMMs-Eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) (unified multimodal evaluation infrastructure), [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine) (unified multimodal models training infrastructure), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae) (safety and interpretability research).
 
