@@ -3,7 +3,7 @@
     {% if entry.type != "thesis" %}
     <span class="periodical">
       {% if entry.abbr %}<span class="genre-tag">{% if site.data.venues[entry.abbr] %}<a href="{{site.data.venues[entry.abbr].url}}" target="_blank">{{entry.abbr}}</a>{% else %}{{entry.abbr}}{% endif %}</span>{% endif %}
-      {% if entry.type == "article" %}<span class="genre-tag{% if entry.abbr %} genre-tag-secondary{% endif %}">{{entry.journal}}</span>{% elsif entry.type == "inproceedings" %}<span class="genre-tag{% if entry.abbr %} genre-tag-secondary{% endif %}">In {{entry.booktitle}}</span>{% endif %}
+      {% if entry.type == "article" %}{% unless entry.abbr %}<span class="genre-tag">{{entry.journal}}</span>{% endunless %}{% elsif entry.type == "inproceedings" %}{% unless entry.abbr %}<span class="genre-tag">In {{entry.booktitle}}</span>{% endunless %}{% endif %}
       {% if entry.code %}<span class="genre-tag genre-tag-secondary"><a href="{{ entry.code }}" target="_blank">Code</a></span>{% endif %}
     </span>
     {% if entry.additional %}<span class="additional">{{entry.additional}}</span>{% endif %}
