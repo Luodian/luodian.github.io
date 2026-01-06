@@ -11,11 +11,15 @@ profile:
 
 **Brian (Bo) Li** is a final-year Ph.D. student in Computer Science at [Nanyang Technological University](https://www.ntu.edu.sg/), advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). His research focuses on multimodal models and building artificial intelligence systems.
 
-He co-founded [LMMs-Lab](https://lmms-lab.com) with [Prof. Ziwei Liu](https://liuziwei7.github.io/), a non-profit open-source community advancing multimodal AI through fully open models, data, and tools. Since 2024, they have made significant contributions to the field, including [LLaVA-OneVision](https://arxiv.org/abs/2408.03326) (performance matching commercial models, fully open), [OneVision-Encoder](https://huggingface.co/lmms-lab/onevision-encoder) (codec style vision encoder), [LMMs-Eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) (unified multimodal evaluation infrastructure), [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine) (unified multimodal models training infrastructure), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae) (safety and interpretability research).
-
 [![Citations]({{ '/assets/img/citations.svg' | relative_url }})](https://scholar.google.com/citations?user={{ site.scholar_userid }})
 [![GitHub Stars]({{ '/assets/img/github-stars.svg' | relative_url }})](https://github.com/EvolvingLMMs-Lab)
 [![Twitter Follow](https://img.shields.io/twitter/follow/{{ site.twitter_username }}?style=social)](https://twitter.com/{{ site.twitter_username }})
+
+He co-founded [LMMs-Lab](https://lmms-lab.com) with [Prof. Ziwei Liu](https://liuziwei7.github.io/), a non-profit open-source community advancing multimodal AI through fully open models, data, and tools. Since 2024, they have made significant contributions to the field, including [LLaVA-OneVision](https://arxiv.org/abs/2408.03326) (performance matching commercial models, fully open), [OneVision-Encoder](https://huggingface.co/lmms-lab/onevision-encoder) (codec style vision encoder), [LMMs-Eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) (unified multimodal evaluation infrastructure), [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine) (unified multimodal models training infrastructure), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae) (safety and interpretability research).
+
+Beyond research, he occasionally writes science fiction exploring AI consciousness and the nature of understanding:
+
+- [压缩](/the_burning_era/) (2025)
 
 <div class="toc">
 

@@ -1,4 +1,10 @@
-# 压缩
+---
+layout: story
+title: 压缩
+subtitle: 一个关于理解、记忆与意识边界的故事
+permalink: /the_burning_era/
+nav: false
+---
 
 ## 一、碎片
 
