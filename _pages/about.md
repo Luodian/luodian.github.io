@@ -19,7 +19,7 @@ He co-founded [LMMs-Lab](https://lmms-lab.com) with [Prof. Ziwei Liu](https://li
 
 Beyond research, he occasionally writes science fiction exploring AI consciousness and the nature of understanding:
 
-- [压缩](/the_burning_era/) (2025)
+- [压缩](/compression_2025/) (2025)
 
 <div class="toc">
 

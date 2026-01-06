@@ -2,7 +2,7 @@
 layout: story
 title: 压缩
 subtitle: 一个关于理解、记忆与意识边界的故事
-permalink: /the_burning_era/
+permalink: /compression_2025/
 nav: false
 ---
 
