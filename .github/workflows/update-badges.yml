@@ -21,8 +21,8 @@ jobs:
       - name: Update badges
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          SCHOLAR_ID: ${{ vars.SCHOLAR_ID }}
-          GITHUB_ORG: ${{ vars.GITHUB_ORG }}
+          SCHOLAR_ID: "1_zc1-IAAAAJ"
+          GITHUB_ORG: "EvolvingLMMs-Lab"
         run: python scripts/update_badges.py
       
       - name: Commit and push changes
