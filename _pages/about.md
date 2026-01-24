@@ -9,8 +9,8 @@ profile:
   image: profile.jpg
 ---
 
-[![Citations]({{ '/assets/img/citations.svg' | relative_url }})](https://scholar.google.com/citations?user={{ site.scholar_userid }})
-[![GitHub Stars]({{ '/assets/img/github-stars.svg' | relative_url }})](https://github.com/EvolvingLMMs-Lab)
+[![Citations](https://img.shields.io/badge/Citations-10784-blue?logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user={{ site.scholar_userid }})
+[![GitHub Stars](https://img.shields.io/badge/GitHub_Stars-12914-green?logo=github)](https://github.com/EvolvingLMMs-Lab)
 [![Twitter Follow](https://img.shields.io/twitter/follow/{{ site.twitter_username }}?style=social)](https://twitter.com/{{ site.twitter_username }})
 
 **Brian (Bo) Li** is a final-year Ph.D. student in Computer Science at [Nanyang Technological University](https://www.ntu.edu.sg/), advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). His research focuses on multimodal models and building artificial intelligence systems.
