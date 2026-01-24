@@ -86,27 +86,41 @@ def generate_stars_svg(count: int) -> str:
 </svg>'''
 
 
+def get_existing_count(svg_path: Path, pattern: str) -> int | None:
+    """Extract existing count from SVG file."""
+    if not svg_path.exists():
+        return None
+    content = svg_path.read_text()
+    match = re.search(pattern, content)
+    return int(match.group(1).replace(",", "")) if match else None
+
+
 def main():
     scholar_id = os.environ.get("SCHOLAR_ID", "1_zc1-IAAAAJ")
     github_org = os.environ.get("GITHUB_ORG", "EvolvingLMMs-Lab")
     assets_dir = Path(__file__).parent.parent / "assets" / "img"
-    
+
+    # Fetch GitHub stars
     print(f"Fetching GitHub stars for {github_org}...")
-    stars = get_github_stars(github_org)
-    print(f"  -> {stars:,} stars")
-    
+    try:
+        stars = get_github_stars(github_org)
+        print(f"  -> {stars:,} stars")
+        stars_svg = generate_stars_svg(stars)
+        (assets_dir / "github-stars.svg").write_text(stars_svg)
+        print(f"Updated {assets_dir / 'github-stars.svg'}")
+    except Exception as e:
+        print(f"  -> Failed: {e}, keeping existing value")
+
+    # Fetch citations (may fail due to Scholar blocking)
     print(f"Fetching citations for scholar ID {scholar_id}...")
-    citations = get_scholar_citations(scholar_id)
-    print(f"  -> {citations:,} citations")
-    
-    citations_svg = generate_citations_svg(citations)
-    stars_svg = generate_stars_svg(stars)
-    
-    (assets_dir / "citations.svg").write_text(citations_svg)
-    print(f"Updated {assets_dir / 'citations.svg'}")
-    
-    (assets_dir / "github-stars.svg").write_text(stars_svg)
-    print(f"Updated {assets_dir / 'github-stars.svg'}")
+    try:
+        citations = get_scholar_citations(scholar_id)
+        print(f"  -> {citations:,} citations")
+        citations_svg = generate_citations_svg(citations)
+        (assets_dir / "citations.svg").write_text(citations_svg)
+        print(f"Updated {assets_dir / 'citations.svg'}")
+    except Exception as e:
+        print(f"  -> Failed: {e}, keeping existing value")
 
 
 if __name__ == "__main__":
