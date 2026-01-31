@@ -1,7 +1,10 @@
 name: GitHub Pages publication
 
 on:
-  push
+  push:
+    branches:
+      - main
+  workflow_dispatch:
 
 jobs:
   jekyll:

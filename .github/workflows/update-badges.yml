@@ -26,6 +26,7 @@ jobs:
         run: python scripts/update_badges.py
       
       - name: Commit and push changes
+        id: commit
         env:
           GITHUB_TOKEN: ${{ secrets.LUODIAN_PAGES }}
         run: |
@@ -34,7 +35,15 @@ jobs:
           git add assets/img/citations.svg assets/img/github-stars.svg
           if git diff --staged --quiet; then
             echo "No changes to commit"
+            echo "changed=false" >> $GITHUB_OUTPUT
           else
             git commit -m "chore: update badges"
             git push https://x-access-token:${GITHUB_TOKEN}@github.com/${{ github.repository }}.git HEAD:${{ github.ref_name }}
+            echo "changed=true" >> $GITHUB_OUTPUT
           fi
+      
+      - name: Trigger Jekyll build
+        if: steps.commit.outputs.changed == 'true'
+        env:
+          GH_TOKEN: ${{ secrets.LUODIAN_PAGES }}
+        run: gh workflow run github_pages.yml --ref main
