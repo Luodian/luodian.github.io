@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Homepage</title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="/pages/luodian/assets/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #202122;
+      background: #f8f9fa;
+    }
+
+    /* Header */
+    .wiki-header {
+      background: #fff;
+      border-bottom: 1px solid #a2a9b1;
+      padding: 0.5em 0;
+    }
+    .wiki-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .wiki-logo {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #202122;
+      text-decoration: none;
+    }
+    .wiki-nav a {
+      color: #0645ad;
+      text-decoration: none;
+      margin-left: 1.5em;
+      font-size: 0.9em;
+    }
+    .wiki-nav a:hover { text-decoration: underline; }
+
+    /* Main layout */
+    .wiki-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      min-height: calc(100vh - 100px);
+    }
+
+    /* Left sidebar - TOC */
+    .wiki-sidebar {
+      width: 176px;
+      flex-shrink: 0;
+      background: #f8f9fa;
+      border-right: 1px solid #a2a9b1;
+      padding: 0.75em;
+    }
+    .wiki-sidebar-title {
+      font-weight: bold;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid #c8ccd1;
+      margin-bottom: 0.5em;
+    }
+    .wiki-sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wiki-sidebar li {
+      margin: 0.3em 0;
+    }
+    .wiki-sidebar a {
+      color: #0645ad;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .wiki-sidebar a:hover { text-decoration: underline; }
+
+    /* Content area */
+    .wiki-content {
+      flex: 1;
+      background: #fff;
+      border-left: 1px solid #a2a9b1;
+      border-right: 1px solid #a2a9b1;
+      padding: 1.5em 2em;
+      min-width: 0;
+    }
+
+    /* Page title */
+    .wiki-title {
+      font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+      font-size: 1.8em;
+      font-weight: normal;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal;
+      color: #000;
+      margin-top: 1em;
+      margin-bottom: 0.25em;
+    }
+    h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.2em;
+    }
+    h3 { font-size: 1.2em; }
+    h4 { font-size: 1.1em; font-weight: bold; }
+    h5 { font-size: 1em; font-weight: bold; }
+
+    p { margin: 0.5em 0; }
+
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:visited { color: #0b0080; }
+
+    ul, ol { margin: 0.3em 0 0.3em 1.6em; }
+    li { margin: 0.2em 0; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #a2a9b1;
+      margin: 1em 0;
+    }
+
+    blockquote {
+      border-left: 3px solid #c8ccd1;
+      padding-left: 1em;
+      margin: 1em 0;
+      color: #54595d;
+    }
+
+    code {
+      font-family: monospace;
+      background: #f8f9fa;
+      padding: 1px 4px;
+      border: 1px solid #eaecf0;
+    }
+    pre {
+      background: #f8f9fa;
+      border: 1px solid #eaecf0;
+      padding: 1em;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    /* Right sidebar - Infobox */
+    .wiki-infobox-container {
+      width: 260px;
+      flex-shrink: 0;
+      padding: 0.75em;
+      background: #f8f9fa;
+    }
+    .infobox {
+      border: 1px solid #a2a9b1;
+      background: #f8f9fa;
+      font-size: 0.9em;
+      padding: 0.5em;
+      position: sticky;
+      top: 1em;
+    }
+    .infobox-title {
+      background: #eaecf0;
+      text-align: center;
+      font-weight: bold;
+      padding: 0.4em;
+      margin: -0.5em -0.5em 0.5em -0.5em;
+    }
+    .infobox img {
+      width: 100%;
+      border: 1px solid #c8ccd1;
+    }
+    .infobox-caption {
+      text-align: center;
+      font-size: 0.85em;
+      color: #54595d;
+      padding: 0.3em 0;
+    }
+    .infobox-row {
+      padding: 0.3em 0;
+      border-top: 1px solid #eaecf0;
+    }
+    .infobox-label {
+      font-weight: bold;
+    }
+
+    .infobox-row a {
+      word-break: break-all;
+    }
+    .infobox-row i {
+      width: 1.2em;
+      text-align: center;
+    }
+
+    /* Publications */
+    .publications { margin-top: 0.5em; }
+    .publications ol.bibliography {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .publications ol.bibliography li {
+      margin-bottom: 0.8em !important;
+      padding-bottom: 0.6em !important;
+      padding-top: 0.6em !important;
+      margin-top: 0 !important;
+      border-bottom: 1px solid #eaecf0;
+    }
+    .publications ol.bibliography li:last-child {
+      border-bottom: none;
+    }
+    .publications ol.bibliography li .pub-entry .hidden {
+      display: none;
+    }
+    .pub-entry {
+      line-height: 1.4;
+    }
+    .pub-entry .periodical,
+    .pub-entry .additional,
+    .pub-entry .author {
+      margin: 0.2em 0 0;
+      line-height: 1.3;
+    }
+    .pub-entry .pub-number {
+      display: none;
+    }
+    .pub-entry .title {
+      font-weight: bold;
+    }
+    .pub-entry .title a {
+      color: #0645ad;
+    }
+    .pub-entry .periodical {
+      display: block;
+      color: #54595d;
+      font-size: 0.9em;
+    }
+    .pub-entry .periodical .genre-tag {
+      display: inline-block;
+      padding: 0.12em 0.45em;
+      border: 1px solid #c8ccd1;
+      border-radius: 3px;
+      background: #f8f9fa;
+      color: #54595d;
+      font-size: 0.85em;
+      font-style: normal;
+      line-height: 1.2;
+      margin: 0.15em 0.4em 0 0;
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .pub-entry .periodical .genre-tag-secondary {
+      border-color: #eaecf0;
+      background: #fff;
+    }
+    .pub-entry .periodical .genre-tag a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .pub-entry .periodical .genre-tag a:hover {
+      text-decoration: underline;
+    }
+    .pub-entry .additional {
+      display: block;
+      color: #5c4a1a;
+      background: #fff8e1;
+      border-left: 3px solid #d4a017;
+      padding: 0.25em 0.5em;
+      border-radius: 2px;
+      font-weight: normal;
+    }
+    .pub-entry .author {
+      display: block;
+      color: #54595d;
+      font-size: 0.9em;
+    }
+    .pub-entry .links {
+      font-size: 0.85em;
+      margin-left: 0.5em;
+    }
+    .pub-entry .links a {
+      margin-right: 0.3em;
+    }
+    .pub-entry .hidden {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease;
+      background: #f8f9fa;
+      border: 1px solid #eaecf0;
+      margin-top: 0.5em;
+      font-size: 0.9em;
+    }
+    .pub-entry .hidden.open {
+      max-height: 30em;
+      padding: 0.5em;
+    }
+
+    /* Footer */
+    .wiki-footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.85em;
+      color: #54595d;
+      border-top: 1px solid #a2a9b1;
+      background: #f8f9fa;
+    }
+
+    /* Hide TOC in content when sidebar exists */
+    .toc { display: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .wiki-wrapper {
+        flex-direction: column;
+      }
+      .wiki-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #a2a9b1;
+      }
+      .wiki-infobox-container {
+        width: 100%;
+        order: -1;
+      }
+      .wiki-content {
+        border-left: none;
+        border-right: none;
+        padding: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wiki-header">
+    <div class="wiki-header-inner">
+      <a href="/" class="wiki-logo">Personal Homepage</a>
+      <nav class="wiki-nav">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </nav>
+    </div>
+  </header>
+
+  <div class="wiki-wrapper">
+    <aside class="wiki-sidebar">
+      <div class="wiki-sidebar-title">Contents</div>
+      <ul>
+        <li><a href="#">(Top)</a></li>
+        <li><a href="#selected-publications">Selected publications</a></li>
+        <li><a href="#professional-experience">Professional experience</a></li>
+        <li><a href="#professional-services">Professional services</a></li>
+      </ul>
+    </aside>
+
+    <main class="wiki-content">
+      <h1 class="wiki-title">Introduction</h1>
+
+<p><a href="https://scholar.google.com/citations?user=1_zc1-IAAAAJ"><img src="https://img.shields.io/badge/Citations-12286-blue?logo=googlescholar&amp;logoColor=white" alt="Citations" /></a>
+<a href="https://github.com/EvolvingLMMs-Lab"><img src="https://img.shields.io/badge/GitHub_Stars-12914-green?logo=github" alt="GitHub Stars" /></a>
+<a href="https://twitter.com/BoLi68567011"><img src="https://img.shields.io/twitter/follow/BoLi68567011?style=social" alt="Twitter Follow" /></a></p>
+
+<p><strong>Brian (Bo) Li</strong> is a final-year Ph.D. student in Computer Science at <a href="https://www.ntu.edu.sg/">Nanyang Technological University</a>, advised by <a href="https://liuziwei7.github.io/">Prof. Ziwei Liu</a>. His research focuses on multimodal models and building artificial intelligence systems.</p>
+
+<p>He co-founded <a href="https://lmms-lab.com">LMMs-Lab</a> with <a href="https://liuziwei7.github.io/">Prof. Ziwei Liu</a>, a non-profit open-source community advancing multimodal AI through fully open models, data, and tools. Since 2024, they have made significant contributions to the field, including <a href="https://arxiv.org/abs/2408.03326">LLaVA-OneVision</a> (performance matching commercial models, fully open), <a href="https://github.com/EvolvingLMMs-Lab/OneVision-Encoder">OneVision-Encoder</a> (codec style vision encoder), <a href="https://github.com/EvolvingLMMs-Lab/lmms-eval">LMMs-Eval</a> (unified multimodal evaluation infrastructure), <a href="https://github.com/EvolvingLMMs-Lab/lmms-engine">LMMs-Engine</a> (unified multimodal models training infrastructure), and <a href="https://github.com/EvolvingLMMs-Lab/multimodal-sae">Multimodal-SAE</a> (safety and interpretability research).</p>
+
+<p>Beyond research, he occasionally writes science fiction exploring AI consciousness and the nature of understanding:</p>
+
+<ul>
+  <li><a href="/compression_2025/">压缩</a> (2025)</li>
+</ul>
+
+<div class="toc">
+
+- [Selected publications](#selected-publications)
+- [Professional experience](#professional-experience)
+- [Professional services](#professional-services)
+  - [Talks and lectures](#talks-and-lectures)
+  - [Administrative roles](#administrative-roles)
+  - [Peer review](#peer-review)
+</div>
+
+<h2 id="selected-publications">Selected publications</h2>
+
+<div class="publications">
+<ol class="bibliography"><li><div id="li2025lmmsengine" class="pub-entry">
+    <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/lmms-engine">LMMs Engine for Unified Multimodal Training</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Open-source Project</span>
+      
+    </span>
+    <span class="additional">A simple, unified multimodal models training engine. Lean, flexible, and built for hacking at scale. Lead codebase design and core maintainer</span>
+    
+    
+</div>
+</li>
+<li><div id="li2025llavaonevision15" class="pub-entry">
+    <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5">LLaVA-OneVision 1.5: Democratized Multimodal Training</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Open-source Project</span>
+      
+    </span>
+    <span class="additional">Fully open-source code, data, checkpoints and training logs; Provided a better open-source ViT; Proved the idea that simple scaling dense captions would improve overall multimodal tasks performance</span>
+    <span class="author">Xiang An, Yin Xie, Kaicheng Yang, Changrui Chen, Huajie Tan, Chunyuan Li, Zizhen Yan, Ziyong Feng, Ziwei Liu, <u>Bo Li*</u>, Jiankang Deng</span>
+    
+</div>
+</li>
+<li><div id="li2025aero" class="pub-entry">
+    <span class="title"><a href="https://www.lmms-lab.com/posts/aero_audio/">Aero-1-Audio</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Technical Blog</span>
+      
+    </span>
+    <span class="additional">Open models for wide range of audio tasks, trained on only 50K hours data yet achieving excellent performance, suggesting smart data &gt; massive training; Lead development</span>
+    <span class="author"><u>Bo Li*</u>, Chen Change Loy, Fanyi Pu, Jingkang Yang, Kaichen Zhang*, Kairui Hu, Luu Minh Thang*, Nguyen Quang Trung*, Pham Ba Cong*, Shuai Liu, Yezhen Wang*, Ziwei Liu</span>
+    
+</div>
+</li>
+<li><div id="li2024llava" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2408.03326">LLaVA-OneVision: Easy Visual Task Transfer</a></span>
+    
+    <span class="periodical"><span class="genre-tag">TMLR 2025</span>
+      
+    </span>
+    <span class="additional">SOTA-level fully open models (models/data/code) achieving GPT-4o-level performance across 30+ image and video tasks. Lead codebase, data curation, and evaluation</span>
+    <span class="author"><u>Bo Li*</u>, Yuanhan Zhang, Dong Guo, Renrui Zhang, Feng Li, Hao Zhang, Kaichen Zhang, Yanwei Li, Ziwei Liu, Chunyuan Li</span>
+    
+</div>
+</li>
+<li><div id="li2024lmmseval" class="pub-entry">
+    <span class="title"><a href="https://github.com/EvolvingLMMs-Lab/lmms-eval">LMMs-Eval: Reality Check on the Evaluation of Large Multimodal Models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NAACL 2025</span>
+      
+    </span>
+    <span class="additional">Open-source evaluation frameworks spanning text, image, video, and audio tasks with 2.4K GitHub stars; contributed core framework and major code</span>
+    <span class="author">Kaichen Zhang*, <u>Bo Li*</u>, Peiyuan Zhang*, Fanyi Pu*, Joshua Adrian Cahyono*, Kairui Hu*, Shuai Liu*, Yuanhan Zhang*, Jingkang Yang*, Chunyuan Li*, Ziwei Liu*</span>
+    
+</div>
+</li>
+<li><div id="liu2024llavanext" class="pub-entry">
+    <span class="title"><a href="https://llava-vl.github.io/blog/2024-01-30-llava-next/">LLaVA-NeXT: Improved reasoning, OCR, and world knowledge</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Technical Blog</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/LLaVA-VL/LLaVA-NeXT" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">First open models achieving GPT-4V-level performance, trained for 24 hours on 32 A100 GPUs. Proposed the idea that massive evaluation leads to better models</span>
+    <span class="author">Haotian Liu, Chunyuan Li, Yuheng Li, <u>Bo Li</u>, Yuanhan Zhang, Sheng Shen, Yong Jae Lee</span>
+    
+</div>
+</li>
+<li><div id="li2023mimic" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2306.05425">MIMIC-IT: Multi-modal In-Context Instruction Tuning</a></span>
+    
+    <span class="periodical"><span class="genre-tag">TPAMI 2025</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/Otter" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">Early (2023-10) experiment on a vision-language-agent (VLA) model with RLHF; proposed the idea and drafted the training code</span>
+    <span class="author"><u>Bo Li*</u>, Yuanhan Zhang*, Liangyu Chen, Jinghao Wang, Fanyi Pu, Jingkang Yang, Chunyuan Li, Ziwei Liu</span>
+    
+</div>
+</li>
+<li><div id="li2023genbench" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2307.13697">Benchmarking and Analyzing Generative Data for Visual Recognition</a></span>
+    
+    <span class="periodical"><span class="genre-tag">TPAMI 2025</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/GenBench" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">Early (2022-12) experiment using synthetic data for visual recognition</span>
+    <span class="author"><u>Bo Li</u>, Haotian Liu, Liangyu Chen, Yong Jae Lee, Chunyuan Li, Ziwei Liu</span>
+    
+</div>
+</li>
+<li><div id="li2022sparse" class="pub-entry">
+    <span class="title"><a href="https://openreview.net/forum?id=kdHpWogtX6Y">Coordinating Multiple Vision-Language Models for Visual Reasoning</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2023</span>
+      
+    </span>
+    
+    <span class="author">Liangyu Chen*, <u>Bo Li*</u>, Sheng Shen, Jingkang Yang, Chunyuan Li, Kurt Keutzer, Trevor Darrell, Ziwei Liu</span>
+    
+</div>
+</li>
+<li><div id="li2022sparsf" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2206.04046">Sparse Mixture-of-Experts are Domain Generalizable Learners</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2023 (Oral)</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/Generalizable-Mixture-of-Experts" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">First batch (2022-05) theoretical analysis of the mixture-of-experts architecture from a generalization perspective</span>
+    <span class="author"><u>Bo Li*</u>, Yifei Shen*, Jingkang Yang, Yezhen Wang, Jiawei Ren, Tong Che, Jun Zhang, Ziwei Liu</span>
+    
+</div>
+</li>
+<li><div id="li2022invariant" class="pub-entry">
+    <span class="title"><a href="https://ojs.aaai.org/index.php/AAAI/article/view/20703">Invariant information bottleneck for domain generalization</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AAAI 2022</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/IIB" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author"><u>Bo Li</u>, Yifei Shen, Yezhen Wang, Wenzhen Zhu, Dongsheng Li, Kurt Keutzer, Han Zhao</span>
+    
+</div>
+</li>
+<li><div id="Wang_2021_ICCV" class="pub-entry">
+    <span class="title"><a href="https://openaccess.thecvf.com/content/ICCV2021/html/Wang_Energy-Based_Open-World_Uncertainty_Modeling_for_Confidence_Calibration_ICCV_2021_paper.html">Energy-Based Open-World Uncertainty Modeling for Confidence Calibration</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICCV 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/BIGKnight/Energy-Based-Open-World-Uncertainty-Modeling-for-Confidence-Calibration" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Yezhen Wang, <u>Bo Li</u>, Tong Che, Kaiyang Zhou, Ziwei Liu, Dongsheng Li</span>
+    
+</div>
+</li>
+<li><div id="li2021learning" class="pub-entry">
+    <span class="title"><a href="https://openaccess.thecvf.com/content/CVPR2021/papers/Li_Learning_Invariant_Representations_and_Risks_for_Semi-Supervised_Domain_Adaptation_CVPR_2021_paper.pdf">Learning invariant representations and risks for semi-supervised domain adaptation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">CVPR 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/Learning-Invariant-Representations-and-Risks" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author"><u>Bo Li</u>, Yezhen Wang, Shanghang Zhang, Dongsheng Li, Kurt Keutzer, Trevor Darrell, Han Zhao</span>
+    
+</div>
+</li>
+<li><div id="zhao2021madan" class="pub-entry">
+    <span class="title"><a href="https://link.springer.com/article/10.1007/s11263-021-01479-3">MADAN: multi-source adversarial domain aggregation network for domain adaptation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">IJCV 2021</span>
+      
+    </span>
+    
+    <span class="author">Sicheng Zhao, <u>Bo Li</u>, Pengfei Xu, Xiangyu Yue, Guiguang Ding, Kurt Keutzer</span>
+    
+</div>
+</li>
+<li><div id="li2020rethinking" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2006.13352">Rethinking distributional matching based domain adaptation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">arXiv preprint arXiv:2006.13352</span>
+      
+    </span>
+    
+    <span class="author"><u>Bo Li</u>, Yezhen Wang, Tong Che, Shanghang Zhang, Yoshua Bengio, Kurt Keutzer</span>
+    
+</div>
+</li>
+<li><div id="zhao2019multi" class="pub-entry">
+    <span class="title"><a href="https://proceedings.neurips.cc/paper/2019/hash/db9ad56c71619aeed9723314d1456037-Abstract.html">Multi-source domain adaptation for semantic segmentation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2019</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Luodian/MADAN" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Sicheng Zhao*, <u>Bo Li*</u>, Xiangyu Yue*, Yang Gu, Pengfei Xu, Runbo Hu, Hua Chai, Kurt Keutzer</span>
+    
+</div>
+</li></ol>
+</div>
+
+<h2 id="professional-experience">Professional experience</h2>
+
+<ul>
+  <li>
+    <p><strong>Aug. 2025 – Present</strong>: <a href="https://team.doubao.com/en/">ByteDance Seed</a>, Singapore. With Haoqi Fan, working on unified multimodal models.</p>
+  </li>
+  <li>
+    <p><strong>Oct. 2024 – Aug. 2025</strong>: <a href="https://lifeattiktok.com/position/7364272465797990665/detail">TikTok AI Innovation Center</a>, Singapore. With Dr. Wei Li and Dr. Zejun Ma.</p>
+  </li>
+  <li>
+    <p><strong>Dec. 2023 – Aug. 2024</strong>: <a href="https://team.doubao.com/en/">ByteDance Seed</a>, Singapore. With Dr. <a href="https://chunyuan.li/">Chunyuan Li</a>, building open-source multimodal models.</p>
+  </li>
+  <li>
+    <p><strong>Dec. 2022 – Aug. 2023</strong>: <a href="https://www.microsoft.com/en-us/research/lab/microsoft-research-redmond/">Microsoft Research</a>, Redmond. With Dr. <a href="https://chunyuan.li/">Chunyuan Li</a>, collaborated with <a href="https://hliu.cc/">Haotian Liu</a> on the LLaVA project.</p>
+  </li>
+  <li>
+    <p><strong>Sep. 2020 – Dec. 2021</strong>: <a href="https://www.microsoft.com/en-us/research/group/shanghai-ai-ml-group/">Microsoft Research</a>, Shanghai. With Dr. <a href="http://recmind.cn/">Dongsheng Li</a>.</p>
+  </li>
+  <li>
+    <p><strong>Oct. 2019 – Aug. 2020</strong>: <a href="https://bair.berkeley.edu/">Berkeley AI Research</a>, CA, USA. With Prof. <a href="https://people.eecs.berkeley.edu/~keutzer/">Kurt Keutzer</a>, Prof. <a href="https://sites.google.com/view/schzhao">Sicheng Zhao</a>, Prof. <a href="https://www.ie.cuhk.edu.hk/people/xyyue.shtml">Xiangyu Yue</a>, Prof. <a href="https://www.shanghangzhang.com/">Shanghang Zhang</a>, and Dr. <a href="https://people.eecs.berkeley.edu/~cjrd/">Colorado Reed</a>.</p>
+  </li>
+  <li>
+    <p><strong>May 2018 – Oct. 2019</strong>: <a href="https://www.didiglobal.com/science/ailabs">DiDi Visual Perception Team</a>, Beijing.</p>
+  </li>
+</ul>
+
+<h2 id="professional-services">Professional services</h2>
+
+<h3 id="talks-and-lectures">Talks and lectures</h3>
+
+<ul>
+  <li>Multimodal Models @ Jump Trading (2025), hosted by Weifeng Liu</li>
+  <li>Guest Lecture: Multimodal Models @ UMich EECS 542, hosted by <a href="https://web.eecs.umich.edu/~stellayu/index.html">Stella X. Yu</a></li>
+  <li>Multimodal Models @ TwelveLabs (2024), hosted by <a href="https://jameskle.com/">James Le</a></li>
+  <li>Otter &amp; MIMICIT @ Alibaba Damo Academy (2023), hosted by <a href="https://lidongbing.github.io/">Dr. Lidong Bing</a></li>
+</ul>
+
+<h3 id="administrative-roles">Administrative roles</h3>
+
+<ul>
+  <li>Cluster Administrator, <a href="https://www.mmlab-ntu.com/index.html">S-Lab @ NTU</a> (70+ users, 400+ GPUs)</li>
+  <li>Organizer, <a href="https://theaitalks.org/">The AI Talk</a></li>
+</ul>
+
+<h3 id="peer-review">Peer review</h3>
+
+<p><strong>Conferences</strong>: ICCV (2021, 2023), NeurIPS (2022), BMVC (2023), AAAI (2023), CVPR (2022, 2023), AISTATS (2023), ICML (2023)</p>
+
+<p><strong>Journals</strong>: Pattern Recognition (PR), IEEE Transactions on Multimedia (TMM), IEEE TPAMI, IJCV</p>
+
+<hr />
+
+<p><em>This page is styled after <a href="https://en.wikipedia.org/">Wikipedia</a>.</em></p>
+
+
+    </main>
+
+    <aside class="wiki-infobox-container">
+      
+      <div class="infobox">
+        <div class="infobox-title">Personal Homepage</div>
+        
+        <img src="/pages/luodian/assets/img/profile.jpg" alt="Personal Homepage">
+        <div class="infobox-caption">Wearing 1st-gen Meta Ray-Ban smart glasses. Canberra, July 2023.</div>
+        
+        <div class="infobox-row">
+          <span class="infobox-label">Affiliation</span><br>
+          Nanyang Technological University
+        </div>
+        <div class="infobox-row">
+          <span class="infobox-label">Position</span><br>
+          Ph.D. Student
+        </div>
+        <div class="infobox-row">
+          <span class="infobox-label">Field</span><br>
+          Computer Science
+        </div>
+        <div class="infobox-row">
+          <span class="infobox-label">Advisor</span><br>
+          <a href="https://liuziwei7.github.io/">Ziwei Liu</a>
+        </div>
+        
+        
+        <div class="infobox-row">
+          <span class="infobox-label">GitHub</span><br>
+          <a href="https://github.com/luodian"><i class="fab fa-github"></i> luodian</a>
+        </div>
+        
+        
+        <div class="infobox-row">
+          <span class="infobox-label">Twitter</span><br>
+          <a href="https://twitter.com/BoLi68567011"><i class="fab fa-twitter"></i> @BoLi68567011</a>
+        </div>
+        
+        
+        <div class="infobox-row">
+          <span class="infobox-label">Google Scholar</span><br>
+          <a href="https://scholar.google.com/citations?user=1_zc1-IAAAAJ"><i class="ai ai-google-scholar"></i> Profile</a>
+        </div>
+        
+      </div>
+      
+    </aside>
+  </div>
+
+  <footer class="wiki-footer">
+    This page was last edited on January 31, 2026.
+  </footer>
+</body>
+</html>

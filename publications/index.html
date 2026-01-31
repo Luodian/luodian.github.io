@@ -1,0 +1,982 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Personal Homepage - Publications</title>
+  <meta name="description" content="">
+  <link rel="shortcut icon" href="/pages/luodian/assets/img/favicon.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/academicons/1.8.6/css/academicons.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #202122;
+      background: #f8f9fa;
+    }
+
+    /* Header */
+    .wiki-header {
+      background: #fff;
+      border-bottom: 1px solid #a2a9b1;
+      padding: 0.5em 0;
+    }
+    .wiki-header-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .wiki-logo {
+      font-size: 1.1em;
+      font-weight: bold;
+      color: #202122;
+      text-decoration: none;
+    }
+    .wiki-nav a {
+      color: #0645ad;
+      text-decoration: none;
+      margin-left: 1.5em;
+      font-size: 0.9em;
+    }
+    .wiki-nav a:hover { text-decoration: underline; }
+
+    /* Main layout */
+    .wiki-wrapper {
+      max-width: 1400px;
+      margin: 0 auto;
+      display: flex;
+      min-height: calc(100vh - 100px);
+    }
+
+    /* Left sidebar - TOC */
+    .wiki-sidebar {
+      width: 176px;
+      flex-shrink: 0;
+      background: #f8f9fa;
+      border-right: 1px solid #a2a9b1;
+      padding: 0.75em;
+    }
+    .wiki-sidebar-title {
+      font-weight: bold;
+      padding-bottom: 0.5em;
+      border-bottom: 1px solid #c8ccd1;
+      margin-bottom: 0.5em;
+    }
+    .wiki-sidebar ul {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .wiki-sidebar li {
+      margin: 0.3em 0;
+    }
+    .wiki-sidebar a {
+      color: #0645ad;
+      text-decoration: none;
+      font-size: 0.9em;
+    }
+    .wiki-sidebar a:hover { text-decoration: underline; }
+
+    /* Content area */
+    .wiki-content {
+      flex: 1;
+      background: #fff;
+      border-left: 1px solid #a2a9b1;
+      border-right: 1px solid #a2a9b1;
+      padding: 1.5em 2em;
+      min-width: 0;
+    }
+
+    /* Page title */
+    .wiki-title {
+      font-family: 'Linux Libertine', 'Georgia', 'Times', serif;
+      font-size: 1.8em;
+      font-weight: normal;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.2em;
+      margin-bottom: 0.5em;
+    }
+
+    /* Typography */
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: normal;
+      color: #000;
+      margin-top: 1em;
+      margin-bottom: 0.25em;
+    }
+    h2 {
+      font-size: 1.5em;
+      border-bottom: 1px solid #a2a9b1;
+      padding-bottom: 0.2em;
+    }
+    h3 { font-size: 1.2em; }
+    h4 { font-size: 1.1em; font-weight: bold; }
+    h5 { font-size: 1em; font-weight: bold; }
+
+    p { margin: 0.5em 0; }
+
+    a { color: #0645ad; text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    a:visited { color: #0b0080; }
+
+    ul, ol { margin: 0.3em 0 0.3em 1.6em; }
+    li { margin: 0.2em 0; }
+
+    hr {
+      border: none;
+      border-top: 1px solid #a2a9b1;
+      margin: 1em 0;
+    }
+
+    blockquote {
+      border-left: 3px solid #c8ccd1;
+      padding-left: 1em;
+      margin: 1em 0;
+      color: #54595d;
+    }
+
+    code {
+      font-family: monospace;
+      background: #f8f9fa;
+      padding: 1px 4px;
+      border: 1px solid #eaecf0;
+    }
+    pre {
+      background: #f8f9fa;
+      border: 1px solid #eaecf0;
+      padding: 1em;
+      overflow-x: auto;
+      font-family: monospace;
+      font-size: 0.9em;
+    }
+
+    /* Right sidebar - Infobox */
+    .wiki-infobox-container {
+      width: 260px;
+      flex-shrink: 0;
+      padding: 0.75em;
+      background: #f8f9fa;
+    }
+    .infobox {
+      border: 1px solid #a2a9b1;
+      background: #f8f9fa;
+      font-size: 0.9em;
+      padding: 0.5em;
+      position: sticky;
+      top: 1em;
+    }
+    .infobox-title {
+      background: #eaecf0;
+      text-align: center;
+      font-weight: bold;
+      padding: 0.4em;
+      margin: -0.5em -0.5em 0.5em -0.5em;
+    }
+    .infobox img {
+      width: 100%;
+      border: 1px solid #c8ccd1;
+    }
+    .infobox-caption {
+      text-align: center;
+      font-size: 0.85em;
+      color: #54595d;
+      padding: 0.3em 0;
+    }
+    .infobox-row {
+      padding: 0.3em 0;
+      border-top: 1px solid #eaecf0;
+    }
+    .infobox-label {
+      font-weight: bold;
+    }
+
+    .infobox-row a {
+      word-break: break-all;
+    }
+    .infobox-row i {
+      width: 1.2em;
+      text-align: center;
+    }
+
+    /* Publications */
+    .publications { margin-top: 0.5em; }
+    .publications ol.bibliography {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    .publications ol.bibliography li {
+      margin-bottom: 0.8em !important;
+      padding-bottom: 0.6em !important;
+      padding-top: 0.6em !important;
+      margin-top: 0 !important;
+      border-bottom: 1px solid #eaecf0;
+    }
+    .publications ol.bibliography li:last-child {
+      border-bottom: none;
+    }
+    .publications ol.bibliography li .pub-entry .hidden {
+      display: none;
+    }
+    .pub-entry {
+      line-height: 1.4;
+    }
+    .pub-entry .periodical,
+    .pub-entry .additional,
+    .pub-entry .author {
+      margin: 0.2em 0 0;
+      line-height: 1.3;
+    }
+    .pub-entry .pub-number {
+      display: none;
+    }
+    .pub-entry .title {
+      font-weight: bold;
+    }
+    .pub-entry .title a {
+      color: #0645ad;
+    }
+    .pub-entry .periodical {
+      display: block;
+      color: #54595d;
+      font-size: 0.9em;
+    }
+    .pub-entry .periodical .genre-tag {
+      display: inline-block;
+      padding: 0.12em 0.45em;
+      border: 1px solid #c8ccd1;
+      border-radius: 3px;
+      background: #f8f9fa;
+      color: #54595d;
+      font-size: 0.85em;
+      font-style: normal;
+      line-height: 1.2;
+      margin: 0.15em 0.4em 0 0;
+      max-width: 100%;
+      white-space: normal;
+      word-break: break-word;
+    }
+    .pub-entry .periodical .genre-tag-secondary {
+      border-color: #eaecf0;
+      background: #fff;
+    }
+    .pub-entry .periodical .genre-tag a {
+      color: inherit;
+      text-decoration: none;
+    }
+    .pub-entry .periodical .genre-tag a:hover {
+      text-decoration: underline;
+    }
+    .pub-entry .additional {
+      display: block;
+      color: #5c4a1a;
+      background: #fff8e1;
+      border-left: 3px solid #d4a017;
+      padding: 0.25em 0.5em;
+      border-radius: 2px;
+      font-weight: normal;
+    }
+    .pub-entry .author {
+      display: block;
+      color: #54595d;
+      font-size: 0.9em;
+    }
+    .pub-entry .links {
+      font-size: 0.85em;
+      margin-left: 0.5em;
+    }
+    .pub-entry .links a {
+      margin-right: 0.3em;
+    }
+    .pub-entry .hidden {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.2s ease;
+      background: #f8f9fa;
+      border: 1px solid #eaecf0;
+      margin-top: 0.5em;
+      font-size: 0.9em;
+    }
+    .pub-entry .hidden.open {
+      max-height: 30em;
+      padding: 0.5em;
+    }
+
+    /* Footer */
+    .wiki-footer {
+      text-align: center;
+      padding: 1em;
+      font-size: 0.85em;
+      color: #54595d;
+      border-top: 1px solid #a2a9b1;
+      background: #f8f9fa;
+    }
+
+    /* Hide TOC in content when sidebar exists */
+    .toc { display: none; }
+
+    /* Responsive */
+    @media (max-width: 900px) {
+      .wiki-wrapper {
+        flex-direction: column;
+      }
+      .wiki-sidebar {
+        width: 100%;
+        border-right: none;
+        border-bottom: 1px solid #a2a9b1;
+      }
+      .wiki-infobox-container {
+        width: 100%;
+        order: -1;
+      }
+      .wiki-content {
+        border-left: none;
+        border-right: none;
+        padding: 1em;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header class="wiki-header">
+    <div class="wiki-header-inner">
+      <a href="/" class="wiki-logo">Personal Homepage</a>
+      <nav class="wiki-nav">
+        
+        
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+          
+        
+      </nav>
+    </div>
+  </header>
+
+  <div class="wiki-wrapper">
+    <aside class="wiki-sidebar">
+      <div class="wiki-sidebar-title">Contents</div>
+      <ul>
+        <li><a href="#">(Top)</a></li>
+        <li><a href="#selected-publications">Selected publications</a></li>
+        <li><a href="#professional-experience">Professional experience</a></li>
+        <li><a href="#professional-services">Professional services</a></li>
+      </ul>
+    </aside>
+
+    <main class="wiki-content">
+      <div class="post">
+
+  <header class="post-header">
+    <h2 class="post-title">Publications</h2>
+    <p class="post-description"></p>
+  </header>
+
+  <article>
+    <div class="publications">
+
+
+  <h2 class="year">2022</h2>
+  <ol class="bibliography"><li><div id="meng2022concrete" class="pub-entry">
+    <span class="title">Concrete Score Matching: Generalized Score Matching for Discrete Data</span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2022</span>
+      
+    </span>
+    
+    <span class="author">Chenlin Meng, Kristy Choi, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="kawar2022denoising" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2201.11793">Denoising Diffusion Restoration Models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2022</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/bahjat-kawar/ddrm" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Bahjat Kawar, Michael Elad, Stefano Ermon, Jiaming Song | <a href="https://ddrm-ml.github.io" target="_blank">Website</a></span>
+    
+</div>
+</li>
+<li><div id="garg2022lisa" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2203.00054">LISA: Learning Interpretable Skill Abstractions from Language</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2022</span>
+      
+    </span>
+    
+    <span class="author">Divyansh Garg, Sakanda Vaidyanath, Kuno Kim, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2022a" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2206.13035">A General Recipe for Likelihood-free Bayesian Optimization</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2022</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/lfbo-ml/lfbo" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">Long oral presentation (Top 2.2%)</span>
+    <span class="author">Jiaming Song*, Lantao Yu*, Willie Neiswanger, Stefano Ermon | <a href="https://lfbo-ml.github.io" target="_blank">Website</a></span>
+    
+</div>
+</li>
+<li><div id="sinha2022experience" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2006.13169">Experience Replay with Likelihood-free Importance Weights</a></span>
+    
+    <span class="periodical"><span class="genre-tag">L4DC 2022</span>
+      
+    </span>
+    <span class="additional">Best paper award finalist</span>
+    <span class="author">Samarth Sinha*, Jiaming Song*, Animesh Garg, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="zhao2022comparing" class="pub-entry">
+    <span class="title"><a href="https://openreview.net/forum?id=KB5onONJIAU">Comparing Distributions by Measuring Differences that Affect Decision Making</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2022</span>
+      
+    </span>
+    <span class="additional"><a style="color:darkred" href="https://blog.iclr.cc/2022/04/20/announcing-the-iclr-2022-outstanding-paper-award-recipients/"> ICLR 2022 Outstanding Paper Award</a></span>
+    <span class="author">Shengjia Zhao, Abhishek Sinha, Yutong He, Aidan Perreault, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="chen2022sdedit" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2108.01073">SDEdit: Image Synthesis and Editing with Stochastic Differential Equations</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2022</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/SDEdit" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Chenlin Meng, Yutong He, Yang Song, Jiaming Song, Jiajun Wu, Jun-Yan Zhu, Stefano Ermon | <a href="https://sde-image-editing.github.io/" target="_blank">Website</a></span>
+    
+</div>
+</li>
+<li><div id="chen2022iscount" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2112.09126">IS-COUNT: Large-scale Object Counting from Satellite Images with Covariate-based Importance Sampling</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AAAI 2022</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/sustainlab-group/IS-Count" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Chenlin Meng, Enci Liu, Willie Neiswanger, Jiaming Song, Marshall Burke, David Lobell, Stefano Ermon | <a href="https://is-count.github.io/" target="_blank">Website</a></span>
+    
+</div>
+</li>
+<li><div id="srivastava2022beyond" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2206.04615">Beyond the Imitation Game: Quantifying and Extrapolating the Capabilities of Language Models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Preprint</span>
+      
+    </span>
+    
+    <span class="author">Aarohi Srivastava, Abhinav Rastogi, Abhishek Rao, Abu Awal Md Shoeb, Abubakar Abid, Adam Fisch, Adam R Brown, Adam Santoro, Aditya Gupta, Adrià Garriga-Alonso,  others</span>
+    
+</div>
+</li></ol>
+
+  <h2 class="year">2021</h2>
+  <ol class="bibliography"><li><div id="sinha2021d2c" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2106.06819">D2C: Diffusion-Denoising Models for Few-shot Conditional Generation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/jiamings/d2c" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Abhishek Sinha*, Jiaming Song*, Chenlin Meng, Stefano Ermon | <a href="https://d2c-model.github.io" target="_blank">Website</a></span>
+    
+</div>
+</li>
+<li><div id="garg2021iq" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2106.12142">IQ-Learn: Inverse soft-Q Learning for Imitation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/Div99/IQ-Learn" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">Spotlight presentation</span>
+    <span class="author">Divyansh Garg, Shuvam Chakraborty, Chris Cundy, Jiaming Song, Stefano Ermon | <a href="https://div99.github.io/IQ-Learn/" target="_blank">Website</a></span>
+    
+</div>
+</li>
+<li><div id="yu2021pseudo" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2111.00780">Pseudo-Spherical Contrastive Divergence</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2021</span>
+      
+    </span>
+    
+    <span class="author">Lantao Yu, Jiaming Song, Yang Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="tashiro2021csdi" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2107.03502">CSDI: Conditional Score-based Diffusion Models for Probabilistic Time Series Imputation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/csdi" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Yusuke Tashiro, Jiaming Song, Yang Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="chen2021variational" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2111.04613">Variational Automatic Curriculum Learning for Sparse-Reward Cooperative Multi-Agent Problems</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/jiayu-ch15/Variational-Automatic-Curriculum-Learning" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Jiayu Chen, Yuanxin Zhang, Yuanfan Xu, Huimin Ma, Huazhong Yang, Jiaming Song, Yu Wang, Yi Wu | <a href="https://sites.google.com/view/vacl-neurips-2021" target="_blank">Website</a></span>
+    
+</div>
+</li>
+<li><div id="kim2020imitation" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2010.09808">Imitation with Neural Density Models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2021</span>
+      
+    </span>
+    
+    <span class="author">Kuno Kim, Akshat Jindal, Yang Song, Jiaming Song, Yanan Sui, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2020denoising" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2010.02502">Denoising Diffusion Implicit Models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/ddim" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Jiaming Song, Chenlin Meng, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="sinha2020negative" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2102.05113">Negative Data Augmentation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/NDA" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Abhishek Sinha*, Ayush Kumar*, Jiaming Song*, Burak Ukzent, Hongxia Jin, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="meng2020improved" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2103.15089">Improved Autoregressive Modeling with Distribution Smoothing</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2021</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/chenlin9/Autoregressive-Modeling-with-Distribution-Smoothing" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">Oral presentation</span>
+    <span class="author">Chenlin Meng, Jiaming Song, Yang Song, Shengjia Zhao, Stefano Ermon</span>
+    
+</div>
+</li></ol>
+
+  <h2 class="year">2020</h2>
+  <ol class="bibliography"><li><div id="song2020multi" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2007.09852">Multi-label Contrastive Predictive Coding</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2020</span>
+      
+    </span>
+    <span class="additional">Oral presentation</span>
+    <span class="author">Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="meng2020autoregressive" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2010.12810">Autoregressive Score Matching</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2020</span>
+      
+    </span>
+    
+    <span class="author">Chenlin Meng, Lantao Yu, Yang Song, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="kuck2020belief" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2007.00295">Belief Propagation Neural Networks</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2020</span>
+      
+    </span>
+    
+    <span class="author">Jonathan Kuck, Shuvam Chakraborty, Hao Tang, Rachel Luo, Jiaming Song, Ashish Sabharwal, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2020robust" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2003.10647">Robust and On-the-fly Dataset Denoising for Image Classification</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ECCV 2020</span>
+      
+    </span>
+    
+    <span class="author">Jiaming Song, Michael Auli, Yann Dauphin, Tengyu Ma</span>
+    
+</div>
+</li>
+<li><div id="niu2020permutation" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2003.00638">Permutation Invariant Graph Generation via Score-Based Generative Modeling</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AISTATS 2020</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/GraphScoreMatching" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Chenhao Niu, Yang Song, Jiaming Song, Shengjia Zhao, Aditya Grover, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="meng2020gaussianization" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2003.01941">Gaussianization Flows</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AISTATS 2020</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/chenlin9/Gaussianization_Flows" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Chenlin Meng, Yang Song, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="yu2020training" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2003.03463">Training Deep Energy-Based Models with f-Divergence Minimization</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2020</span>
+      
+    </span>
+    
+    <span class="author">Lantao Yu, Yang Song, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2020bridging" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1910.09779">Bridging the Gap Between f-GANs and Wasserstein GANs</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2020</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/f-wgan" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="kim2020domain" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1910.00105">Domain Adaptive Imitation Learning</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2020</span>
+      
+    </span>
+    
+    <span class="author">Kuno Kim, Yihong Gu, Jiaming Song, Shengjia Zhao, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2020understanding" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1910.06222">Understanding the Limitations of Variational Mutual Information Estimators</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2020</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/smile-mi-estimator" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="xu2020theory" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2002.10689">A Theory of Usable Information under Computational Constraints</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICLR 2020</span>
+      
+    </span>
+    <span class="additional">Oral presentation</span>
+    <span class="author">Yilun Xu, Shengjia Zhao, Jiaming Song, Russell Stewart, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="gruver2020multi" class="pub-entry">
+    <span class="title"><a href="http://www.ifaamas.org/Proceedings/aamas2020/pdfs/p1855.pdf">Multi-agent Adversarial Inverse Reinforcement Learning with Latent Variables</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AAMAS 2020</span>
+      
+    </span>
+    
+    <span class="author">Nate Gruver, Jiaming Song, Mykel J Kochenderfer, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="luo2020privacy" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/2008.09643">Privacy Preserving Recalibration under Domain Shift</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Preprint</span>
+      
+    </span>
+    
+    <span class="author">Rachel Luo, Shengjia Zhao, Jiaming Song, Jonathan Kuck, Stefano Ermon, Silvio Savarese</span>
+    
+</div>
+</li></ol>
+
+  <h2 class="year">2019</h2>
+  <ol class="bibliography"><li><div id="grover2019bias" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1906.09531">Bias Correction of Learned Generative Models using Likelihood-free Importance Weighting</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2019</span>
+      
+    </span>
+    
+    <span class="author">Aditya Grover, Jiaming Song, Ashish Kapoor, Kenneth Tran, Alekh Agarwal, Eric J Horvitz, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="malik2019calibrated" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1906.08312">Calibrated Model-based Deep Reinforcement Learning</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2019</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/CalibratedModelBasedRL" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Ali Malik, Volodymyr Kuleshov, Jiaming Song, Danny Nemer, Harlan Seymour, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="yu2019multi" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1907.13220">Multi-agent Adversarial Inverse Reinforcement Learning</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2019</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/ma-airl" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Lantao Yu, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="zhao2019infovae" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1706.02262">InfoVAE: Balancing Learning and Inference in Variational Autoencoders</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AAAI 2019</span>
+      
+    </span>
+    
+    <span class="author">Shengjia Zhao, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2019learning" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1812.04218">Learning Controllable Fair Representations</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AISTATS 2019</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/lag-fairness" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Jiaming Song, Pratyusha Kalluri, Aditya Grover, Shengjia Zhao, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2019unsupervised" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1910.09115">Unsupervised Out-of-Distribution Detection with Batch Normalization</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Preprint</span>
+      
+    </span>
+    
+    <span class="author">Jiaming Song, Yang Song, Stefano Ermon</span>
+    
+</div>
+</li></ol>
+
+  <h2 class="year">2018</h2>
+  <ol class="bibliography"><li><div id="song2018multi" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1807.09936">Multi-Agent Generative Adversarial Imitation Learning</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2018</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/multiagent-gail" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Jiaming Song, Hongyu Ren, Dorsa Sadigh, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="zhao2018bias" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1811.03259">Bias and Generalization in Deep Generative Models: An Empirical Study</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2018</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/BiasAndGeneralization" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">Spotlight presentation</span>
+    <span class="author">Shengjia Zhao, Hongyu Ren, Arianna Yuan, Jiaming Song, Noah Goodman, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="zhao2018information" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1806.06514">The Information Autoencoding Family: A Lagrangian Perspective on Latent Variable Generative Models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">UAI 2018</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/lagvae" target="_blank">Code</a></span>
+    </span>
+    <span class="additional">Oral presentation</span>
+    <span class="author">Shengjia Zhao, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="song2018accelerating" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1803.01273">Accelerating Natural Gradient with Higher-Order Invariance</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2018</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/higher_order_invariance" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Yang Song, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="ren2018adversarial" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1805.10561">Adversarial Constraint Learning for Structured Prediction</a></span>
+    
+    <span class="periodical"><span class="genre-tag">IJCAI 2018</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/acl" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Hongyu Ren, Russell Stewart, Jiaming Song, Volodymyr Kuleshov, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="ren2018learning" class="pub-entry">
+    <span class="title">Learning with weak supervision from physics and data-driven constraints</span>
+    
+    <span class="periodical"><span class="genre-tag">AI Magazine</span>
+      
+    </span>
+    
+    <span class="author">Hongyu Ren, Russell Stewart, Jiaming Song, Volodymyr Kuleshov, Stefano Ermon</span>
+    
+</div>
+</li></ol>
+
+  <h2 class="year">2017</h2>
+  <ol class="bibliography"><li><div id="song2017nice" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1706.07561">A-NICE-MC: Adversarial training for MCMC</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2017</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/a-nice-mc" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Jiaming Song, Shengjia Zhao, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="li2017infogail" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1703.08840">InfoGAIL: Interpretable imitation learning from visual demonstrations</a></span>
+    
+    <span class="periodical"><span class="genre-tag">NeurIPS 2017</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/infogail" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Yunzhu Li, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="zhao2017learning" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1702.08396">Learning Hierarchical Features from Deep Generative Models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2017</span>
+      <span class="genre-tag genre-tag-secondary"><a href="https://github.com/ermongroup/Variational-Ladder-Autoencoder" target="_blank">Code</a></span>
+    </span>
+    
+    <span class="author">Shengjia Zhao, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li>
+<li><div id="zhao2017towards" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1702.08658">Towards deeper understanding of variational autoencoding models</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Preprint</span>
+      
+    </span>
+    
+    <span class="author">Shengjia Zhao, Jiaming Song, Stefano Ermon</span>
+    
+</div>
+</li></ol>
+
+  <h2 class="year">2016</h2>
+  <ol class="bibliography"><li><div id="song2016factored" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1605.06715">Factored Temporal Sigmoid Belief Networks for Sequence Learning</a></span>
+    
+    <span class="periodical"><span class="genre-tag">ICML 2016</span>
+      
+    </span>
+    
+    <span class="author">Jiaming Song, Zhe Gan, Lawrence Carin</span>
+    
+</div>
+</li>
+<li><div id="chen2016discriminative" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1512.02016">Discriminative nonparametric latent feature relational models with data augmentation</a></span>
+    
+    <span class="periodical"><span class="genre-tag">AAAI 2016</span>
+      
+    </span>
+    
+    <span class="author">Bei Chen, Ning Chen, Jun Zhu, Jiaming Song, Bo Zhang</span>
+    
+</div>
+</li>
+<li><div id="zhu2016max" class="pub-entry">
+    <span class="title"><a href="https://arxiv.org/abs/1602.07428">Max-margin Nonparametric Latent Feature Models for Link Prediction</a></span>
+    
+    <span class="periodical"><span class="genre-tag">Preprint</span>
+      
+    </span>
+    
+    <span class="author">Jun Zhu, Jiaming Song, Bei Chen</span>
+    
+</div>
+</li></ol>
+
+
+</div>
+
+  </article>
+
+</div>
+
+    </main>
+
+    <aside class="wiki-infobox-container">
+      
+    </aside>
+  </div>
+
+  <footer class="wiki-footer">
+    This page was last edited on January 31, 2026.
+  </footer>
+</body>
+</html>
