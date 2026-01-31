@@ -9,7 +9,7 @@ profile:
   image: profile.jpg
 ---
 
-[![Citations](https://img.shields.io/badge/Citations-10784-blue?logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user={{ site.scholar_userid }})
+[![Citations](https://img.shields.io/badge/Citations-12286-blue?logo=googlescholar&logoColor=white)](https://scholar.google.com/citations?user={{ site.scholar_userid }})
 [![GitHub Stars](https://img.shields.io/badge/GitHub_Stars-12914-green?logo=github)](https://github.com/EvolvingLMMs-Lab)
 [![Twitter Follow](https://img.shields.io/twitter/follow/{{ site.twitter_username }}?style=social)](https://twitter.com/{{ site.twitter_username }})
 

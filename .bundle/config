@@ -2,3 +2,5 @@
 BUNDLE_BUILD__NOKOGIRI: "--use-system-libraries"
 BUNDLE_PATH: "vendor/bundle"
 BUNDLE_FORCE_RUBY_PLATFORM: "true"
+BUNDLE_BUILD__UNF_EXT: "--with-cppflags=-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 --with-cxxflags=-std=c++11"
+BUNDLE_BUILD__EVENTMACHINE: "--with-cppflags=-I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/c++/v1 -I/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include"
