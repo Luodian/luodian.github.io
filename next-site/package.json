@@ -12,6 +12,7 @@
     "sync:all": "npm run sync:legacy && npm run sync:assets"
   },
   "dependencies": {
+    "geist": "^1.7.0",
     "next": "15.1.6",
     "react": "19.0.0",
     "react-dom": "19.0.0"
