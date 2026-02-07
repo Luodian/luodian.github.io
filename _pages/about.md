@@ -9,13 +9,15 @@ profile:
   image: profile.webp
 ---
 
-[![Citations]({{ '/assets/img/citations.svg' | relative_url }})](https://scholar.google.com/citations?user={{ site.scholar_userid }})
-[![GitHub Stars](https://img.shields.io/badge/GitHub_Stars-12914-green?logo=github)](https://github.com/EvolvingLMMs-Lab)
-[![Twitter Follow](https://img.shields.io/twitter/follow/{{ site.twitter_username }}?style=social)](https://twitter.com/{{ site.twitter_username }})
+<div class="social-badges">
+  <a href="https://scholar.google.com/citations?user={{ site.scholar_userid }}"><img src="{{ '/assets/img/citations.svg' | relative_url }}" alt="Citations" /></a>
+  <a href="https://github.com/EvolvingLMMs-Lab"><img src="https://img.shields.io/badge/GitHub_Stars-12914-green?logo=github" alt="GitHub Stars" /></a>
+  <a href="https://twitter.com/{{ site.twitter_username }}"><img src="https://img.shields.io/twitter/follow/{{ site.twitter_username }}?style=social" alt="Twitter Follow" /></a>
+</div>
 
 **Brian (Bo) Li** is a final-year Ph.D. student in Computer Science at [Nanyang Technological University](https://www.ntu.edu.sg/), advised by [Prof. Ziwei Liu](https://liuziwei7.github.io/). His research focuses on multimodal models and building artificial intelligence systems.
 
-He co-founded <a href="https://lmms-lab.com"><img src="{{ '/assets/img/logo.png' | relative_url }}" alt="LMMs-Lab" style="height: 1.05em; width: auto; vertical-align: -0.15em;" /></a> with [Prof. Ziwei Liu](https://liuziwei7.github.io/), a non-profit open-source community advancing multimodal AI through fully open models, data, and tools. Since 2024, they have made significant contributions to the field, including [LLaVA-OneVision](https://arxiv.org/abs/2408.03326) (performance matching commercial models, fully open), [OneVision-Encoder](https://github.com/EvolvingLMMs-Lab/OneVision-Encoder) (codec style vision encoder), [LMMs-Eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) (unified multimodal evaluation infrastructure), [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine) (unified multimodal models training infrastructure), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae) (safety and interpretability research).
+He co-founded <a href="https://lmms-lab.com"><img src="{{ '/assets/img/logo.png' | relative_url }}" alt="LMMs-Lab" style="height: 1.2em; width: auto; vertical-align: -0.15em;" /></a> with [Prof. Ziwei Liu](https://liuziwei7.github.io/), a non-profit open-source community advancing multimodal AI through fully open models, data, and tools. Since 2024, they have made significant contributions to the field, including [LLaVA-OneVision](https://arxiv.org/abs/2408.03326) (performance matching commercial models, fully open), [OneVision-Encoder](https://github.com/EvolvingLMMs-Lab/OneVision-Encoder) (codec style vision encoder), [LMMs-Eval](https://github.com/EvolvingLMMs-Lab/lmms-eval) (unified multimodal evaluation infrastructure), [LMMs-Engine](https://github.com/EvolvingLMMs-Lab/lmms-engine) (unified multimodal models training infrastructure), and [Multimodal-SAE](https://github.com/EvolvingLMMs-Lab/multimodal-sae) (safety and interpretability research).
 
 Beyond research, he occasionally writes science fiction exploring AI consciousness and the nature of understanding:
 
