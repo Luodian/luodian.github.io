@@ -1,0 +1,148 @@
+.shell {
+  min-height: 100vh;
+  background: #f4f4f4;
+  color: #0f1115;
+  padding: 16px;
+}
+
+.canvas {
+  min-height: calc(100vh - 32px);
+  width: min(1600px, 100%);
+  margin: 0 auto;
+  border: 1px solid rgba(15, 17, 21, 0.08);
+  background: #f4f4f4;
+  padding: clamp(44px, 8vh, 84px) clamp(28px, 8vw, 132px) clamp(34px, 6vh, 68px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow: hidden;
+}
+
+.hero {
+  animation: fade-up 520ms cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.title {
+  margin: 0;
+  font-family: var(--font-geist-sans), sans-serif;
+  font-size: clamp(3.2rem, 10.8vw, 7.9rem);
+  font-weight: 400;
+  line-height: 0.92;
+  letter-spacing: -0.04em;
+  max-width: 11.5ch;
+}
+
+.title span {
+  display: block;
+  margin-top: 0.1em;
+  width: fit-content;
+  border-bottom: 3px solid rgba(15, 17, 21, 0.15);
+  padding-bottom: 0.06em;
+}
+
+.meta {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: clamp(24px, 4vw, 80px);
+  align-items: end;
+  font-family: var(--font-geist-mono), monospace;
+  animation: fade-up 620ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  animation-delay: 80ms;
+}
+
+.metaLeft {
+  max-width: 540px;
+}
+
+.metaRight {
+  min-width: 280px;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 0.73rem;
+  text-transform: uppercase;
+  letter-spacing: 0.18em;
+  color: #5f6772;
+}
+
+.copy {
+  margin: 8px 0 0;
+  max-width: 44ch;
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #333c47;
+}
+
+.enter {
+  margin-top: 14px;
+  display: inline-block;
+  font-size: 0.79rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  color: #10151d;
+  text-decoration: none;
+  border-bottom: 1px solid rgba(16, 21, 29, 0.3);
+  padding-bottom: 4px;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.enter:hover {
+  color: #0a4fbf;
+  border-color: rgba(10, 79, 191, 0.45);
+}
+
+.projectList {
+  list-style: none;
+  margin: 10px 0 0;
+  padding: 0;
+  display: grid;
+  gap: 6px;
+}
+
+.projectList a {
+  color: #10151d;
+  font-size: 0.82rem;
+  letter-spacing: 0.06em;
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: color 140ms ease, border-color 140ms ease;
+}
+
+.projectList a:hover {
+  color: #0a4fbf;
+  border-color: rgba(10, 79, 191, 0.45);
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 768px) {
+  .shell {
+    padding: 0;
+  }
+
+  .canvas {
+    min-height: 100vh;
+    border: 0;
+    padding: 36px 20px 30px;
+    gap: 44px;
+  }
+
+  .meta {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .metaRight {
+    min-width: 0;
+  }
+}
