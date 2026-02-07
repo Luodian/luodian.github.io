@@ -10,6 +10,9 @@ export default function RootLayout({ children }: { children: ReactNode }) {
       lang="en"
       className={`${GeistSans.variable} ${GeistMono.variable} ${GeistPixelSquare.variable}`}
     >
+      <head>
+        <link rel="preload" as="image" href="/vibe-bg.jpg" fetchPriority="high" />
+      </head>
       <body>{children}</body>
     </html>
   );
