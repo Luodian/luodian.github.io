@@ -1,6 +1,7 @@
 .shell {
   --pixel: var(--font-geist-pixel-square), var(--font-geist-mono), "SFMono-Regular",
     Menlo, monospace;
+  --pixel-zh: var(--font-ark-pixel-zh-cn), var(--pixel);
   min-height: 100vh;
   background: #ffffff;
   color: #0f1324;
@@ -402,6 +403,10 @@
     padding 200ms ease,
     margin-top 200ms ease,
     transform 200ms ease;
+}
+
+.cnPixel {
+  font-family: var(--pixel-zh);
 }
 
 .heroWroteLink {

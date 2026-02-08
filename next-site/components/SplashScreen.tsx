@@ -412,7 +412,7 @@ export default function SplashScreen() {
             <div className={styles.heroWroteActions}>
               <Link
                 href={STORY_PATH}
-                className={`${styles.heroWroteLink} ${isMobileViewport && storyLinkArmed ? styles.heroWroteLinkArmed : ""}`}
+                className={`${styles.heroWroteLink} ${styles.cnPixel} ${isMobileViewport && storyLinkArmed ? styles.heroWroteLinkArmed : ""}`}
                 onClick={(event) => {
                   if (!isMobileViewport) return;
                   if (!storyLinkArmed) {
@@ -427,7 +427,7 @@ export default function SplashScreen() {
               {isMobileViewport && storyLinkArmed ? (
                 <button
                   type="button"
-                  className={styles.heroWroteDismiss}
+                  className={`${styles.heroWroteDismiss} ${styles.cnPixel}`}
                   onClick={() => {
                     setStoryExcerptOpen(false);
                     setStoryLinkArmed(false);
@@ -439,7 +439,7 @@ export default function SplashScreen() {
             </div>
             <p
               id="story-excerpt"
-              className={`${styles.heroWroteExcerpt} ${storyExcerptOpen ? styles.heroWroteExcerptOpen : ""}`}
+              className={`${styles.heroWroteExcerpt} ${styles.cnPixel} ${storyExcerptOpen ? styles.heroWroteExcerptOpen : ""}`}
             >
               {STORY_EXCERPT}
             </p>
