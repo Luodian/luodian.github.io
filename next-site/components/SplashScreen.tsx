@@ -5,6 +5,7 @@ import { useRouter } from "next/navigation";
 import { type CSSProperties, useEffect, useMemo, useRef, useState } from "react";
 import { AnimatePresence, motion } from "motion/react";
 import { MousePointer } from "lucide-react";
+import WebGpuBackdrop from "@/components/WebGpuBackdrop";
 import styles from "@/app/splash.module.css";
 
 const PROJECTS = [
@@ -22,6 +23,10 @@ const CONNECT_LINKS = [
   { name: "LinkedIn", href: "https://www.linkedin.com/in/brianbo1121/" },
   { name: "GitHub", href: "https://github.com/luodian" },
 ];
+
+const STORY_PATH = "/compression_2025/";
+const STORY_EXCERPT =
+  "“那就永远尝试。这就是意识存在的方式，Noah。不是抵达，而是趋近。不是理解，而是追问。不是压缩成一个最终的答案，而是在不可压缩的关系中持续展开。”";
 
 const ARCHIVE_PATH = "/inside";
 const STATUS_POOL = ["learning", "thinking", "coding", "sleeping"] as const;
@@ -128,14 +133,21 @@ export default function SplashScreen() {
   const router = useRouter();
   const vibeZoneRef = useRef<HTMLDivElement | null>(null);
   const vibeOrbitRef = useRef<HTMLSpanElement | null>(null);
+  const titleRef = useRef<HTMLHeadingElement | null>(null);
   const [mounted, setMounted] = useState(false);
   const [time, setTime] = useState("00:00:00");
   const [status, setStatus] = useState<(typeof STATUS_POOL)[number]>("thinking");
   const [vibeActive, setVibeActive] = useState(false);
+  const [storyExcerptOpen, setStoryExcerptOpen] = useState(false);
+  const [storyLinkArmed, setStoryLinkArmed] = useState(false);
+  const [isMobileViewport, setIsMobileViewport] = useState(false);
+  const [lowPowerMode, setLowPowerMode] = useState(false);
+  const [webGpuReady, setWebGpuReady] = useState(false);
   const orbitCursors = useMemo<OrbitCursor[]>(() => {
     const cursors: OrbitCursor[] = [];
-    const circles = [140, 180, 220, 260];
-    const cursorsPerCircle = [8, 12, 16, 20];
+    const circles = lowPowerMode ? [130, 170, 210] : [140, 180, 220, 260];
+    const cursorsPerCircle = lowPowerMode ? [6, 9, 12] : [8, 12, 16, 20];
+    const trailDepth = lowPowerMode ? 1 : 2;
 
     circles.forEach((radius, circleIndex) => {
       const count = cursorsPerCircle[circleIndex];
@@ -156,7 +168,7 @@ export default function SplashScreen() {
           scale: 1,
         });
 
-        for (let t = 1; t <= 2; t += 1) {
+        for (let t = 1; t <= trailDepth; t += 1) {
           cursors.push({
             id: `cursor-${circleIndex}-${i}-trail-${t}`,
             x,
@@ -172,7 +184,7 @@ export default function SplashScreen() {
     });
 
     return cursors;
-  }, []);
+  }, [lowPowerMode]);
 
   useEffect(() => {
     setMounted(true);
@@ -201,6 +213,32 @@ export default function SplashScreen() {
     };
   }, [router]);
 
+  useEffect(() => {
+    const mq = window.matchMedia("(max-width: 768px)");
+    const reducedMotionMq = window.matchMedia("(prefers-reduced-motion: reduce)");
+    const syncViewport = () => {
+      const mobile = mq.matches;
+      const navWithMemory = navigator as Navigator & { deviceMemory?: number };
+      const cores = navigator.hardwareConcurrency ?? 8;
+      const memory = navWithMemory.deviceMemory ?? 8;
+      const lowPower = mobile || cores <= 4 || memory <= 4 || reducedMotionMq.matches;
+      setIsMobileViewport(mobile);
+      setLowPowerMode(lowPower);
+      if (!mobile) {
+        setStoryLinkArmed(false);
+        setStoryExcerptOpen(false);
+      }
+    };
+
+    syncViewport();
+    mq.addEventListener("change", syncViewport);
+    reducedMotionMq.addEventListener("change", syncViewport);
+    return () => {
+      mq.removeEventListener("change", syncViewport);
+      reducedMotionMq.removeEventListener("change", syncViewport);
+    };
+  }, []);
+
   const placeVibe = (clientX: number, clientY: number) => {
     if (!vibeZoneRef.current || !vibeOrbitRef.current) return;
     const rect = vibeZoneRef.current.getBoundingClientRect();
@@ -209,8 +247,20 @@ export default function SplashScreen() {
     vibeOrbitRef.current.style.transform = `translate3d(${x}px, ${y}px, 0)`;
   };
 
+  const isWithinTitle = (clientX: number, clientY: number) => {
+    const rect = titleRef.current?.getBoundingClientRect();
+    if (!rect) return false;
+    return (
+      clientX >= rect.left &&
+      clientX <= rect.right &&
+      clientY >= rect.top &&
+      clientY <= rect.bottom
+    );
+  };
+
   return (
-    <main className={styles.shell}>
+    <main className={`${styles.shell} ${webGpuReady ? styles.shellWebGpu : ""}`}>
+      <WebGpuBackdrop className={styles.webgpuOverlay} onReadyChange={setWebGpuReady} />
       <div className={styles.gridOverlay} aria-hidden="true" />
       <div className={styles.noise} aria-hidden="true" />
 
@@ -220,16 +270,21 @@ export default function SplashScreen() {
             ref={vibeZoneRef}
             className={styles.titleVibeZone}
             onPointerEnter={(event) => {
+              if (!isWithinTitle(event.clientX, event.clientY)) return;
               setVibeActive(true);
               placeVibe(event.clientX, event.clientY);
             }}
             onPointerMove={(event) => {
+              if (!isWithinTitle(event.clientX, event.clientY)) {
+                setVibeActive(false);
+                return;
+              }
               if (!vibeActive) setVibeActive(true);
               placeVibe(event.clientX, event.clientY);
             }}
             onPointerLeave={() => setVibeActive(false)}
           >
-            <h1 className={styles.title}>
+            <h1 ref={titleRef} className={styles.title}>
               <span className={styles.titleLine}>Brian is building</span>
               <span className={styles.titleLineAccent}>Something</span>
             </h1>
@@ -251,7 +306,7 @@ export default function SplashScreen() {
                         className={styles.vibeCore}
                         onClick={() => router.push(ARCHIVE_PATH)}
                       >
-                        Feeling the vibe
+                        I'm feeling it
                       </button>
                       <motion.span
                         className={styles.vibeRing}
@@ -319,6 +374,14 @@ export default function SplashScreen() {
                 </AnimatePresence>
               ) : null}
             </span>
+
+            <button
+              type="button"
+              className={styles.vibeMobileCta}
+              onClick={() => router.push(ARCHIVE_PATH)}
+            >
+              I'm feeling it
+            </button>
           </div>
 
           <div className={styles.heroBuilt}>
@@ -333,9 +396,53 @@ export default function SplashScreen() {
                   <a href={p.href} target="_blank" rel="noopener noreferrer">
                     {p.name}
                   </a>
+                  {i < PROJECTS.length - 1 ? (
+                    <span className={styles.heroBuiltDivider} aria-hidden="true">
+                      {" "}
+                      /{" "}
+                    </span>
+                  ) : null}
                 </li>
               ))}
             </ul>
+          </div>
+
+          <div className={styles.heroWrote}>
+            <p className={styles.heroWroteLead}>He also wrote</p>
+            <div className={styles.heroWroteActions}>
+              <Link
+                href={STORY_PATH}
+                className={`${styles.heroWroteLink} ${isMobileViewport && storyLinkArmed ? styles.heroWroteLinkArmed : ""}`}
+                onClick={(event) => {
+                  if (!isMobileViewport) return;
+                  if (!storyLinkArmed) {
+                    event.preventDefault();
+                    setStoryExcerptOpen(true);
+                    setStoryLinkArmed(true);
+                  }
+                }}
+              >
+                {isMobileViewport && storyLinkArmed ? "进入《压缩》（2025）" : "压缩（2025）"}
+              </Link>
+              {isMobileViewport && storyLinkArmed ? (
+                <button
+                  type="button"
+                  className={styles.heroWroteDismiss}
+                  onClick={() => {
+                    setStoryExcerptOpen(false);
+                    setStoryLinkArmed(false);
+                  }}
+                >
+                  取消/收起
+                </button>
+              ) : null}
+            </div>
+            <p
+              id="story-excerpt"
+              className={`${styles.heroWroteExcerpt} ${storyExcerptOpen ? styles.heroWroteExcerptOpen : ""}`}
+            >
+              {STORY_EXCERPT}
+            </p>
           </div>
         </header>
 
