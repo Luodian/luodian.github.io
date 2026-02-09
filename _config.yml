@@ -192,3 +192,4 @@ mdb:
 popper:
   version: "1.16.0"
   integrity: "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3Uks+dQRVvoxMfooN"
+exclude: [vendor, next-site]
