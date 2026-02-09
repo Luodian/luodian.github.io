@@ -22,7 +22,7 @@ const CONNECT_LINKS = [
   { name: "Twitter", href: "https://x.com/Brian_Bo_Li" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/brianbo1121/" },
   { name: "GitHub", href: "https://github.com/luodian" },
-  { name: "Google Scholar", href: "https://scholar.google.com/citations?user=P_3j7d0AAAAJ" },
+  { name: "Google Scholar", href: "https://scholar.google.com/citations?user=1_zc1-IAAAAJ" },
 ];
 
 const STORY_PATH = "/compression_2025/";
