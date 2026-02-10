@@ -16,6 +16,10 @@ const PROJECTS = [
     name: "OneVision-Encoder",
     href: "https://github.com/EvolvingLMMs-Lab/OneVision-Encoder",
   },
+  {
+    name: "Multimodal-SAE",
+    href: "https://github.com/EvolvingLMMs-Lab/multimodal-sae",
+  },
 ];
 
 const CONNECT_LINKS = [
@@ -31,6 +35,7 @@ const STORY_EXCERPT =
 
 const ARCHIVE_PATH = "/inside";
 const STATUS_POOL = ["learning", "thinking", "coding", "sleeping"] as const;
+const SOMETHING_SUFFIXES = ["new", "advanced"] as const;
 
 function pickWeighted<T extends string>(
   options: Array<{ value: T; weight: number }>
@@ -139,11 +144,16 @@ export default function SplashScreen() {
   const [time, setTime] = useState("00:00:00");
   const [status, setStatus] = useState<(typeof STATUS_POOL)[number]>("thinking");
   const [vibeActive, setVibeActive] = useState(false);
+  const [somethingHoverCount, setSomethingHoverCount] = useState(0);
   const [storyExcerptOpen, setStoryExcerptOpen] = useState(false);
   const [storyLinkArmed, setStoryLinkArmed] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [lowPowerMode, setLowPowerMode] = useState(false);
   const [webGpuReady, setWebGpuReady] = useState(false);
+  const somethingSuffix =
+    somethingHoverCount === 0
+      ? ""
+      : SOMETHING_SUFFIXES[(somethingHoverCount - 1) % SOMETHING_SUFFIXES.length];
   const orbitCursors = useMemo<OrbitCursor[]>(() => {
     const cursors: OrbitCursor[] = [];
     const circles = lowPowerMode ? [130, 170, 210] : [140, 180, 220, 260];
@@ -287,7 +297,32 @@ export default function SplashScreen() {
           >
             <h1 ref={titleRef} className={styles.title}>
               <span className={styles.titleLine}>Brian is building</span>
-              <span className={styles.titleLineAccent}>Something</span>
+              <span
+                className={styles.titleLineAccent}
+                onPointerEnter={(event) => {
+                  if (event.pointerType === "touch") return;
+                  setSomethingHoverCount((count) => count + 1);
+                }}
+              >
+                <AnimatePresence initial={false} mode="wait">
+                  <motion.span
+                    key={somethingSuffix || "base"}
+                    className={styles.titleLineAccentText}
+                    initial={{ opacity: 0, y: "0.52em", scale: 0.985 }}
+                    animate={{ opacity: 1, y: "0em", scale: 1 }}
+                    exit={{ opacity: 0, y: "-0.44em", scale: 0.985 }}
+                    transition={{
+                      duration: lowPowerMode ? 0.18 : 0.26,
+                      ease: [0.22, 1, 0.36, 1],
+                    }}
+                  >
+                    <span className={styles.titleLineAccentMain}>Something</span>
+                    <span className={styles.titleLineAccentSuffix}>
+                      {somethingSuffix ? ` ${somethingSuffix}` : ""}
+                    </span>
+                  </motion.span>
+                </AnimatePresence>
+              </span>
             </h1>
 
             <span ref={vibeOrbitRef} className={styles.vibeOrbit}>
