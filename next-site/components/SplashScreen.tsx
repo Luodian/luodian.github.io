@@ -35,7 +35,7 @@ const STORY_EXCERPT =
 
 const ARCHIVE_PATH = "/inside";
 const STATUS_POOL = ["learning", "thinking", "coding", "sleeping"] as const;
-const SOMETHING_SUFFIXES = ["new", "advanced"] as const;
+const SOMETHING_SUFFIXES = ["new", "superb"] as const;
 
 function pickWeighted<T extends string>(
   options: Array<{ value: T; weight: number }>
@@ -144,16 +144,13 @@ export default function SplashScreen() {
   const [time, setTime] = useState("00:00:00");
   const [status, setStatus] = useState<(typeof STATUS_POOL)[number]>("thinking");
   const [vibeActive, setVibeActive] = useState(false);
-  const [somethingHoverCount, setSomethingHoverCount] = useState(0);
+  const [somethingSuffixIndex, setSomethingSuffixIndex] = useState(0);
   const [storyExcerptOpen, setStoryExcerptOpen] = useState(false);
   const [storyLinkArmed, setStoryLinkArmed] = useState(false);
   const [isMobileViewport, setIsMobileViewport] = useState(false);
   const [lowPowerMode, setLowPowerMode] = useState(false);
   const [webGpuReady, setWebGpuReady] = useState(false);
-  const somethingSuffix =
-    somethingHoverCount === 0
-      ? ""
-      : SOMETHING_SUFFIXES[(somethingHoverCount - 1) % SOMETHING_SUFFIXES.length];
+  const somethingSuffix = SOMETHING_SUFFIXES[somethingSuffixIndex];
   const orbitCursors = useMemo<OrbitCursor[]>(() => {
     const cursors: OrbitCursor[] = [];
     const circles = lowPowerMode ? [130, 170, 210] : [140, 180, 220, 260];
@@ -250,6 +247,13 @@ export default function SplashScreen() {
     };
   }, []);
 
+  useEffect(() => {
+    const interval = window.setInterval(() => {
+      setSomethingSuffixIndex((index) => (index + 1) % SOMETHING_SUFFIXES.length);
+    }, lowPowerMode ? 2800 : 2200);
+    return () => window.clearInterval(interval);
+  }, [lowPowerMode]);
+
   const placeVibe = (clientX: number, clientY: number) => {
     if (!vibeZoneRef.current || !vibeOrbitRef.current) return;
     const rect = vibeZoneRef.current.getBoundingClientRect();
@@ -297,31 +301,25 @@ export default function SplashScreen() {
           >
             <h1 ref={titleRef} className={styles.title}>
               <span className={styles.titleLine}>Brian is building</span>
-              <span
-                className={styles.titleLineAccent}
-                onPointerEnter={(event) => {
-                  if (event.pointerType === "touch") return;
-                  setSomethingHoverCount((count) => count + 1);
-                }}
-              >
-                <AnimatePresence initial={false} mode="wait">
-                  <motion.span
-                    key={somethingSuffix || "base"}
-                    className={styles.titleLineAccentText}
-                    initial={{ opacity: 0, y: "0.52em", scale: 0.985 }}
-                    animate={{ opacity: 1, y: "0em", scale: 1 }}
-                    exit={{ opacity: 0, y: "-0.44em", scale: 0.985 }}
-                    transition={{
-                      duration: lowPowerMode ? 0.18 : 0.26,
-                      ease: [0.22, 1, 0.36, 1],
-                    }}
-                  >
-                    <span className={styles.titleLineAccentMain}>Something</span>
-                    <span className={styles.titleLineAccentSuffix}>
-                      {somethingSuffix ? ` ${somethingSuffix}` : ""}
-                    </span>
-                  </motion.span>
-                </AnimatePresence>
+              <span className={styles.titleLineAccent}>
+                <span className={styles.titleLineAccentMain}>Something</span>{" "}
+                <span className={styles.titleLineAccentSuffixSlot}>
+                  <AnimatePresence initial={false} mode="wait">
+                    <motion.span
+                      key={somethingSuffix}
+                      className={styles.titleLineAccentSuffixAnimated}
+                      initial={{ opacity: 0, y: "0.52em", scale: 0.985 }}
+                      animate={{ opacity: 1, y: "0em", scale: 1 }}
+                      exit={{ opacity: 0, y: "-0.44em", scale: 0.985 }}
+                      transition={{
+                        duration: lowPowerMode ? 0.18 : 0.26,
+                        ease: [0.22, 1, 0.36, 1],
+                      }}
+                    >
+                      {somethingSuffix}
+                    </motion.span>
+                  </AnimatePresence>
+                </span>
               </span>
             </h1>
 
