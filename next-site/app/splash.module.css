@@ -132,6 +132,7 @@
   padding-bottom: 0.06em;
   position: relative;
   overflow: hidden;
+  white-space: nowrap;
   cursor: default;
   border-bottom: 3px solid rgba(14, 20, 40, 0.28);
   transition: border-color 220ms ease;
@@ -175,19 +176,10 @@
   color: inherit;
 }
 
-.titleLineAccentSuffixSlot {
-  display: inline-grid;
-  min-width: 6.2ch;
-  align-items: baseline;
-}
-
-.titleLineAccentSuffixAnimated {
-  grid-area: 1 / 1;
-  display: inline-block;
+.titleLineAccentSuffix {
+  display: inline;
   color: #1743ab;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
-  will-change: transform, opacity;
-  backface-visibility: hidden;
 }
 
 .vibeOrbit {
