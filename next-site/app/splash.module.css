@@ -176,10 +176,19 @@
   color: inherit;
 }
 
+.titleLineAccentSuffixSlot {
+  display: inline-grid;
+  overflow: hidden;
+  vertical-align: baseline;
+}
+
 .titleLineAccentSuffix {
-  display: inline;
+  grid-area: 1 / 1;
+  display: inline-block;
   color: #1743ab;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.28);
+  will-change: transform, opacity;
+  backface-visibility: hidden;
 }
 
 .vibeOrbit {
