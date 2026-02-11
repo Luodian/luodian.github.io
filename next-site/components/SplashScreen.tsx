@@ -354,7 +354,6 @@ export default function SplashScreen() {
                           ease: [0.22, 1, 0.36, 1],
                         }}
                       >
-                        {" "}
                         {somethingSuffix}
                       </motion.span>
                     ) : null}
