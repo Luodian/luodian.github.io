@@ -140,6 +140,7 @@ export default function SplashScreen() {
   const vibeZoneRef = useRef<HTMLDivElement | null>(null);
   const vibeOrbitRef = useRef<HTMLSpanElement | null>(null);
   const titleRef = useRef<HTMLHeadingElement | null>(null);
+  const titleAccentRef = useRef<HTMLSpanElement | null>(null);
   const [mounted, setMounted] = useState(false);
   const [time, setTime] = useState("00:00:00");
   const [status, setStatus] = useState<(typeof STATUS_POOL)[number]>("thinking");
@@ -278,6 +279,31 @@ export default function SplashScreen() {
     );
   };
 
+  const isWithinTitleAccent = (clientX: number, clientY: number) => {
+    const rect = titleAccentRef.current?.getBoundingClientRect();
+    if (!rect) return false;
+    return (
+      clientX >= rect.left &&
+      clientX <= rect.right &&
+      clientY >= rect.top &&
+      clientY <= rect.bottom
+    );
+  };
+
+  const syncSomethingHover = (
+    clientX: number,
+    clientY: number,
+    pointerType: string
+  ) => {
+    const nextHovered = pointerType !== "touch" && isWithinTitleAccent(clientX, clientY);
+    setSomethingHovered((prev) => {
+      if (!prev && nextHovered) {
+        setSomethingSuffixIndex(0);
+      }
+      return prev === nextHovered ? prev : nextHovered;
+    });
+  };
+
   return (
     <main className={`${styles.shell} ${webGpuReady ? styles.shellWebGpu : ""}`}>
       <WebGpuBackdrop className={styles.webgpuOverlay} onReadyChange={setWebGpuReady} />
@@ -293,28 +319,26 @@ export default function SplashScreen() {
               if (!isWithinTitle(event.clientX, event.clientY)) return;
               setVibeActive(true);
               placeVibe(event.clientX, event.clientY);
+              syncSomethingHover(event.clientX, event.clientY, event.pointerType);
             }}
             onPointerMove={(event) => {
               if (!isWithinTitle(event.clientX, event.clientY)) {
                 setVibeActive(false);
+                setSomethingHovered(false);
                 return;
               }
               if (!vibeActive) setVibeActive(true);
               placeVibe(event.clientX, event.clientY);
+              syncSomethingHover(event.clientX, event.clientY, event.pointerType);
             }}
-            onPointerLeave={() => setVibeActive(false)}
+            onPointerLeave={() => {
+              setVibeActive(false);
+              setSomethingHovered(false);
+            }}
           >
             <h1 ref={titleRef} className={styles.title}>
               <span className={styles.titleLine}>Brian is building</span>
-              <span
-                className={styles.titleLineAccent}
-                onPointerEnter={(event) => {
-                  if (event.pointerType === "touch") return;
-                  setSomethingSuffixIndex(0);
-                  setSomethingHovered(true);
-                }}
-                onPointerLeave={() => setSomethingHovered(false)}
-              >
+              <span ref={titleAccentRef} className={styles.titleLineAccent}>
                 <span className={styles.titleLineAccentMain}>something</span>
                 <span className={styles.titleLineAccentSuffixSlot}>
                   <AnimatePresence initial={false} mode="wait">
