@@ -27,7 +27,7 @@
       --accent-light: #e6f0fa;
       --border: #e0e0e0;
       --border-dark: #cccccc;
-      --story-font: "Ark Pixel CN", "GeistPixelSquare", "Press Start 2P", monospace;
+      --story-font: "Ark Pixel CN", "GeistPixelSquare", monospace;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -39,9 +39,13 @@
       color: var(--text-primary);
       background: var(--bg-primary);
       min-height: 100vh;
-      text-rendering: geometricPrecision;
-      -webkit-font-smoothing: none;
-      font-smooth: never;
+      -webkit-text-size-adjust: 100%;
+    }
+
+    /* Force pixel font for all story text to avoid framework overrides */
+    .story-container, .story-container * {
+      font-family: var(--story-font) !important;
+      font-weight: 400;
     }
 
     ::selection {
