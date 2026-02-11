@@ -27,10 +27,7 @@
       --accent-light: #e6f0fa;
       --border: #e0e0e0;
       --border-dark: #cccccc;
-      --story-font: "Ark Pixel CN",
-        var(--font-ark-pixel-zh-cn, "Ark Pixel CN"),
-        var(--font-geist-pixel-square, "Ark Pixel CN"),
-        "PingFang SC", "Microsoft YaHei", monospace;
+      --story-font: "Ark Pixel CN", "GeistPixelSquare", "Press Start 2P", monospace;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -42,6 +39,9 @@
       color: var(--text-primary);
       background: var(--bg-primary);
       min-height: 100vh;
+      text-rendering: geometricPrecision;
+      -webkit-font-smoothing: none;
+      font-smooth: never;
     }
 
     ::selection {
