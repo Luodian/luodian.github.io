@@ -6,10 +6,15 @@
   <title>压缩 - Personal Homepage</title>
   <meta name="description" content="">
   <link rel="shortcut icon" href="/assets/img/favicon.ico">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
   <style>
+    @font-face {
+      font-family: "Ark Pixel CN";
+      src: url("/assets/fonts/ark-pixel-16px-proportional-zh_cn.otf.woff2") format("woff2");
+      font-display: swap;
+      font-weight: 400;
+      font-style: normal;
+    }
+
     :root {
       --bg-primary: #fafafa;
       --bg-secondary: #f5f5f5;
@@ -22,12 +27,16 @@
       --accent-light: #e6f0fa;
       --border: #e0e0e0;
       --border-dark: #cccccc;
+      --story-font: "Ark Pixel CN", var(--font-ark-pixel-zh-cn),
+        var(--font-geist-pixel-square), var(--font-geist-pixel-grid),
+        var(--font-geist-pixel-circle), var(--font-geist-pixel-triangle),
+        var(--font-geist-pixel-line), monospace;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Noto Sans SC', -apple-system, sans-serif;
+      font-family: var(--story-font);
       font-size: 16px;
       line-height: 1.85;
       color: var(--text-primary);
@@ -56,7 +65,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--story-font);
       font-size: 0.85em;
     }
     .terminal-header a {
@@ -95,7 +104,7 @@
     }
 
     .story-title {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--story-font);
       font-size: 2.4em;
       font-weight: 500;
       color: var(--text-primary);
@@ -109,7 +118,7 @@
     }
 
     .story-meta {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--story-font);
       color: var(--text-secondary);
       font-size: 0.9em;
     }
@@ -128,7 +137,7 @@
     }
 
     h2 {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--story-font);
       font-size: 1.3em;
       font-weight: 500;
       color: var(--text-primary);
@@ -143,7 +152,7 @@
     }
 
     h3 {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--story-font);
       font-size: 1.1em;
       font-weight: 500;
       color: var(--text-primary);
@@ -186,7 +195,7 @@
     }
 
     code {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--story-font);
       background: var(--bg-tertiary);
       padding: 0.2em 0.5em;
       border-radius: 4px;
@@ -199,7 +208,7 @@
       padding: 2em 0;
       margin-top: 2em;
       text-align: center;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--story-font);
       font-size: 0.85em;
       color: var(--text-muted);
     }
