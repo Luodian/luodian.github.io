@@ -1,8 +1,7 @@
 .shell {
-  --pixel: "Noto Sans SC", -apple-system, BlinkMacSystemFont, "PingFang SC",
-    "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC",
-    "WenQuanYi Micro Hei", sans-serif;
-  --pixel-zh: var(--pixel);
+  --pixel: var(--font-geist-pixel-square), var(--font-geist-mono), "SFMono-Regular",
+    Menlo, monospace;
+  --pixel-zh: var(--font-ark-pixel-zh-cn), var(--pixel);
   min-height: 100vh;
   background: #ffffff;
   color: #0f1324;
@@ -442,7 +441,7 @@
 
 .heroWroteExcerpt {
   margin: 0;
-  font-family: var(--pixel);
+  font-family: var(--font-geist-sans), "PingFang SC", "Noto Sans SC", sans-serif;
   font-size: 15px;
   line-height: 1.6;
   color: #182244;
