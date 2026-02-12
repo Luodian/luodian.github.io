@@ -11,7 +11,7 @@ layout: none
   <link rel="shortcut icon" href="{{ '/assets/img/favicon.ico' | relative_url }}">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Noto+Sans+SC:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-primary: #fafafa;
@@ -25,17 +25,21 @@ layout: none
       --accent-light: #e6f0fa;
       --border: #e0e0e0;
       --border-dark: #cccccc;
+      --font-story: "Noto Sans SC", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Noto Sans CJK SC", "WenQuanYi Micro Hei", sans-serif;
+      --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', 'Courier New', monospace;
     }
 
     * { margin: 0; padding: 0; box-sizing: border-box; }
 
     body {
-      font-family: 'Noto Sans SC', -apple-system, sans-serif;
-      font-size: 16px;
-      line-height: 1.85;
+      font-family: var(--font-story);
+      font-size: 24px;
+      line-height: 1.9;
       color: var(--text-primary);
       background: var(--bg-primary);
       min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
     }
 
     ::selection {
@@ -59,7 +63,7 @@ layout: none
       display: flex;
       justify-content: space-between;
       align-items: center;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-story);
       font-size: 0.85em;
     }
     .terminal-header a {
@@ -98,21 +102,16 @@ layout: none
     }
 
     .story-title {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-story);
       font-size: 2.4em;
       font-weight: 500;
       color: var(--text-primary);
       margin-bottom: 0.4em;
       letter-spacing: -0.02em;
     }
-    .story-title::before {
-      content: '# ';
-      color: var(--accent);
-      opacity: 0.7;
-    }
 
     .story-meta {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-story);
       color: var(--text-secondary);
       font-size: 0.9em;
     }
@@ -131,7 +130,7 @@ layout: none
     }
 
     h2 {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-story);
       font-size: 1.3em;
       font-weight: 500;
       color: var(--text-primary);
@@ -139,27 +138,20 @@ layout: none
       padding: 0.5em 0;
       border-bottom: 1px solid var(--border);
     }
-    h2::before {
-      content: '## ';
-      color: var(--accent);
-      opacity: 0.6;
-    }
 
     h3 {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-story);
       font-size: 1.1em;
       font-weight: 500;
       color: var(--text-primary);
       margin: 2em 0 0.8em;
     }
-    h3::before {
-      content: '### ';
-      color: var(--text-muted);
-    }
 
     p {
       margin: 1em 0;
-      text-align: justify;
+      text-align: left;
+      overflow-wrap: anywhere;
+      word-break: break-word;
     }
 
     blockquote {
@@ -189,7 +181,7 @@ layout: none
     }
 
     code {
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-mono);
       background: var(--bg-tertiary);
       padding: 0.2em 0.5em;
       border-radius: 4px;
@@ -202,7 +194,7 @@ layout: none
       padding: 2em 0;
       margin-top: 2em;
       text-align: center;
-      font-family: 'JetBrains Mono', monospace;
+      font-family: var(--font-story);
       font-size: 0.85em;
       color: var(--text-muted);
     }
