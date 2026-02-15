@@ -41,7 +41,7 @@ Beyond research, he occasionally writes science fiction exploring AI consciousne
 
 ## Professional experience
 
-- **Aug. 2025 – Present**: [ByteDance Seed](https://team.doubao.com/en/), Singapore. With Haoqi Fan, working on unified multimodal models.
+- **Aug. 2025 – Feb. 2026**: [ByteDance Seed](https://team.doubao.com/en/), Singapore. Joined the TopSeed program (selected and managed by Dr. Yonghui Wu) in the Seed Multimodal & World Model team. Worked on unified multimodal model under Haoqi Fan (one of the most brilliant people I have ever worked with). It was frontier work and an overall nice experience.
 
 - **Oct. 2024 – Aug. 2025**: [TikTok AI Innovation Center](https://lifeattiktok.com/position/7364272465797990665/detail), Singapore. With Dr. Wei Li and Dr. Zejun Ma.
 
