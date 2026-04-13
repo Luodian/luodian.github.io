@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian's Neovim Shortcuts</title>
+<style>
+  :root {
+    --bg: #1a1b26;
+    --bg-card: #24283b;
+    --bg-card-hover: #292e42;
+    --bg-kbd: #414868;
+    --fg: #c0caf5;
+    --fg-dim: #565f89;
+    --fg-dark: #3b4261;
+    --accent: #7aa2f7;
+    --accent2: #bb9af7;
+    --green: #9ece6a;
+    --orange: #ff9e64;
+    --red: #f7768e;
+    --cyan: #7dcfff;
+    --yellow: #e0af68;
+    --border: #3b4261;
+    --search-bg: #1f2335;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'JetBrains Mono', 'SF Mono', 'Fira Code', 'Cascadia Code', monospace;
+    background: var(--bg);
+    color: var(--fg);
+    line-height: 1.6;
+    min-height: 100vh;
+  }
+
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1.5rem;
+  }
+
+  header {
+    text-align: center;
+    margin-bottom: 2rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid var(--border);
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+
+  header .meta {
+    font-size: 0.8rem;
+    color: var(--fg-dim);
+  }
+
+  header .meta span {
+    display: inline-block;
+    margin: 0 0.5rem;
+    padding: 0.15rem 0.5rem;
+    background: var(--bg-card);
+    border-radius: 4px;
+    border: 1px solid var(--border);
+  }
+
+  /* Search */
+  .search-wrap {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg);
+    padding: 0.75rem 0 1rem;
+    border-bottom: 1px solid var(--border);
+    margin-bottom: 1.5rem;
+  }
+
+  .search-box {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+    display: block;
+    padding: 0.6rem 1rem 0.6rem 2.4rem;
+    background: var(--search-bg);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    color: var(--fg);
+    font-family: inherit;
+    font-size: 0.85rem;
+    outline: none;
+    transition: border-color 0.2s;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='%23565f89' viewBox='0 0 16 16'%3E%3Cpath d='M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85zm-5.242.156a5 5 0 1 1 0-10 5 5 0 0 1 0 10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: 0.75rem center;
+  }
+
+  .search-box:focus { border-color: var(--accent); }
+  .search-box::placeholder { color: var(--fg-dim); }
+
+  .match-count {
+    text-align: center;
+    font-size: 0.75rem;
+    color: var(--fg-dim);
+    margin-top: 0.4rem;
+    min-height: 1.2em;
+  }
+
+  /* Sections */
+  .section {
+    margin-bottom: 2rem;
+  }
+
+  .section-title {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    padding-left: 0.5rem;
+    border-left: 3px solid var(--accent);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .section-title .icon { font-size: 0.9rem; }
+
+  .section-title[data-color="purple"] { border-color: var(--accent2); }
+  .section-title[data-color="green"]  { border-color: var(--green); }
+  .section-title[data-color="orange"] { border-color: var(--orange); }
+  .section-title[data-color="red"]    { border-color: var(--red); }
+  .section-title[data-color="cyan"]   { border-color: var(--cyan); }
+  .section-title[data-color="yellow"] { border-color: var(--yellow); }
+
+  /* Table */
+  table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    background: var(--bg-card);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  thead th {
+    text-align: left;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--fg-dim);
+    padding: 0.6rem 1rem;
+    background: var(--bg-card);
+    border-bottom: 1px solid var(--border);
+  }
+
+  tbody tr {
+    transition: background 0.15s;
+  }
+
+  tbody tr:hover { background: var(--bg-card-hover); }
+
+  tbody td {
+    padding: 0.5rem 1rem;
+    font-size: 0.82rem;
+    border-bottom: 1px solid var(--bg);
+    vertical-align: middle;
+  }
+
+  tbody tr:last-child td { border-bottom: none; }
+
+  .col-keys { width: 30%; white-space: nowrap; }
+  .col-action { width: 40%; }
+  .col-source { width: 15%; }
+  .col-mode { width: 15%; }
+
+  /* Keyboard keys */
+  kbd {
+    display: inline-block;
+    padding: 0.1rem 0.45rem;
+    background: var(--bg-kbd);
+    border: 1px solid var(--fg-dark);
+    border-radius: 4px;
+    font-family: inherit;
+    font-size: 0.78rem;
+    color: var(--cyan);
+    line-height: 1.5;
+    box-shadow: 0 1px 0 var(--fg-dark);
+  }
+
+  kbd + kbd { margin-left: 0.15rem; }
+
+  .key-then {
+    color: var(--fg-dim);
+    font-size: 0.7rem;
+    margin: 0 0.15rem;
+  }
+
+  /* Source badge */
+  .badge {
+    display: inline-block;
+    padding: 0.1rem 0.4rem;
+    border-radius: 4px;
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+  }
+  .badge-builtin  { background: #1a3a1a; color: var(--green); }
+  .badge-lazyvim  { background: #1a2a4a; color: var(--accent); }
+  .badge-custom   { background: #3a2a1a; color: var(--orange); }
+  .badge-snacks   { background: #2a1a3a; color: var(--accent2); }
+
+  .mode-tag {
+    font-size: 0.7rem;
+    color: var(--fg-dim);
+  }
+
+  /* Hidden row */
+  tr.hidden { display: none; }
+  .section.hidden { display: none; }
+
+  /* Footer */
+  footer {
+    text-align: center;
+    padding-top: 1.5rem;
+    border-top: 1px solid var(--border);
+    margin-top: 2rem;
+    font-size: 0.72rem;
+    color: var(--fg-dim);
+  }
+
+  footer a { color: var(--accent); text-decoration: none; }
+  footer a:hover { text-decoration: underline; }
+
+  /* Responsive */
+  @media (max-width: 700px) {
+    .col-source, .col-mode, thead th:nth-child(3), thead th:nth-child(4),
+    tbody td:nth-child(3), tbody td:nth-child(4) { display: none; }
+    .col-keys { width: 40%; }
+    .col-action { width: 60%; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+<header>
+  <h1>Brian's Neovim Shortcuts</h1>
+  <div class="meta">
+    <span>Neovim 0.11.6</span>
+    <span>LazyVim v8</span>
+    <span>Snacks Picker</span>
+    <span>leader = Space</span>
+  </div>
+</header>
+
+<div class="search-wrap">
+  <input type="text" class="search-box" id="search" placeholder="Filter shortcuts... (e.g. definition, buffer, git)" autocomplete="off" />
+  <div class="match-count" id="matchCount"></div>
+</div>
+
+<!-- LSP -->
+<div class="section" id="sec-lsp">
+  <h2 class="section-title" data-color="green"><span class="icon">&#9670;</span> LSP - Go to Definition / References</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>g</kbd><kbd>d</kbd></td><td>Go to definition</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>g</kbd><kbd>D</kbd></td><td>Go to declaration</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>g</kbd><kbd>r</kbd></td><td>Find all references / usages</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>g</kbd><kbd>I</kbd></td><td>Go to implementation</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>g</kbd><kbd>y</kbd></td><td>Go to type definition</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>K</kbd></td><td>Hover documentation</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>g</kbd><kbd>K</kbd></td><td>Signature help</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>k</kbd></td><td>Signature help (insert mode)</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">i</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>c</kbd><kbd>a</kbd></td><td>Code action</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n, v</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>c</kbd><kbd>r</kbd></td><td>Rename symbol</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>c</kbd><kbd>A</kbd></td><td>Source action</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>c</kbd><kbd>l</kbd></td><td>LSP info</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>c</kbd><kbd>f</kbd></td><td>Format document / selection</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n, v</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Diagnostics -->
+<div class="section" id="sec-diag">
+  <h2 class="section-title" data-color="red"><span class="icon">&#9670;</span> Diagnostics</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>]</kbd><kbd>d</kbd></td><td>Next diagnostic</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>[</kbd><kbd>d</kbd></td><td>Previous diagnostic</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>]</kbd><kbd>e</kbd></td><td>Next error</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>[</kbd><kbd>e</kbd></td><td>Previous error</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>]</kbd><kbd>w</kbd></td><td>Next warning</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>[</kbd><kbd>w</kbd></td><td>Previous warning</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>x</kbd><kbd>x</kbd></td><td>Diagnostics (Trouble)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>x</kbd><kbd>X</kbd></td><td>Buffer diagnostics (Trouble)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Search / Picker -->
+<div class="section" id="sec-search">
+  <h2 class="section-title"><span class="icon">&#9670;</span> Search / Snacks Picker</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Space</kbd><kbd>Space</kbd></td><td>Find files (root dir)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>f</kbd><kbd>f</kbd></td><td>Find files (root dir)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>f</kbd><kbd>F</kbd></td><td>Find files (cwd)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>f</kbd><kbd>g</kbd></td><td>Find files (git)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>f</kbd><kbd>r</kbd></td><td>Recent files</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>f</kbd><kbd>n</kbd></td><td>New file</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>/</kbd></td><td>Grep (root dir)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>g</kbd></td><td>Grep (root dir)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>G</kbd></td><td>Grep (cwd)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>w</kbd></td><td>Grep word under cursor (root dir)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>W</kbd></td><td>Grep word under cursor (cwd)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>s</kbd></td><td>LSP document symbols</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>S</kbd></td><td>LSP workspace symbols</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>b</kbd></td><td>Buffer lines</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>d</kbd></td><td>Diagnostics (buffer)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>D</kbd></td><td>Diagnostics (all buffers)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>h</kbd></td><td>Help tags</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>k</kbd></td><td>Keymaps</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>m</kbd></td><td>Marks</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>r</kbd></td><td>Resume last picker</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>"</kbd></td><td>Registers</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>c</kbd></td><td>Command history</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>s</kbd><kbd>C</kbd></td><td>Commands</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><span style="color:var(--fg-dim)">visual</span> <kbd>/</kbd></td><td>Search visual selection in buffer</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">v</td></tr>
+      <tr><td><span style="color:var(--fg-dim)">visual</span> <kbd>Space</kbd><kbd>/</kbd></td><td>Grep visual selection (project-wide)</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">v</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Navigation -->
+<div class="section" id="sec-nav">
+  <h2 class="section-title" data-color="cyan"><span class="icon">&#9670;</span> Navigation</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Ctrl</kbd><kbd>o</kbd></td><td>Jump back (jump list)</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>i</kbd></td><td>Jump forward (jump list)</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>]</kbd><kbd>q</kbd></td><td>Next quickfix item</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>[</kbd><kbd>q</kbd></td><td>Previous quickfix item</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>%</kbd></td><td>Jump to matching bracket</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>g</kbd><kbd>g</kbd></td><td>Go to first line</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>G</kbd></td><td>Go to last line</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>{</kbd> / <kbd>}</kbd></td><td>Previous / next paragraph</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>d</kbd></td><td>Scroll down half page</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>u</kbd></td><td>Scroll up half page</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Buffers -->
+<div class="section" id="sec-buffers">
+  <h2 class="section-title" data-color="purple"><span class="icon">&#9670;</span> Buffers</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Shift</kbd><kbd>h</kbd></td><td>Previous buffer</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Shift</kbd><kbd>l</kbd></td><td>Next buffer</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>b</kbd><kbd>b</kbd></td><td>Switch to other buffer</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>b</kbd><kbd>d</kbd></td><td>Delete buffer</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>b</kbd><kbd>D</kbd></td><td>Delete buffer + window</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>b</kbd><kbd>o</kbd></td><td>Delete other buffers</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>,</kbd></td><td>Switch buffer (picker)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Windows -->
+<div class="section" id="sec-windows">
+  <h2 class="section-title" data-color="cyan"><span class="icon">&#9670;</span> Windows</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Ctrl</kbd><kbd>h</kbd></td><td>Go to left window</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>j</kbd></td><td>Go to lower window</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>k</kbd></td><td>Go to upper window</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>l</kbd></td><td>Go to right window</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>-</kbd></td><td>Split below</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>|</kbd></td><td>Split right</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>w</kbd><kbd>d</kbd></td><td>Delete window</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>w</kbd><kbd>m</kbd></td><td>Maximize / restore window</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Tabs -->
+<div class="section" id="sec-tabs">
+  <h2 class="section-title" data-color="yellow"><span class="icon">&#9670;</span> Tabs</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Space</kbd><kbd>Tab</kbd><kbd>Tab</kbd></td><td>New tab</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>Tab</kbd><kbd>d</kbd></td><td>Close tab</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>Tab</kbd><kbd>o</kbd></td><td>Close other tabs</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>Tab</kbd><kbd>]</kbd></td><td>Next tab</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>Tab</kbd><kbd>[</kbd></td><td>Previous tab</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>Tab</kbd><kbd>l</kbd></td><td>Last tab</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>Tab</kbd><kbd>f</kbd></td><td>First tab</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Editing -->
+<div class="section" id="sec-editing">
+  <h2 class="section-title" data-color="orange"><span class="icon">&#9670;</span> Editing</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Alt</kbd><kbd>j</kbd></td><td>Move line down</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n, v</td></tr>
+      <tr><td><kbd>Alt</kbd><kbd>k</kbd></td><td>Move line up</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n, v</td></tr>
+      <tr><td><kbd>&lt;</kbd></td><td>Indent left (stays in visual)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">v</td></tr>
+      <tr><td><kbd>&gt;</kbd></td><td>Indent right (stays in visual)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">v</td></tr>
+      <tr><td><kbd>J</kbd></td><td>Join lines (cursor stays put)</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>u</kbd></td><td>Undo</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Ctrl</kbd><kbd>r</kbd></td><td>Redo</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>.</kbd></td><td>Repeat last change</td><td><span class="badge badge-builtin">builtin</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>x</kbd><kbd>x</kbd></td><td>Autoformat JSON (jq)</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Git -->
+<div class="section" id="sec-git">
+  <h2 class="section-title" data-color="red"><span class="icon">&#9670;</span> Git</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>g</kbd></td><td>Lazygit (root dir)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>G</kbd></td><td>Lazygit (cwd)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>f</kbd></td><td>Lazygit current file history</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>l</kbd></td><td>Lazygit log (root dir)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>b</kbd></td><td>Git blame line</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>B</kbd></td><td>Git browse (open in browser)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>]</kbd><kbd>h</kbd></td><td>Next git hunk</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>[</kbd><kbd>h</kbd></td><td>Previous git hunk</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>h</kbd><kbd>p</kbd></td><td>Preview hunk inline</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>h</kbd><kbd>s</kbd></td><td>Stage hunk</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n, v</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>h</kbd><kbd>r</kbd></td><td>Reset hunk</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n, v</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>h</kbd><kbd>S</kbd></td><td>Stage buffer</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>h</kbd><kbd>R</kbd></td><td>Reset buffer</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>h</kbd><kbd>d</kbd></td><td>Diff this</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- File Explorer -->
+<div class="section" id="sec-explorer">
+  <h2 class="section-title" data-color="purple"><span class="icon">&#9670;</span> File Explorer (Snacks)</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Space</kbd><kbd>e</kbd></td><td>Toggle file explorer</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>E</kbd></td><td>Toggle file explorer (cwd)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>y</kbd><kbd>r</kbd></td><td>Copy relative path</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (explorer)</td></tr>
+      <tr><td><kbd>y</kbd><kbd>a</kbd></td><td>Copy absolute path</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (explorer)</td></tr>
+      <tr><td><kbd>y</kbd><kbd>f</kbd></td><td>Copy filename</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (explorer)</td></tr>
+      <tr><td><kbd>y</kbd><kbd>d</kbd></td><td>Copy directory path</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (explorer)</td></tr>
+      <tr><td><kbd>y</kbd><kbd>y</kbd></td><td>Copy full path (default)</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (explorer)</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- UI Toggles -->
+<div class="section" id="sec-ui">
+  <h2 class="section-title" data-color="yellow"><span class="icon">&#9670;</span> UI Toggles</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>f</kbd></td><td>Toggle auto format (global)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>F</kbd></td><td>Toggle auto format (buffer)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>s</kbd></td><td>Toggle spelling</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>w</kbd></td><td>Toggle word wrap</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>L</kbd></td><td>Toggle relative line numbers</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>d</kbd></td><td>Toggle diagnostics</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>c</kbd></td><td>Toggle conceal</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>b</kbd></td><td>Toggle dark/light background</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>C</kbd></td><td>Colorscheme picker</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>u</kbd><kbd>n</kbd></td><td>Dismiss all notifications</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<!-- Misc -->
+<div class="section" id="sec-misc">
+  <h2 class="section-title" data-color="green"><span class="icon">&#9670;</span> Misc</h2>
+  <table>
+    <thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+    <tbody>
+      <tr><td><kbd>Space</kbd><kbd>l</kbd></td><td>Lazy (plugin manager)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Space</kbd><kbd>q</kbd><kbd>q</kbd></td><td>Quit all</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Esc</kbd></td><td>Clear search highlight</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+      <tr><td><kbd>Cmd</kbd><kbd>v</kbd></td><td>Paste from clipboard (Neovide)</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">i, c</td></tr>
+    </tbody>
+  </table>
+</div>
+
+<footer>
+  Config: <a href="https://github.com/luodian/dotfiles">~/.config/nvim</a>
+  &middot; LazyVim <a href="https://www.lazyvim.org/keymaps">keymaps reference</a>
+  &middot; Generated 2026-04-13
+</footer>
+
+</div>
+
+<script>
+(function() {
+  const input = document.getElementById('search');
+  const countEl = document.getElementById('matchCount');
+  const sections = document.querySelectorAll('.section');
+
+  input.addEventListener('input', function() {
+    const q = this.value.toLowerCase().trim();
+    let total = 0, visible = 0;
+
+    sections.forEach(sec => {
+      const rows = sec.querySelectorAll('tbody tr');
+      let secVisible = 0;
+      rows.forEach(row => {
+        total++;
+        const text = row.textContent.toLowerCase();
+        if (!q || text.includes(q)) {
+          row.classList.remove('hidden');
+          secVisible++;
+          visible++;
+        } else {
+          row.classList.add('hidden');
+        }
+      });
+      sec.classList.toggle('hidden', secVisible === 0 && q.length > 0);
+    });
+
+    if (q) {
+      countEl.textContent = visible + ' of ' + total + ' shortcuts';
+    } else {
+      countEl.textContent = '';
+    }
+  });
+
+  // Focus search on / key (when not in input)
+  document.addEventListener('keydown', function(e) {
+    if (e.key === '/' && document.activeElement !== input) {
+      e.preventDefault();
+      input.focus();
+    }
+    if (e.key === 'Escape' && document.activeElement === input) {
+      input.value = '';
+      input.dispatchEvent(new Event('input'));
+      input.blur();
+    }
+  });
+})();
+</script>
+</body>
+</html>
