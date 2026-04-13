@@ -416,6 +416,24 @@
   color: #131b38;
 }
 
+.heroHobby {
+  margin-top: 18px;
+  max-width: none;
+  animation: fade-in 520ms ease both;
+  animation-delay: 400ms;
+}
+
+.heroHobbyLabel {
+  margin: 0;
+  font-family: var(--pixel);
+  font-size: 16px;
+  font-weight: 700;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: #1f2744;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.38);
+}
+
 .heroWrote {
   margin-top: 18px;
   max-width: 74ch;
@@ -850,7 +868,12 @@
     max-width: none;
   }
 
+  .heroHobby {
+    margin-top: 12px;
+  }
+
   .heroBuiltLabel,
+  .heroHobbyLabel,
   .heroWroteLead {
     font-size: 13px;
     letter-spacing: 0.12em;

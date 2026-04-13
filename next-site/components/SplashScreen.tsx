@@ -29,6 +29,10 @@ const CONNECT_LINKS = [
   { name: "Google Scholar", href: "https://scholar.google.com/citations?user=1_zc1-IAAAAJ" },
 ];
 
+const HOBBY_PROJECTS = [
+  { name: "Neovim Shortcuts", href: "/neovim-shortcuts" },
+];
+
 const STORY_PATH = "/compression_2025/";
 const STORY_EXCERPT =
   "“那就永远尝试。这就是意识存在的方式，Noah。不是抵达，而是趋近。不是理解，而是追问。不是压缩成一个最终的答案，而是在不可压缩的关系中持续展开。”";
@@ -470,6 +474,29 @@ export default function SplashScreen() {
                     {p.name}
                   </a>
                   {i < PROJECTS.length - 1 ? (
+                    <span className={styles.heroBuiltDivider} aria-hidden="true">
+                      {" "}
+                      /{" "}
+                    </span>
+                  ) : null}
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div className={styles.heroHobby}>
+            <p className={styles.heroHobbyLabel}>兴趣项目</p>
+            <ul className={styles.heroBuiltLinks}>
+              {HOBBY_PROJECTS.map((p, i) => (
+                <li
+                  key={p.name}
+                  className={styles.heroBuiltItem}
+                  style={{ "--delay": `${i * 60 + 680}ms` } as CSSProperties}
+                >
+                  <Link href={p.href}>
+                    {p.name}
+                  </Link>
+                  {i < HOBBY_PROJECTS.length - 1 ? (
                     <span className={styles.heroBuiltDivider} aria-hidden="true">
                       {" "}
                       /{" "}
