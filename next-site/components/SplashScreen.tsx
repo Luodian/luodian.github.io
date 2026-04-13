@@ -485,7 +485,7 @@ export default function SplashScreen() {
           </div>
 
           <div className={styles.heroHobby}>
-            <p className={styles.heroHobbyLabel}>兴趣项目</p>
+            <p className={styles.heroHobbyLabel}>Sidecar Projects</p>
             <ul className={styles.heroBuiltLinks}>
               {HOBBY_PROJECTS.map((p, i) => (
                 <li
