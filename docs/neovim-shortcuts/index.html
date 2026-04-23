@@ -296,6 +296,7 @@
         <li><a href="#tabs">Tabs</a></li>
         <li><a href="#editing">Editing</a></li>
         <li><a href="#git">Git</a></li>
+        <li><a href="#github">GitHub (PRs)</a></li>
         <li><a href="#explorer">File Explorer</a></li>
         <li><a href="#ui">UI Toggles</a></li>
         <li><a href="#misc">Misc</a></li>
@@ -310,6 +311,7 @@
         <span class="meta-badge">LazyVim v8</span>
         <span class="meta-badge">Snacks Picker</span>
         <span class="meta-badge">leader = Space</span>
+        <span class="meta-badge">localleader = \</span>
       </div>
 
       <div class="search-wrap">
@@ -508,6 +510,83 @@
 </table>
 </div>
 
+<!-- GitHub (PRs) -->
+<div class="section" id="github">
+<h2>GitHub (Octo / Diffview / gh.nvim)</h2>
+<table>
+<thead><tr><th class="col-keys">Shortcut</th><th class="col-action">Action</th><th class="col-source">Source</th><th class="col-mode">Mode</th></tr></thead>
+<tbody>
+  <!-- Custom Octo entry points (github-pr.lua) -->
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>p</kbd><kbd>l</kbd></td><td>List PRs (Octo)</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>p</kbd><kbd>c</kbd></td><td>Checkout PR</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>p</kbd><kbd>d</kbd></td><td>PR diff</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>r</kbd><kbd>s</kbd></td><td>Start review</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>r</kbd><kbd>S</kbd></td><td>Submit review</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>r</kbd><kbd>c</kbd></td><td>Review comments panel</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+
+  <!-- Diffview -->
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>d</kbd><kbd>o</kbd></td><td>Diffview open</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>d</kbd><kbd>c</kbd></td><td>Diffview close</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>d</kbd><kbd>h</kbd></td><td>Current file history</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>g</kbd><kbd>d</kbd><kbd>H</kbd></td><td>Branch file history</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n</td></tr>
+
+  <!-- gh.nvim (via LazyVim util.gh extra) -->
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>p</kbd><kbd>o</kbd></td><td>Open PR (gh.nvim panel)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>p</kbd><kbd>d</kbd></td><td>PR details</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>p</kbd><kbd>r</kbd></td><td>Refresh PR</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>r</kbd><kbd>b</kbd></td><td>Begin review (gh.nvim)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>r</kbd><kbd>s</kbd></td><td>Submit review (gh.nvim)</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>t</kbd><kbd>c</kbd></td><td>Create comment thread</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>t</kbd><kbd>n</kbd></td><td>Next comment thread</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>t</kbd><kbd>t</kbd></td><td>Toggle thread visibility</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>i</kbd><kbd>p</kbd></td><td>Preview issue</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>G</kbd><kbd>i</kbd><kbd>o</kbd></td><td>Open issue</td><td><span class="badge badge-lazyvim">lazyvim</span></td><td class="mode-tag">n</td></tr>
+
+  <!-- Octo buffer-local: reviewers / assignees -->
+  <tr><td><kbd>\</kbd><kbd>v</kbd><kbd>a</kbd></td><td>Request reviewer</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>v</kbd><kbd>d</kbd></td><td>Remove reviewer request</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>a</kbd><kbd>a</kbd></td><td>Add assignee</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>a</kbd><kbd>d</kbd></td><td>Remove assignee</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+
+  <!-- Octo buffer-local: review threads -->
+  <tr><td><kbd>\</kbd><kbd>r</kbd><kbd>t</kbd></td><td>Resolve review thread</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>r</kbd><kbd>T</kbd></td><td>Unresolve review thread</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+
+  <!-- Octo buffer-local: PR lifecycle -->
+  <tr><td><kbd>\</kbd><kbd>p</kbd><kbd>o</kbd></td><td>Checkout PR (in-buffer)</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>p</kbd><kbd>m</kbd></td><td>Merge PR</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>p</kbd><kbd>s</kbd><kbd>m</kbd></td><td>Squash &amp; merge PR</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>p</kbd><kbd>r</kbd><kbd>m</kbd></td><td>Rebase &amp; merge PR</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>p</kbd><kbd>d</kbd></td><td>Show PR diff</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>p</kbd><kbd>c</kbd></td><td>List PR commits</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>p</kbd><kbd>f</kbd></td><td>List changed files</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>i</kbd><kbd>c</kbd></td><td>Close PR / issue</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>i</kbd><kbd>o</kbd></td><td>Reopen PR / issue</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>Space</kbd><kbd>q</kbd><kbd>a</kbd></td><td>Approve PR</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+
+  <!-- Octo buffer-local: comments / navigation -->
+  <tr><td><kbd>\</kbd><kbd>c</kbd><kbd>a</kbd></td><td>Add comment</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>c</kbd><kbd>r</kbd></td><td>Reply to comment</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>c</kbd><kbd>d</kbd></td><td>Delete comment</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>c</kbd><kbd>e</kbd></td><td>Comment edit history</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>]</kbd><kbd>c</kbd></td><td>Next comment</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>[</kbd><kbd>c</kbd></td><td>Previous comment</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+
+  <!-- Octo buffer-local: labels -->
+  <tr><td><kbd>\</kbd><kbd>l</kbd><kbd>a</kbd></td><td>Add label</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>l</kbd><kbd>d</kbd></td><td>Remove label</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>\</kbd><kbd>l</kbd><kbd>c</kbd></td><td>Create label</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+
+  <!-- Octo buffer-local: utility -->
+  <tr><td><kbd>Ctrl</kbd><kbd>r</kbd></td><td>Reload PR / issue</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>Ctrl</kbd><kbd>b</kbd></td><td>Open in browser</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>Ctrl</kbd><kbd>y</kbd></td><td>Copy URL</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>Ctrl</kbd><kbd>e</kbd></td><td>Copy commit SHA</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+  <tr><td><kbd>g</kbd><kbd>f</kbd></td><td>Go to file (from PR diff)</td><td><span class="badge badge-custom">custom</span></td><td class="mode-tag">n (octo)</td></tr>
+</tbody>
+</table>
+</div>
+
 <!-- File Explorer -->
 <div class="section" id="explorer">
 <h2>File Explorer (Snacks)</h2>
@@ -563,7 +642,7 @@
   </div>
 
   <div class="wiki-footer">
-    Updated 2026-04-13
+    Updated 2026-04-23
   </div>
 
 <script>
