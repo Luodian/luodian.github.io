@@ -4,3 +4,4 @@ docs/Gemfile.lock
 docs/Gemfile
 docs/README.md
 .vscode/*
+.vercel
