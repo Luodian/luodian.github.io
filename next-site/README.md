@@ -1,35 +1,35 @@
-# next-site
+# Brian (Bo) Li's website
 
-Next.js template for migrating the current Jekyll output with parity-first behavior.
+The site uses Next.js with a static export. Vercel runs the root `vercel.json` build command and publishes `next-site/out`.
 
-## What this version guarantees
+## Develop and verify
 
-- Route-level parity with the current site pages:
-  - `/`
-  - plus every non-root HTML route discovered from legacy pages automatically
-- Existing HTML/CSS structure is preserved by rendering from legacy HTML files.
-- Existing static assets are reused from `docs/assets` and `docs/projects/genbench`.
-
-## Usage
-
-1. Sync legacy pages and assets:
-
-```bash
+```sh
+cd next-site
+npm ci
 npm run sync:all
-```
-
-2. Install and run:
-
-```bash
-npm install
 npm run dev
 ```
 
-3. Build static export:
-
-```bash
+```sh
 npm run build
+node scripts/check-export.mjs
 ```
 
-`npm run build` will auto-sync legacy pages and assets before building.
-Generated output goes to `next-site/out`.
+The export check verifies portfolio routes, internal links and anchors, metadata, and the updated publications. Preview the production export with `python3 -m http.server 4173 --directory out`.
+
+## Edit content
+
+- `lib/portfolio.ts` contains current projects, recent papers, updates, and experience.
+- `lib/publication-history.json` contains earlier publication records migrated from the previous homepage.
+- `components/Portfolio.tsx` and `components/portfolio.module.css` render the homepage, projects, publications, and about pages.
+- `/play/` preserves the original interactive homepage.
+- `CONTENT_SOURCES.md` records the sources used for the September 2026 update.
+
+Keep venue labels precise, distinguish preprints from conference and journal publications, and use the linked source for release dates. Update the shared review date only after checking the content. Do not put changing citation or star counts in prose.
+
+## Legacy pages and assets
+
+The build copies legacy HTML from `docs/` into `next-site/legacy/` and assets from `docs/assets/` into `next-site/public/assets/`. Edit the source under `docs/`, since the copied output is overwritten during every build. Native routes own `/`, `/inside/`, `/projects/`, `/publications/`, and `/play/`; nested legacy routes such as `/projects/genbench/` remain available.
+
+The homepage uses `public/profile-portrait.webp`, a smaller rendition of the existing profile photograph. Files directly under `public/` are preserved by asset synchronization.
