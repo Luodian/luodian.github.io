@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Portfolio from "@/components/Portfolio";
-export const metadata: Metadata = {
-  title: "About | Brian (Bo) Li",
-  description:
-    "Bo Li's research interests, professional experience, talks, and community work.",
-  alternates: { canonical: "https://www.brianboli.com/inside/" },
-};
-export default function AboutPage() {
-  return <Portfolio view="inside" />;
+import LegacyHtmlPage from "@/components/LegacyHtmlPage";
+import { buildLegacyMetadata } from "@/lib/legacy-page";
+
+const SOURCE = "index.html";
+
+export const metadata: Metadata = buildLegacyMetadata(SOURCE);
+
+export default function InsidePage() {
+  return <LegacyHtmlPage source={SOURCE} />;
 }

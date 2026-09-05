@@ -1,3 +1,49 @@
+@article{mmsearch-r1,
+  title={MMSearch-R1: Incentivizing LMMs to Search},
+  author={Wu, Jinming and Deng, Zihao and Li, Wei and Liu, Yiding and You, Bo and Li, Bo and Ma, Zejun and Liu, Ziwei},
+  url={https://aclanthology.org/2026.acl-long.114/},
+  journal={ACL 2026},
+  abbr={ACL 2026},
+  year={2026},
+  month={July},
+  additional={Learning when and how to search for external knowledge during multimodal reasoning.},
+}
+
+@article{longvt,
+  title={LongVT: Incentivizing “Thinking with Long Videos” via Native Tool Calling},
+  author={Yang, Zuhao and Wang, Sudong and Zhang, Kaichen and Wu, Keming and Leng, Sicong and Zhang, Yifan and Li, Bo and Qin, Chengwei and Lu, Shijian and Li, Xingxuan and Bing, Lidong},
+  url={https://openaccess.thecvf.com/content/CVPR2026/html/Yang_LongVT_Incentivizing_Thinking_with_Long_Videos_via_Native_Tool_Calling_CVPR_2026_paper.html},
+  journal={CVPR 2026},
+  abbr={CVPR 2026},
+  year={2026},
+  month={June},
+  additional={Video reasoning that revisits relevant clips through native tool calls.},
+}
+
+@article{onevision-2,
+  title={LLaVA-OneVision-2: Towards Next-Generation Perceptual Intelligence},
+  author={An, Xiang and Xie, Yin and Tang, Feilong and Yan, Yunyao and Tan, Huajie and Zhu, Didi and Chen, Changrui and Zhao, Xiuwei and Qin, Bin and Yang, Kaicheng and Shen, Yifei and Zhang, Yuanhan and Zhang, Kaichen and Zhang, Wenkang and Cheng, Zheng and Zhang, Nansen and Wu, Chunsheng and Ge, Chunjiang and Ran, Zimin and Song, Dehua and Li, Chunyuan and Feng, Shikun and Hu, Ming and Chen, Zhangquan and Niu, Junbo and Li, Bo and Feng, Ziyong and Liu, Ziwei and Ge, Zongyuan and Deng, Jiankang},
+  url={https://arxiv.org/abs/2605.25979},
+  journal={arXiv 2026},
+  abbr={arXiv 2026},
+  year={2026},
+  month={May},
+  additional={Codec-stream tokenization for video understanding, temporal and spatial grounding, and manipulation-trace reasoning.},
+  code={https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-2},
+}
+
+@article{encoder,
+  title={OneVision-Encoder: Codec-Aligned Sparsity as a Foundational Principle for Multimodal Intelligence},
+  author={Tang, Feilong and An, Xiang and Yan, Yunyao and Xie, Yin and Qin, Bin and Yang, Kaicheng and Shen, Yifei and Zhang, Yuanhan and Li, Chunyuan and Feng, Shikun and Chen, Changrui and Tan, Huajie and Hu, Ming and Zhang, Manyuan and Li, Bo and Feng, Ziyong and Liu, Ziwei and Ge, Zongyuan and Deng, Jiankang},
+  url={https://arxiv.org/abs/2602.08683},
+  journal={arXiv 2026},
+  abbr={arXiv 2026},
+  year={2026},
+  month={February},
+  additional={Learning visual representations from sparse, informative video patches with shared spatial and temporal coordinates.},
+  code={https://github.com/EvolvingLMMs-Lab/OneVision-Encoder},
+}
+
 @article{li2025lmmsengine,
   title={LMMs Engine for Unified Multimodal Training},
   url={https://github.com/EvolvingLMMs-Lab/lmms-engine},
@@ -5,7 +51,7 @@
   year={2025},
   month={October},
   count={19},
-  additional={A simple, unified multimodal models training engine. Lean, flexible, and built for hacking at scale. Lead codebase design and core maintainer},
+  additional={A simple, unified multimodal training engine, now with distributed recipes for vision-language models and video generation. Lead codebase design and core maintainer},
 }
 
 @article{li2025aero,
@@ -21,7 +67,7 @@
 
 @article{li2024llava,
   	title={LLaVA-OneVision: Easy Visual Task Transfer},
-  	author={Li*, Bo and Zhang, Yuanhan and Guo, Dong and Zhang, Renrui and Li, Feng and Zhang, Hao and Zhang, Kaichen and Li, Yanwei and Liu, Ziwei and Li, Chunyuan},
+    author={Li*, Bo and Zhang, Yuanhan and Guo, Dong and Zhang, Renrui and Li, Feng and Zhang, Hao and Zhang, Kaichen and Zhang, Peiyuan and Li, Yanwei and Liu, Ziwei and Li, Chunyuan},
     url={https://arxiv.org/abs/2408.03326},
   	journal={Transactions on Machine Learning Research (TMLR), 2025},
     abbr={TMLR 2025},
@@ -32,26 +78,29 @@
 }
 
 @article{li2025llavaonevision15,
-  title={LLaVA-OneVision 1.5: Democratized Multimodal Training},
-  author={An, Xiang and Xie, Yin and Yang, Kaicheng and Chen, Changrui and Tan, Huajie and Li, Chunyuan and Yan, Zizhen and Feng, Ziyong and Liu, Ziwei and Li*, Bo and Deng, Jiankang},
-  url={https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5},
-  journal={Open-source Project},
+  title={LLaVA-OneVision-1.5: Fully Open Framework for Democratized Multimodal Training},
+  author={An, Xiang and Xie, Yin and Yang, Kaicheng and Zhang, Wenkang and Zhao, Xiuwei and Cheng, Zheng and Wang, Yirui and Xu, Songcen and Chen, Changrui and Zhu, Didi and Wu, Chunsheng and Tan, Huajie and Li, Chunyuan and Yang, Jing and Yu, Jie and Wang, Xiyao and Qin, Bin and Wang, Yumeng and Yan, Zizhen and Feng, Ziyong and Liu, Ziwei and Li*, Bo and Deng, Jiankang},
+  url={https://arxiv.org/abs/2509.23661},
+  journal={arXiv 2025},
+  abbr={arXiv 2025},
   year={2025},
-  month={October},
+  month={September},
   count={16},
-  additional={Fully open-source code, data, checkpoints and training logs; Provided a better open-source ViT; Proved the idea that simple scaling dense captions would improve overall multimodal tasks performance},
+  additional={A reproducible framework for training open vision-language models, including data curation and reinforcement learning post-training.},
+  code={https://github.com/EvolvingLMMs-Lab/LLaVA-OneVision-1.5},
 }
 
 @article{li2024lmmseval,
     title={LMMs-Eval: Reality Check on the Evaluation of Large Multimodal Models},
     author={Zhang*, Kaichen and Li*, Bo and Zhang*, Peiyuan and Pu*, Fanyi and Cahyono*, Joshua Adrian and Hu*, Kairui and Liu*, Shuai and Zhang*, Yuanhan and Yang*, Jingkang and Li*, Chunyuan and Liu*, Ziwei},
-    url={https://github.com/EvolvingLMMs-Lab/lmms-eval},
-    journal={North American Chapter of the Association for Computational Linguistics (NAACL), 2025},
-    abbr={NAACL 2025},
+    url={https://aclanthology.org/2025.findings-naacl.51/},
+    code={https://github.com/EvolvingLMMs-Lab/lmms-eval},
+    journal={Findings of the Association for Computational Linguistics: NAACL 2025},
+    abbr={Findings of NAACL 2025},
     year={2024},
     month={July},
     count={16},
-    additional={Open-source evaluation frameworks spanning text, image, video, and audio tasks with 2.4K GitHub stars; contributed core framework and major code},
+    additional={Open-source evaluation across text, image, video, and audio, now with an HTTP evaluation service, statistical comparisons, and agentic tasks; contributed core framework and major code},
 }
 
 @article{liu2024llavanext,

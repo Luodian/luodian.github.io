@@ -129,5 +129,5 @@ export function listLegacySlugs(): string[][] {
         .split("/")
         .filter(Boolean);
     })
-    .filter((slug) => slug.length > 0 && !["projects", "publications"].includes(slug.join("/")));
+    .filter((slug) => slug.length > 0);
 }

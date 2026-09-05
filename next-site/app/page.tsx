@@ -1,11 +1,12 @@
 import type { Metadata } from "next";
-import Portfolio from "@/components/Portfolio";
+import SplashScreen from "@/components/SplashScreen";
+
 export const metadata: Metadata = {
-  title: "Brian (Bo) Li | Researcher & Builder",
+  title: "Brian is building",
   description:
-    "Bo Li at Advanced Machine Intelligence. Multimodal models, visual representations, and open research tools. Co-founder of LMMs-Lab.",
-  alternates: { canonical: "https://www.brianboli.com/" },
+    "Brian is building something. Previously he built LMMs-Eval, LLaVA-OneVision-2, LLaVA-OneVision, LMMs-Engine, and OneVision-Encoder.",
 };
+
 export default function HomePage() {
-  return <Portfolio />;
+  return <SplashScreen />;
 }

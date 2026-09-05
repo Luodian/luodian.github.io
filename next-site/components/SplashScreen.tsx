@@ -9,6 +9,7 @@ import WebGpuBackdrop from "@/components/WebGpuBackdrop";
 import styles from "@/app/splash.module.css";
 
 const PROJECTS = [
+  { name: "LLaVA-OneVision-2", href: "https://arxiv.org/abs/2605.25979" },
   { name: "LMMs-Eval", href: "https://github.com/EvolvingLMMs-Lab/lmms-eval" },
   { name: "LLaVA-OneVision", href: "https://arxiv.org/abs/2408.03326" },
   { name: "LMMs-Engine", href: "https://github.com/EvolvingLMMs-Lab/lmms-engine" },
@@ -30,6 +31,7 @@ const CONNECT_LINKS = [
 ];
 
 const HOBBY_PROJECTS = [
+  { name: "nano-hevc", href: "https://github.com/Luodian/nano-hevc" },
   { name: "Neovim Shortcuts", href: "/neovim-shortcuts" },
 ];
 
