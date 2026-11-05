@@ -1,34 +1,45 @@
 #!/usr/bin/env node
 /**
- * Regenerate the citation + GitHub-stars badge SVGs at Vercel build time.
+ * Regenerate the citation + GitHub-stars badge SVGs.
  *
- * Run order matters: this MUST run AFTER `sync:assets` (which wipes and
- * re-copies public/assets from docs/assets). It overwrites the synced
- * baseline with freshly fetched numbers. If a fetch fails — e.g. Google
- * Scholar blocks the build IP, or GitHub rate-limits an unauthenticated
- * build — the existing synced SVG is left in place as a fallback and the
- * build still succeeds. This script never exits non-zero.
+ * Default (Vercel build): write only into next-site/public/assets/img after
+ * sync:assets. If a fetch fails, keep the synced baseline and exit 0.
+ *
+ * Weekly baseline refresh on the Mac:
+ *   GITHUB_TOKEN=$(gh auth token) node scripts/fetch-badges.mjs --baselines
+ * Writes docs/assets/img, assets/img, and next-site/public/assets/img.
+ * Refuses to write if either fetch fails or a value drops by more than 10%.
+ * Prints old→new and exits non-zero on failure.
  *
  * Env (all optional):
  *   SCHOLAR_ID    Google Scholar user id          (default: 1_zc1-IAAAAJ)
  *   GITHUB_ORG    org whose repo stars are summed  (default: EvolvingLMMs-Lab)
  *   GITHUB_USER   user whose repo stars are summed (default: luodian)
- *   GITHUB_TOKEN  raises the GitHub API rate limit (recommended on Vercel)
- *
- * Usage: node scripts/fetch-badges.mjs
+ *   GITHUB_TOKEN  raises the GitHub API rate limit (recommended)
  */
 
-import { writeFileSync, existsSync } from "node:fs";
+import { writeFileSync, existsSync, readFileSync, mkdirSync } from "node:fs";
 import { fileURLToPath } from "node:url";
 import { dirname, join } from "node:path";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
-const OUT_DIR = join(__dirname, "..", "public", "assets", "img");
+const ROOT_DIR = join(__dirname, "..", "..");
+const PUBLIC_OUT_DIR = join(__dirname, "..", "public", "assets", "img");
+const BASELINE_DIRS = [
+  join(ROOT_DIR, "docs", "assets", "img"),
+  join(ROOT_DIR, "assets", "img"),
+  PUBLIC_OUT_DIR,
+];
 
 const SCHOLAR_ID = process.env.SCHOLAR_ID || "1_zc1-IAAAAJ";
 const GITHUB_ORG = process.env.GITHUB_ORG || "EvolvingLMMs-Lab";
 const GITHUB_USER = process.env.GITHUB_USER || "luodian";
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN || process.env.GH_TOKEN || "";
+
+const args = new Set(process.argv.slice(2));
+const BASELINES = args.has("--baselines");
+const STRICT = BASELINES || args.has("--strict");
+const MAX_DROP_RATIO = 0.1;
 
 async function fetchWithTimeout(url, options = {}, timeoutMs = 15000) {
   const controller = new AbortController();
@@ -74,7 +85,12 @@ async function getGitHubStars() {
 async function getScholarCitations() {
   const resp = await fetchWithTimeout(
     `https://scholar.google.com/citations?user=${SCHOLAR_ID}&hl=en`,
-    { headers: { "User-Agent": "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)" } }
+    {
+      headers: {
+        "User-Agent":
+          "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/120.0.0.0 Safari/537.36",
+      },
+    }
   );
   if (!resp.ok) throw new Error(`Scholar HTTP ${resp.status}`);
   const html = await resp.text();
@@ -117,20 +133,126 @@ function starsSvg(count) {
 </svg>`;
 }
 
-async function writeBadge(name, label, getValue, makeSvg) {
-  const file = join(OUT_DIR, name);
-  try {
-    const value = await getValue();
-    writeFileSync(file, makeSvg(value));
-    console.log(`[badges] ${label}: ${value.toLocaleString("en-US")} -> ${name}`);
-  } catch (err) {
-    const note = existsSync(file)
-      ? "keeping synced baseline"
-      : "WARNING: no baseline SVG to fall back to";
-    console.warn(`[badges] ${label} fetch failed (${err.message}); ${note}`);
+function parseCountFromSvg(file, kind) {
+  if (!existsSync(file)) return null;
+  const text = readFileSync(file, "utf8");
+  if (kind === "citations") {
+    const labeled = text.match(/Citations:\s*([0-9][0-9,]*)/);
+    if (labeled) return Number(labeled[1].replace(/,/g, ""));
+  }
+  const numbers = [...text.matchAll(/>([0-9][0-9,]*)</g)].map((m) =>
+    Number(m[1].replace(/,/g, ""))
+  );
+  return numbers.length ? numbers[0] : null;
+}
+
+function writeDirs(name, svg) {
+  const dirs = BASELINES ? BASELINE_DIRS : [PUBLIC_OUT_DIR];
+  for (const dir of dirs) {
+    mkdirSync(dir, { recursive: true });
+    writeFileSync(join(dir, name), svg);
   }
 }
 
-await writeBadge("github-stars.svg", "GitHub stars", getGitHubStars, starsSvg);
-await writeBadge("citations.svg", "Scholar citations", getScholarCitations, citationsSvg);
-console.log("[badges] done");
+function guardDrop(label, oldValue, value) {
+  if (
+    STRICT &&
+    oldValue != null &&
+    oldValue > 0 &&
+    value < oldValue * (1 - MAX_DROP_RATIO)
+  ) {
+    throw new Error(
+      `refusing ${label} drop ${oldValue.toLocaleString("en-US")} → ${value.toLocaleString("en-US")} (>${MAX_DROP_RATIO * 100}% decrease)`
+    );
+  }
+}
+
+async function fetchOrKeep(name, label, kind, getValue) {
+  const baselineFile = join(ROOT_DIR, "docs", "assets", "img", name);
+  const publicFile = join(PUBLIC_OUT_DIR, name);
+  const oldFile = existsSync(baselineFile) ? baselineFile : publicFile;
+  const oldValue = parseCountFromSvg(oldFile, kind);
+  try {
+    const value = await getValue();
+    guardDrop(label, oldValue, value);
+    return { ok: true, name, label, kind, value, oldValue };
+  } catch (err) {
+    return { ok: false, name, label, kind, oldValue, error: err };
+  }
+}
+
+function reportAndWrite(result, makeSvg) {
+  const { name, label, value, oldValue } = result;
+  writeDirs(name, makeSvg(value));
+  const oldText = oldValue == null ? "missing" : oldValue.toLocaleString("en-US");
+  console.log(
+    `[badges] ${label}: ${oldText} → ${value.toLocaleString("en-US")} (${name})`
+  );
+}
+
+async function writeBadgeLoose(name, label, kind, getValue, makeSvg) {
+  const result = await fetchOrKeep(name, label, kind, getValue);
+  if (result.ok) {
+    reportAndWrite(result, makeSvg);
+    return;
+  }
+  const publicFile = join(PUBLIC_OUT_DIR, name);
+  const note = existsSync(publicFile)
+    ? "keeping synced baseline"
+    : "WARNING: no baseline SVG to fall back to";
+  console.warn(
+    `[badges] ${label} fetch failed (${result.error.message}); ${note}`
+  );
+}
+
+async function main() {
+  if (BASELINES) {
+    console.log("[badges] mode: refresh committed baselines (strict)");
+    const stars = await fetchOrKeep(
+      "github-stars.svg",
+      "GitHub stars",
+      "stars",
+      getGitHubStars
+    );
+    const citations = await fetchOrKeep(
+      "citations.svg",
+      "Scholar citations",
+      "citations",
+      getScholarCitations
+    );
+    const failed = [stars, citations].filter((r) => !r.ok);
+    if (failed.length) {
+      for (const r of failed) {
+        console.error(`[badges] ${r.label} failed: ${r.error.message}`);
+      }
+      console.error("[badges] aborted; baselines left unchanged");
+      process.exitCode = 1;
+      return;
+    }
+    reportAndWrite(stars, starsSvg);
+    reportAndWrite(citations, citationsSvg);
+    console.log("[badges] done");
+    return;
+  }
+
+  await writeBadgeLoose(
+    "github-stars.svg",
+    "GitHub stars",
+    "stars",
+    getGitHubStars,
+    starsSvg
+  );
+  await writeBadgeLoose(
+    "citations.svg",
+    "Scholar citations",
+    "citations",
+    getScholarCitations,
+    citationsSvg
+  );
+  console.log("[badges] done");
+}
+
+main().catch((err) => {
+  console.error(`[badges] fatal: ${err.message}`);
+  process.exitCode = 1;
+});

@@ -9,7 +9,8 @@
     "lint": "next lint",
     "sync:assets": "bash ./scripts/sync-assets.sh",
     "sync:legacy": "bash ./scripts/sync-legacy-pages.sh",
-    "sync:all": "npm run sync:legacy && npm run sync:assets"
+    "sync:all": "npm run sync:legacy && npm run sync:assets",
+    "refresh:badges": "node scripts/fetch-badges.mjs --baselines"
   },
   "dependencies": {
     "geist": "^1.7.0",
